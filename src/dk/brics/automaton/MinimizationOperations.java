@@ -68,9 +68,9 @@ final public class MinimizationOperations {
 		a.recomputeHashCode();
 	}
 	
-	private static boolean statesAgree(Transition[][] transitions, boolean[][] mark, int n1, int n2) {
-		Transition[] t1 = transitions[n1];
-		Transition[] t2 = transitions[n2];
+	private static boolean statesAgree(AbstractTransition[][] transitions, boolean[][] mark, int n1, int n2) {
+		AbstractTransition[] t1 = transitions[n1];
+		AbstractTransition[] t2 = transitions[n2];
 		for (int k1 = 0, k2 = 0; k1 < t1.length && k2 < t2.length;) {
 			if (t1[k1].max < t2[k2].min)
 				k1++;
@@ -95,9 +95,9 @@ final public class MinimizationOperations {
 		return true;
 	}
 
-	private static void addTriggers(Transition[][] transitions, ArrayList<ArrayList<HashSet<IntPair>>> triggers, int n1, int n2) {
-		Transition[] t1 = transitions[n1];
-		Transition[] t2 = transitions[n2];
+	private static void addTriggers(AbstractTransition[][] transitions, ArrayList<ArrayList<HashSet<IntPair>>> triggers, int n1, int n2) {
+		AbstractTransition[] t1 = transitions[n1];
+		AbstractTransition[] t2 = transitions[n2];
 		for (int k1 = 0, k2 = 0; k1 < t1.length && k2 < t2.length;) {
 			if (t1[k1].max < t2[k2].min)
 				k1++;
@@ -152,13 +152,13 @@ final public class MinimizationOperations {
 	public static void minimizeHuffman(Automaton a) {
 		a.determinize();
 		a.totalize();
-		Set<State> ss = a.getStates();
-		Transition[][] transitions = new Transition[ss.size()][];
-		State[] states = ss.toArray(new State[ss.size()]);
+		Set<AbstractState> ss = a.getStates();
+		AbstractTransition[][] transitions = new AbstractTransition[ss.size()][];
+		AbstractState[] states = ss.toArray(new AbstractState[ss.size()]);
 		boolean[][] mark = new boolean[states.length][states.length];
-		ArrayList<ArrayList<HashSet<IntPair>>> triggers = new ArrayList<ArrayList<HashSet<IntPair>>>();
+		ArrayList<ArrayList<HashSet<IntPair>>> triggers = new ArrayList<>();
 		for (int n1 = 0; n1 < states.length; n1++) {
-			ArrayList<HashSet<IntPair>> v = new ArrayList<HashSet<IntPair>>();
+			ArrayList<HashSet<IntPair>> v = new ArrayList<>();
 			initialize(v, states.length);
 			triggers.add(v);
 		}
@@ -206,7 +206,7 @@ final public class MinimizationOperations {
 		for (int n = 0; n < numclasses; n++) {
 			State s = newstates[n];
 			s.accept = states[s.number].accept;
-			for (Transition t : states[s.number].transitions)
+			for (AbstractTransition t : states[s.number].transitions)
 				s.transitions.add(new Transition(t.min, t.max, newstates[t.to.number]));
 		}
 		a.removeDeadTransitions();
@@ -227,54 +227,54 @@ final public class MinimizationOperations {
 	 */
 	public static void minimizeHopcroft(Automaton a) {
 		a.determinize();
-		Set<Transition> tr = a.initial.getTransitions();
+		Set<AbstractTransition> tr = a.initial.getTransitions();
 		if (tr.size() == 1) {
-			Transition t = tr.iterator().next();
+			AbstractTransition t = tr.iterator().next();
 			if (t.to == a.initial && t.min == Character.MIN_VALUE && t.max == Character.MAX_VALUE)
 				return;
 		}
 		a.totalize();
 		// make arrays for numbered states and effective alphabet
-		Set<State> ss = a.getStates();
-		State[] states = new State[ss.size()];
+		Set<AbstractState> ss = a.getStates();
+		AbstractState[] states = new AbstractState[ss.size()];
 		int number = 0;
-		for (State q : ss) {
+		for (AbstractState q : ss) {
 			states[number] = q;
 			q.number = number++;
 		}
 		char[] sigma = a.getStartPoints();
 		// initialize data structures
-		ArrayList<ArrayList<LinkedList<State>>> reverse = new ArrayList<ArrayList<LinkedList<State>>>();
+		ArrayList<ArrayList<LinkedList<AbstractState>>> reverse = new ArrayList<>();
 		for (int q = 0; q < states.length; q++) {
-			ArrayList<LinkedList<State>> v = new ArrayList<LinkedList<State>>();
+			ArrayList<LinkedList<AbstractState>> v = new ArrayList<>();
 			initialize(v, sigma.length);
 			reverse.add(v);
 		}
 		boolean[][] reverse_nonempty = new boolean[states.length][sigma.length];
-		ArrayList<LinkedList<State>> partition = new ArrayList<LinkedList<State>>();
+		ArrayList<LinkedList<AbstractState>> partition = new ArrayList<>();
 		initialize(partition, states.length);
 		int[] block = new int[states.length];
 		StateList[][] active = new StateList[states.length][sigma.length];
 		StateListNode[][] active2 = new StateListNode[states.length][sigma.length];
-		LinkedList<IntPair> pending = new LinkedList<IntPair>();
+		LinkedList<IntPair> pending = new LinkedList<>();
 		boolean[][] pending2 = new boolean[sigma.length][states.length];
-		ArrayList<State> split = new ArrayList<State>();
+		ArrayList<AbstractState> split = new ArrayList<>();
 		boolean[] split2 = new boolean[states.length];
-		ArrayList<Integer> refine = new ArrayList<Integer>();
+		ArrayList<Integer> refine = new ArrayList<>();
 		boolean[] refine2 = new boolean[states.length];
-		ArrayList<ArrayList<State>> splitblock = new ArrayList<ArrayList<State>>();
+		ArrayList<ArrayList<AbstractState>> splitblock = new ArrayList<>();
 		initialize(splitblock, states.length);
 		for (int q = 0; q < states.length; q++) {
-			splitblock.set(q, new ArrayList<State>());
-			partition.set(q, new LinkedList<State>());
+			splitblock.set(q, new ArrayList<>());
+			partition.set(q, new LinkedList<>());
 			for (int x = 0; x < sigma.length; x++) {
-				reverse.get(q).set(x, new LinkedList<State>());
+				reverse.get(q).set(x, new LinkedList<>());
 				active[q][x] = new StateList();
 			}
 		}
 		// find initial partition and reverse edges
 		for (int q = 0; q < states.length; q++) {
-			State qq = states[q];
+			AbstractState qq = states[q];
 			int j;
 			if (qq.accept)
 				j = 0;
@@ -284,7 +284,7 @@ final public class MinimizationOperations {
 			block[qq.number] = j;
 			for (int x = 0; x < sigma.length; x++) {
 				char y = sigma[x];
-				State p = qq.step(y);
+				AbstractState p = qq.step(y);
 				reverse.get(p.number).get(x).add(qq);
 				reverse_nonempty[p.number][x] = true;
 			}
@@ -292,7 +292,7 @@ final public class MinimizationOperations {
 		// initialize active sets
 		for (int j = 0; j <= 1; j++)
 			for (int x = 0; x < sigma.length; x++)
-				for (State qq : partition.get(j))
+				for (AbstractState qq : partition.get(j))
 					if (reverse_nonempty[qq.number][x])
 						active2[qq.number][x] = active[j][x].add(qq);
 		// initialize pending
@@ -316,7 +316,7 @@ final public class MinimizationOperations {
 			pending2[x][p] = false;
 			// find states that need to be split off their blocks
 			for (StateListNode m = active[p][x].first; m != null; m = m.next)
-				for (State s : reverse.get(m.q.number).get(x))
+				for (AbstractState s : reverse.get(m.q.number).get(x))
 					if (!split2[s.number]) {
 						split2[s.number] = true;
 						split.add(s);
@@ -330,9 +330,9 @@ final public class MinimizationOperations {
 			// refine blocks
 			for (int j : refine) {
 				if (splitblock.get(j).size() < partition.get(j).size()) {
-					LinkedList<State> b1 = partition.get(j);
-					LinkedList<State> b2 = partition.get(k);
-					for (State s : splitblock.get(j)) {
+					LinkedList<AbstractState> b1 = partition.get(j);
+					LinkedList<AbstractState> b2 = partition.get(k);
+					for (AbstractState s : splitblock.get(j)) {
 						b1.remove(s);
 						b2.add(s);
 						block[s.number] = k;
@@ -358,7 +358,7 @@ final public class MinimizationOperations {
 					}
 					k++;
 				}
-				for (State s : splitblock.get(j))
+				for (AbstractState s : splitblock.get(j))
 					split2[s.number] = false;
 				refine2[j] = false;
 				splitblock.get(j).clear();
@@ -367,23 +367,24 @@ final public class MinimizationOperations {
 			refine.clear();
 		}
 		// make a new state for each equivalence class, set initial state
-		State[] newstates = new State[k];
+		AbstractState[] newstates = new AbstractState[k];
 		for (int n = 0; n < newstates.length; n++) {
-			State s = new State();
+			AbstractState s = new State();
 			newstates[n] = s;
-			for (State q : partition.get(n)) {
+			for (AbstractState q : partition.get(n)) {
 				if (q == a.initial)
 					a.initial = s;
 				s.accept = q.accept;
 				s.number = q.number; // select representative
+				s.internalState = q.internalState;
 				q.number = n;
 			}
 		}
 		// build transitions and set acceptance
 		for (int n = 0; n < newstates.length; n++) {
-			State s = newstates[n];
+			AbstractState s = newstates[n];
 			s.accept = states[s.number].accept;
-			for (Transition t : states[s.number].transitions)
+			for (AbstractTransition t : states[s.number].transitions)
 				s.transitions.add(new Transition(t.min, t.max, newstates[t.to.number]));
 		}
 		a.removeDeadTransitions();
@@ -394,11 +395,11 @@ final public class MinimizationOperations {
 	 */
 	public static void minimizeValmari(Automaton automaton) {
 		automaton.determinize();
-		Set<State> states = automaton.getStates();
+		Set<AbstractState> states = automaton.getStates();
 		splitTransitions(states);
 		int stateCount = states.size();
 		int transitionCount = automaton.getNumberOfTransitions();
-		Set<State> acceptStates = automaton.getAcceptStates();
+		Set<AbstractState> acceptStates = automaton.getAcceptStates();
 		Partition blocks = new Partition(stateCount);
 		Partition cords = new Partition(transitionCount);
 		IntPair[] labels = new IntPair[transitionCount];
@@ -407,8 +408,8 @@ final public class MinimizationOperations {
 		// split transitions in 'heads', 'labels', and 'tails'
 		Automaton.setStateNumbers(states);
 		int number = 0;
-		for (State s : automaton.getStates()) {
-			for (Transition t : s.getTransitions()) {
+		for (AbstractState s : automaton.getStates()) {
+			for (AbstractTransition t : s.getTransitions()) {
 				tails[number] = s.number;
 				labels[number] = new IntPair(t.min, t.max);
 				heads[number] = t.getDest().number;
@@ -416,7 +417,7 @@ final public class MinimizationOperations {
 			}
 		}
 		// make initial block partition
-		for (State s : acceptStates)
+		for (AbstractState s : acceptStates)
 			blocks.mark(s.number);
 		blocks.split();
 		// make initial transition partition
@@ -484,18 +485,18 @@ final public class MinimizationOperations {
 			A[--F[K[t]]] = t;
 	}
 
-	private static void splitTransitions(Set<State> states) {
+	private static void splitTransitions(Set<AbstractState> states) {
 		TreeSet<Character> pointSet = new TreeSet<Character>();
-		for (State s : states) {
-			for (Transition t : s.getTransitions()) {
+		for (AbstractState s : states) {
+			for (AbstractTransition t : s.getTransitions()) {
 				pointSet.add(t.min);
 				pointSet.add(t.max);
 			}
 		}
-		for (State s : states) {
-			Set<Transition> transitions = s.getTransitions();
+		for (AbstractState s : states) {
+			Set<AbstractTransition> transitions = s.getTransitions();
 			s.resetTransitions();
-			for (Transition t : transitions) {
+			for (AbstractTransition t : transitions) {
 				if (t.min == t.max) {
 					s.addTransition(t);
 					continue;
@@ -532,20 +533,20 @@ final public class MinimizationOperations {
 
 		StateListNode first, last;
 
-		StateListNode add(State q) {
+		StateListNode add(AbstractState q) {
 			return new StateListNode(q, this);
 		}
 	}
 
 	static class StateListNode {
-		
-		State q;
+
+		AbstractState q;
 
 		StateListNode next, prev;
 
 		StateList sl;
 
-		StateListNode(State q, StateList sl) {
+		StateListNode(AbstractState q, StateList sl) {
 			this.q = q;
 			this.sl = sl;
 			if (sl.size++ == 0)

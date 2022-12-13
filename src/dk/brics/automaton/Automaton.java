@@ -36,15 +36,7 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Finite-state automaton with regular expression operations.
@@ -104,7 +96,7 @@ public class Automaton implements Serializable, Cloneable {
 	static int minimization = MINIMIZE_HOPCROFT;
 	
 	/** Initial state of this automaton. */
-	State initial;
+	AbstractState initial;
 	
 	/** If true, then this automaton is definitely deterministic 
 	 (i.e., there are no choices for any run, but a run may crash). */
@@ -224,7 +216,7 @@ public class Automaton implements Serializable, Cloneable {
 	 * Gets initial state. 
 	 * @return state
 	 */
-	public State getInitialState() {
+	public AbstractState getInitialState() {
 		expandSingleton();
 		return initial;
 	}
@@ -269,24 +261,24 @@ public class Automaton implements Serializable, Cloneable {
 	 * Returns the set of states that are reachable from the initial state.
 	 * @return set of {@link State} objects
 	 */
-	public Set<State> getStates() {
+	public Set<AbstractState> getStates() {
 		expandSingleton();
-		Set<State> visited;
+		Set<AbstractState> visited;
 		if (isDebug())
-			visited = new LinkedHashSet<State>();
+			visited = new LinkedHashSet<>();
 		else
-			visited = new HashSet<State>();
-		LinkedList<State> worklist = new LinkedList<State>();
+			visited = new HashSet<>();
+		LinkedList<AbstractState> worklist = new LinkedList<>();
 		worklist.add(initial);
 		visited.add(initial);
 		while (worklist.size() > 0) {
-			State s = worklist.removeFirst();
-			Collection<Transition> tr;
+			AbstractState s = worklist.removeFirst();
+			Collection<AbstractTransition> tr;
 			if (isDebug())
 				tr = s.getSortedTransitions(false);
 			else
 				tr = s.transitions;
-			for (Transition t : tr)
+			for (AbstractTransition t : tr)
 				if (!visited.contains(t.to)) {
 					visited.add(t.to);
 					worklist.add(t.to);
@@ -299,18 +291,18 @@ public class Automaton implements Serializable, Cloneable {
 	 * Returns the set of reachable accept states. 
 	 * @return set of {@link State} objects
 	 */
-	public Set<State> getAcceptStates() {
+	public Set<AbstractState> getAcceptStates() {
 		expandSingleton();
-		HashSet<State> accepts = new HashSet<State>();
-		HashSet<State> visited = new HashSet<State>();
-		LinkedList<State> worklist = new LinkedList<State>();
+		HashSet<AbstractState> accepts = new HashSet<>();
+		HashSet<AbstractState> visited = new HashSet<>();
+		LinkedList<AbstractState> worklist = new LinkedList<>();
 		worklist.add(initial);
 		visited.add(initial);
 		while (worklist.size() > 0) {
-			State s = worklist.removeFirst();
+			AbstractState s = worklist.removeFirst();
 			if (s.accept)
 				accepts.add(s);
-			for (Transition t : s.transitions)
+			for (AbstractTransition t : s.transitions)
 				if (!visited.contains(t.to)) {
 					visited.add(t.to);
 					worklist.add(t.to);
@@ -322,11 +314,11 @@ public class Automaton implements Serializable, Cloneable {
 	/** 
 	 * Assigns consecutive numbers to the given states. 
 	 */
-	static void setStateNumbers(Set<State> states) {
+	static void setStateNumbers(Set<AbstractState> states) {
 		if (states.size() == Integer.MAX_VALUE)
 			throw new IllegalArgumentException("number of states exceeded Integer.MAX_VALUE");
 		int number = 0;
-		for (State s : states)
+		for (AbstractState s : states)
 			s.number = number++;
 	}
 	
@@ -334,11 +326,11 @@ public class Automaton implements Serializable, Cloneable {
 	 * Adds transitions to explicit crash state to ensure that transition function is total. 
 	 */
 	void totalize() {
-		State s = new State();
+		AbstractState s = new State();
 		s.transitions.add(new Transition(Character.MIN_VALUE, Character.MAX_VALUE, s));
-		for (State p : getStates()) {
+		for (AbstractState p : getStates()) {
 			int maxi = Character.MIN_VALUE;
-			for (Transition t : p.getSortedTransitions(false)) {
+			for (AbstractTransition t : p.getSortedTransitions(false)) {
 				if (t.min > maxi)
 					p.transitions.add(new Transition((char)maxi, (char)(t.min - 1), s));
 				if (t.max + 1 > maxi)
@@ -366,14 +358,14 @@ public class Automaton implements Serializable, Cloneable {
 	public void reduce() {
 		if (isSingleton())
 			return;
-		Set<State> states = getStates();
+		Set<AbstractState> states = getStates();
 		setStateNumbers(states);
-		for (State s : states) {
-			List<Transition> st = s.getSortedTransitions(true);
+		for (AbstractState s : states) {
+			List<AbstractTransition> st = s.getSortedTransitions(true);
 			s.resetTransitions();
-			State p = null;
+			AbstractState p = null;
 			int min = -1, max = -1;
-			for (Transition t : st) {
+			for (AbstractTransition t : st) {
 				if (p == t.to) {
 					if (t.min <= max + 1) {
 						if (t.max > max)
@@ -404,8 +396,8 @@ public class Automaton implements Serializable, Cloneable {
 	char[] getStartPoints() {
 		Set<Character> pointset = new HashSet<Character>();
 		pointset.add(Character.MIN_VALUE);
-		for (State s : getStates()) {
-			for (Transition t : s.transitions) {
+		for (AbstractState s : getStates()) {
+			for (AbstractTransition t : s.transitions) {
 				pointset.add(t.min);
 				if (t.max < Character.MAX_VALUE)
 					pointset.add((char)(t.max + 1));
@@ -423,23 +415,23 @@ public class Automaton implements Serializable, Cloneable {
 	 * Returns the set of live states. A state is "live" if an accept state is reachable from it. 
 	 * @return set of {@link State} objects
 	 */
-	public Set<State> getLiveStates() {
+	public Set<AbstractState> getLiveStates() {
 		expandSingleton();
 		return getLiveStates(getStates());
 	}
 	
-	private Set<State> getLiveStates(Set<State> states) {
-		HashMap<State, Set<State>> map = new HashMap<State, Set<State>>();
-		for (State s : states)
-			map.put(s, new HashSet<State>());
-		for (State s : states)
-			for (Transition t : s.transitions)
+	private Set<AbstractState> getLiveStates(Set<AbstractState> states) {
+		HashMap<AbstractState, Set<AbstractState>> map = new HashMap<>();
+		for (AbstractState s : states)
+			map.put(s, new HashSet<>());
+		for (AbstractState s : states)
+			for (AbstractTransition t : s.transitions)
 				map.get(t.to).add(s);
-		Set<State> live = new HashSet<State>(getAcceptStates());
-		LinkedList<State> worklist = new LinkedList<State>(live);
+		Set<AbstractState> live = new HashSet<>(getAcceptStates());
+		LinkedList<AbstractState> worklist = new LinkedList<>(live);
 		while (worklist.size() > 0) {
-			State s = worklist.removeFirst();
-			for (State p : map.get(s))
+			AbstractState s = worklist.removeFirst();
+			for (AbstractState p : map.get(s))
 				if (!live.contains(p)) {
 					live.add(p);
 					worklist.add(p);
@@ -456,12 +448,12 @@ public class Automaton implements Serializable, Cloneable {
 		clearHashCode();
 		if (isSingleton())
 			return;
-		Set<State> states = getStates();
-		Set<State> live = getLiveStates(states);
-		for (State s : states) {
-			Set<Transition> st = s.transitions;
+		Set<AbstractState> states = getStates();
+		Set<AbstractState> live = getLiveStates(states);
+		for (AbstractState s : states) {
+			Set<AbstractTransition> st = s.transitions;
 			s.resetTransitions();
-			for (Transition t : st)
+			for (AbstractTransition t : st)
 				if (live.contains(t.to))
 					s.transitions.add(t);
 		}
@@ -471,10 +463,10 @@ public class Automaton implements Serializable, Cloneable {
 	/** 
 	 * Returns a sorted array of transitions for each state (and sets state numbers). 
 	 */
-	static Transition[][] getSortedTransitions(Set<State> states) {
+	static AbstractTransition[][] getSortedTransitions(Set<AbstractState> states) {
 		setStateNumbers(states);
-		Transition[][] transitions = new Transition[states.size()][];
-		for (State s : states)
+		AbstractTransition[][] transitions = new AbstractTransition[states.size()][];
+		for (AbstractState s : states)
 			transitions[s.number] = s.getSortedTransitionArray(false);
 		return transitions;
 	}
@@ -516,7 +508,7 @@ public class Automaton implements Serializable, Cloneable {
 		if (isSingleton())
 			return singleton.length();
 		int c = 0;
-		for (State s : getStates())
+		for (AbstractState s : getStates())
 			c += s.transitions.size();
 		return c;
 	}
@@ -579,10 +571,10 @@ public class Automaton implements Serializable, Cloneable {
 				Transition.appendCharString(c, b);
 			b.append("\n");
 		} else {
-			Set<State> states = getStates();
+			Set<AbstractState> states = getStates();
 			setStateNumbers(states);
 			b.append("initial state: ").append(initial.number).append("\n");
-			for (State s : states)
+			for (AbstractState s : states)
 				b.append(s.toString());
 		}
 		return b.toString();
@@ -595,22 +587,10 @@ public class Automaton implements Serializable, Cloneable {
 	public String toDot() {
 		StringBuilder b = new StringBuilder("digraph Automaton {\n");
 		b.append("  rankdir = LR;\n");
-		Set<State> states = getStates();
+		Set<AbstractState> states = getStates();
 		setStateNumbers(states);
-		for (State s : states) {
-			b.append("  ").append(s.number);
-			if (s.accept)
-				b.append(" [shape=doublecircle,label=\"\"];\n");
-			else
-				b.append(" [shape=circle,label=\"\"];\n");
-			if (s == initial) {
-				b.append("  initial [shape=plaintext,label=\"\"];\n");
-				b.append("  initial -> ").append(s.number).append("\n");
-			}
-			for (Transition t : s.transitions) {
-				b.append("  ").append(s.number);
-				t.appendDot(b);
-			}
+		for (AbstractState s : states) {
+			s.appendDot(b, initial);
 		}
 		return b.append("}\n").toString();
 	}
@@ -643,16 +623,19 @@ public class Automaton implements Serializable, Cloneable {
 		try {
 			Automaton a = (Automaton)super.clone();
 			if (!isSingleton()) {
-				HashMap<State, State> m = new HashMap<State, State>();
-				Set<State> states = getStates();
-				for (State s : states)
+				HashMap<AbstractState, AbstractState> m = new HashMap<>();
+				Set<AbstractState> states = getStates();
+				for (AbstractState s : states)
 					m.put(s, new State());
-				for (State s : states) {
-					State p = m.get(s);
+				for (AbstractState s : states) {
+					AbstractState p = m.get(s);
 					p.accept = s.accept;
+					if (s.internalState != null) {
+						p.internalState = s.internalState.clone();
+					}
 					if (s == initial)
 						a.initial = p;
-					for (Transition t : s.transitions)
+					for (AbstractTransition t : s.transitions)
 						p.transitions.add(new Transition(t.min, t.max, m.get(t.to)));
 				}
 			}

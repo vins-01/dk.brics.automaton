@@ -52,6 +52,9 @@ public class RunAutomaton implements Serializable {
 	int[] transitions; // delta(state,c) = transitions[state*points.length + getCharClass(c)]
 	char[] points; // char interval start points
 	int[] classmap; // map from char number to class class
+	int[] minThreshold;
+	int[] maxThreshold;
+	int[] counters;
 
 	/** 
 	 * Sets alphabet table for optimal run performance. 
@@ -194,21 +197,30 @@ public class RunAutomaton implements Serializable {
 	public RunAutomaton(Automaton a, boolean tableize) {
 		a.determinize();
 		points = a.getStartPoints();
-		Set<State> states = a.getStates();
+		Set<AbstractState> states = a.getStates();
 		Automaton.setStateNumbers(states);
 		initial = a.initial.number;
 		size = states.size();
 		accept = new boolean[size];
-		transitions = new int[size * points.length];
-		for (int n = 0; n < size * points.length; n++)
+		final int transitionSize = size * points.length;
+		transitions = new int[transitionSize];
+		minThreshold = new int[transitionSize];
+		maxThreshold = new int[transitionSize];
+		for (int n = 0; n < transitionSize; n++) {
 			transitions[n] = -1;
-		for (State s : states) {
+			minThreshold[n] = Integer.MIN_VALUE;
+			maxThreshold[n] = Integer.MAX_VALUE;
+		}
+		for (AbstractState s : states) {
 			int n = s.number;
 			accept[n] = s.accept;
 			for (int c = 0; c < points.length; c++) {
-				State q = s.step(points[c]);
+				AbstractState q = s.step(points[c]);
+				final int pos = n * points.length + c;
+				// minThreshold[pos] = s.min;
+				// maxThreshold[pos] = s.max;
 				if (q != null)
-					transitions[n * points.length + c] = q.number;
+					transitions[pos] = q.number;
 			}
 		}
 		if (tableize)
@@ -223,10 +235,22 @@ public class RunAutomaton implements Serializable {
 	 * transition function.)
 	 */
 	public int step(int state, char c) {
-		if (classmap == null)
-			return transitions[state * points.length + getCharClass(c)];
-		else
-			return transitions[state * points.length + classmap[c - Character.MIN_VALUE]];
+		int pos = state * points.length;
+		if (classmap == null) {
+			pos += getCharClass(c);
+		} else {
+			pos += classmap[c - Character.MIN_VALUE];
+		}
+		counters[pos]++;
+		if (
+				counters[pos] >= minThreshold[pos] &&
+				counters[pos] <= maxThreshold[pos]
+		) {
+			state = transitions[pos];
+		} else if (counters[pos] > maxThreshold[pos]) {
+			state = -1;
+		}
+		return state;
 	}
 
 	/** 
@@ -235,6 +259,7 @@ public class RunAutomaton implements Serializable {
 	public boolean run(String s) {
 		int p = initial;
 		int l = s.length();
+		counters = new int[transitions.length];
 		for (int i = 0; i < l; i++) {
 			p = step(p, s.charAt(i));
 			if (p == -1)

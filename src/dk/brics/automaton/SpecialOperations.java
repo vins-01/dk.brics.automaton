@@ -47,24 +47,24 @@ final public class SpecialOperations {
 	 * Reverses the language of the given (non-singleton) automaton while returning
 	 * the set of new initial states.
 	 */
-	public static Set<State> reverse(Automaton a) {
+	public static Set<AbstractState> reverse(Automaton a) {
 		// reverse all edges
-		HashMap<State, HashSet<Transition>> m = new HashMap<State, HashSet<Transition>>();
-		Set<State> states = a.getStates();
-		Set<State> accept = a.getAcceptStates();
-		for (State r : states) {
-			m.put(r, new HashSet<Transition>());
+		HashMap<AbstractState, HashSet<AbstractTransition>> m = new HashMap<>();
+		Set<AbstractState> states = a.getStates();
+		Set<AbstractState> accept = a.getAcceptStates();
+		for (AbstractState r : states) {
+			m.put(r, new HashSet<>());
 			r.accept = false;
 		}
-		for (State r : states)
-			for (Transition t : r.getTransitions())
+		for (AbstractState r : states)
+			for (AbstractTransition t : r.getTransitions())
 				m.get(t.to).add(new Transition(t.min, t.max, r));
-		for (State r : states)
+		for (AbstractState r : states)
 			r.transitions = m.get(r);
 		// make new initial+final states
 		a.initial.accept = true;
 		a.initial = new State();
-		for (State r : accept)
+		for (AbstractState r : accept)
 			a.initial.addEpsilon(r); // ensures that all initial states are reachable
 		a.deterministic = false;
 		return accept;
@@ -89,8 +89,8 @@ final public class SpecialOperations {
 	}
 	
 	private static void acceptToAccept(Automaton a) {
-		State s = new State();
-		for (State r : a.getAcceptStates())
+		AbstractState s = new State();
+		for (AbstractState r : a.getAcceptStates())
 			s.addEpsilon(r);
 		a.initial = s;
 		a.deterministic = false;
@@ -111,8 +111,8 @@ final public class SpecialOperations {
 			for (int i = 0; i < a.singleton.length(); i++)
 				s.transitions.add(new Transition(a.singleton.charAt(i), q));
 		else
-			for (State p : a.getStates())
-				for (Transition t : p.transitions)
+			for (AbstractState p : a.getStates())
+				for (AbstractTransition t : p.transitions)
 					s.transitions.add(new Transition(t.min, t.max, q));
 		b.deterministic = true;
 		b.removeDeadTransitions();
@@ -134,8 +134,8 @@ final public class SpecialOperations {
 		State f = new State();
 		addSetTransitions(f, set, f);
 		f.accept = true;
-		for (State s : a.getStates()) {
-			State r = s.step(c);
+		for (AbstractState s : a.getStates()) {
+			AbstractState r = s.step(c);
 			if (r != null) {
 				// add inner
 				State q = new State();
@@ -158,7 +158,7 @@ final public class SpecialOperations {
 		return a;
 	}
 	
-	private static void addSetTransitions(State s, String set, State p) {
+	private static void addSetTransitions(AbstractState s, String set, AbstractState p) {
 		for (int n = 0; n < set.length(); n++)
 			s.transitions.add(new Transition(set.charAt(n), p));
 	}
@@ -173,11 +173,11 @@ final public class SpecialOperations {
 	 */
 	public static Automaton compress(Automaton a, String set, char c) {
 		a = a.cloneExpandedIfRequired();
-		for (State s : a.getStates()) {
-			State r = s.step(c);
+		for (AbstractState s : a.getStates()) {
+			AbstractState r = s.step(c);
 			if (r != null) {
 				// add inner
-				State q = new State();
+				AbstractState q = new State();
 				addSetTransitions(q, set, q);
 				addSetTransitions(s, set, q);
 				q.addEpsilon(r);
@@ -208,10 +208,10 @@ final public class SpecialOperations {
 		for (Character c : ckeys)
 			keys[j++] = c;
 		a = a.cloneExpandedIfRequired();
-		for (State s : a.getStates()) {
-			Set<Transition> st = s.transitions;
+		for (AbstractState s : a.getStates()) {
+			Set<AbstractTransition> st = s.transitions;
 			s.resetTransitions();
-			for (Transition t : st) {
+			for (AbstractTransition t : st) {
 				int index = findIndex(t.min, keys);
 				while (t.min <= t.max) {
 					if (keys[index] > t.min) {
@@ -279,11 +279,11 @@ final public class SpecialOperations {
 	 */
 	public static Automaton subst(Automaton a, char c, String s) {
 		a = a.cloneExpandedIfRequired();
-		Set<StatePair> epsilons = new HashSet<StatePair>();
-		for (State p : a.getStates()) {
-			Set<Transition> st = p.transitions;
+		Set<StatePair> epsilons = new HashSet<>();
+		for (AbstractState p : a.getStates()) {
+			Set<AbstractTransition> st = p.transitions;
 			p.resetTransitions();
-			for (Transition t : st)
+			for (AbstractTransition t : st)
 				if (t.max < c || t.min > c)
 					p.transitions.add(t);
 				else {
@@ -294,9 +294,9 @@ final public class SpecialOperations {
 					if (s.length() == 0)
 						epsilons.add(new StatePair(p, t.to));
 					else {
-						State q = p;
+						AbstractState q = p;
 						for (int i = 0; i < s.length(); i++) {
-							State r;
+							AbstractState r;
 							if (i + 1 == s.length())
 								r = t.to;
 							else
@@ -328,10 +328,10 @@ final public class SpecialOperations {
 	 */
 	public static Automaton homomorph(Automaton a, char[] source, char[] dest) {
 		a = a.cloneExpandedIfRequired();
-		for (State s : a.getStates()) {
-			Set<Transition> st = s.transitions;
+		for (AbstractState s : a.getStates()) {
+			Set<AbstractTransition> st = s.transitions;
 			s.resetTransitions();
-			for (Transition t : st) {
+			for (AbstractTransition t : st) {
 				int min = t.min;
 				while (min <= t.max) {
 					int n = findIndex((char)min, source);
@@ -382,9 +382,9 @@ final public class SpecialOperations {
 		} else {
 			HashSet<StatePair> epsilons = new HashSet<StatePair>();
 			a = a.cloneExpandedIfRequired();
-			for (State s : a.getStates()) {
-				HashSet<Transition> new_transitions = new HashSet<Transition>();
-				for (Transition t : s.transitions) {
+			for (AbstractState s : a.getStates()) {
+				HashSet<AbstractTransition> new_transitions = new HashSet<>();
+				for (AbstractTransition t : s.transitions) {
 					boolean addepsilon = false;
 					if (t.min < '\uf900' && t.max > '\udfff') {
 						int w1 = Arrays.binarySearch(cc, t.min > '\ue000' ? t.min : '\ue000');
@@ -429,16 +429,16 @@ final public class SpecialOperations {
 	public static boolean isFinite(Automaton a) {
 		if (a.isSingleton())
 			return true;
-		return isFinite(a.initial, new HashSet<State>(), new HashSet<State>());
+		return isFinite(a.initial, new HashSet<>(), new HashSet<>());
 	}
 	
 	/** 
 	 * Checks whether there is a loop containing s. (This is sufficient since 
 	 * there are never transitions to dead states.) 
 	 */
-	private static boolean isFinite(State s, HashSet<State> path, HashSet<State> visited) {
+	private static boolean isFinite(AbstractState s, HashSet<AbstractState> path, HashSet<AbstractState> visited) {
 		path.add(s);
-		for (Transition t : s.transitions)
+		for (AbstractTransition t : s.transitions)
 			if (path.contains(t.to) || (!visited.contains(t.to) && !isFinite(t.to, path, visited)))
 				return false;
 		path.remove(s);
@@ -458,12 +458,12 @@ final public class SpecialOperations {
 		return strings;
 	}
 	
-	private static void getStrings(State s, Set<String> strings, StringBuilder path, int length) {
+	private static void getStrings(AbstractState s, Set<String> strings, StringBuilder path, int length) {
 		if (length == 0) {
 			if (s.accept)
 				strings.add(path.toString());
 		} else 
-			for (Transition t : s.transitions)
+			for (AbstractTransition t : s.transitions)
 				for (int n = t.min; n <= t.max; n++) {
 					path.append((char)n);
 					getStrings(t.to, strings, path, length - 1);
@@ -476,10 +476,10 @@ final public class SpecialOperations {
 	 * language. If the language is not finite, null is returned.
 	 */
 	public static Set<String> getFiniteStrings(Automaton a) {
-		HashSet<String> strings = new HashSet<String>();
+		HashSet<String> strings = new HashSet<>();
 		if (a.isSingleton())
 			strings.add(a.singleton);
-		else if (!getFiniteStrings(a.initial, new HashSet<State>(), strings, new StringBuilder(), -1))
+		else if (!getFiniteStrings(a.initial, new HashSet<>(), strings, new StringBuilder(), -1))
 			return null;
 		return strings;
 	}
@@ -491,13 +491,13 @@ final public class SpecialOperations {
 	 * methods works like {@link #getFiniteStrings(Automaton)}.
 	 */
 	public static Set<String> getFiniteStrings(Automaton a, int limit) {
-		HashSet<String> strings = new HashSet<String>();
+		HashSet<String> strings = new HashSet<>();
 		if (a.isSingleton()) {
 			if (limit > 0)
 				strings.add(a.singleton);
 			else
 				return null;
-		} else if (!getFiniteStrings(a.initial, new HashSet<State>(), strings, new StringBuilder(), limit))
+		} else if (!getFiniteStrings(a.initial, new HashSet<>(), strings, new StringBuilder(), limit))
 			return null;
 		return strings;
 	}
@@ -506,9 +506,9 @@ final public class SpecialOperations {
 	 * Returns the strings that can be produced from the given state, or false if more than 
 	 * <code>limit</code> strings are found. <code>limit</code>&lt;0 means "infinite". 
 	 * */
-	private static boolean getFiniteStrings(State s, HashSet<State> pathstates, HashSet<String> strings, StringBuilder path, int limit) {
+	private static boolean getFiniteStrings(AbstractState s, HashSet<AbstractState> pathstates, HashSet<String> strings, StringBuilder path, int limit) {
 		pathstates.add(s);
-		for (Transition t : s.transitions) {
+		for (AbstractTransition t : s.transitions) {
 			if (pathstates.contains(t.to))
 				return false;
 			for (int n = t.min; n <= t.max; n++) {
@@ -536,14 +536,14 @@ final public class SpecialOperations {
 		if (a.isSingleton())
 			return a.singleton;
 		StringBuilder b = new StringBuilder();
-		HashSet<State> visited = new HashSet<State>();
-		State s = a.initial;
+		HashSet<AbstractState> visited = new HashSet<>();
+		AbstractState s = a.initial;
 		boolean done;
 		do {
 			done = true;
 			visited.add(s);
 			if (!s.accept && s.transitions.size() == 1) {
-				Transition t = s.transitions.iterator().next();
+				AbstractTransition t = s.transitions.iterator().next();
 				if (t.min == t.max && !visited.contains(t.to)) {
 					b.append(t.min);
 					s = t.to;
@@ -558,7 +558,7 @@ final public class SpecialOperations {
 	 * Prefix closes the given automaton.
 	 */
 	public static void prefixClose(Automaton a) {
-		for (State s : a.getStates())
+		for (AbstractState s : a.getStates())
 			s.setAccept(true);
 		a.clearHashCode();
 		a.checkMinimizeAlways();

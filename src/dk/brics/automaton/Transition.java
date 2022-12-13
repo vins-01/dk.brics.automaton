@@ -38,63 +38,23 @@ import java.io.Serializable;
  * and a destination state.
  * @author Anders M&oslash;ller &lt;<a href="mailto:amoeller@cs.au.dk">amoeller@cs.au.dk</a>&gt;
  */
-public class Transition implements Serializable, Cloneable {
+public class Transition extends AbstractTransition {
 	
 	static final long serialVersionUID = 40001;
-	
-	/* 
-	 * CLASS INVARIANT: min<=max
-	 */
-	
-	char min;
-	char max;
-	
-	State to;
-	
-	/** 
-	 * Constructs a new singleton interval transition. 
-	 * @param c transition character
-	 * @param to destination state
-	 */
-	public Transition(char c, State to)	{
-		min = max = c;
-		this.to = to;
+
+	public Transition(char c, AbstractState to)	{
+		super(c, to);
 	}
-	
-	/** 
-	 * Constructs a new transition. 
-	 * Both end points are included in the interval.
-	 * @param min transition interval minimum
-	 * @param max transition interval maximum
-	 * @param to destination state
-	 */
-	public Transition(char min, char max, State to)	{
-		if (max < min) {
-			char t = max;
-			max = min;
-			min = t;
-		}
-		this.min = min;
-		this.max = max;
-		this.to = to;
+
+	public Transition(char min, char max, AbstractState to)	{
+		super(min, max, to);
 	}
-	
-	/** Returns minimum of this transition interval. */
-	public char getMin() {
-		return min;
+
+	public Transition(char min, char max, AbstractState to, AbstractInternalState internalState)	{
+		super(min, max, to, internalState);
 	}
-	
-	/** Returns maximum of this transition interval. */
-	public char getMax() {
-		return max;
-	}
-	
-	/** Returns destination of this transition. */
-	public State getDest() {
-		return to;
-	}
-	
-	/** 
+
+	/**
 	 * Checks for equality.
 	 * @param obj object to compare with
 	 * @return true if <code>obj</code> is a transition with same 
@@ -114,12 +74,20 @@ public class Transition implements Serializable, Cloneable {
 	 * The hash code is based on the character interval (not the destination state).
 	 * @return hash code
 	 */
-	@Override
+	/*@Override
 	public int hashCode() {
 		return min * 2 + max * 3;
+	}*/
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + min * 2;
+		result = prime * result + max * 3;
+		result = prime * result + ((internalState == null) ? 0 : internalState.hashCode());
+		return result;
 	}
-	
-	/** 
+
+	/**
 	 * Clones this transition. 
 	 * @return clone with same character interval and destination state
 	 */
@@ -165,13 +133,4 @@ public class Transition implements Serializable, Cloneable {
 		return b.toString();
 	}
 
-	void appendDot(StringBuilder b) {
-		b.append(" -> ").append(to.number).append(" [label=\"");
-		appendCharString(min, b);
-		if (min != max) {
-			b.append("-");
-			appendCharString(max, b);
-		}
-		b.append("\"]\n");
-	}
 }

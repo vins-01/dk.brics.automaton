@@ -32,7 +32,7 @@ package dk.brics.automaton;
 import java.io.Serializable;
 import java.util.Comparator;
 
-class TransitionComparator implements Comparator<Transition>, Serializable {
+class TransitionComparator implements Comparator<AbstractTransition>, Serializable {
 
 	static final long serialVersionUID = 10001;
 
@@ -45,7 +45,7 @@ class TransitionComparator implements Comparator<Transition>, Serializable {
 	/** 
 	 * Compares by (min, reverse max, to) or (to, min, reverse max). 
 	 */
-	public int compare(Transition t1, Transition t2) {
+	public int compare(AbstractTransition t1, AbstractTransition t2) {
 		if (to_first) {
 			if (t1.to != t2.to) {
 				if (t1.to == null)

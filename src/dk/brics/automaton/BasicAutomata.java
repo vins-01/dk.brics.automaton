@@ -439,11 +439,11 @@ final public class BasicAutomata {
 	 */
 	public static Automaton makeStringMatcher(String s) {
 		Automaton a = new Automaton();
-		State[] states = new State[s.length() + 1];
+		AbstractState[] states = new AbstractState[s.length() + 1];
 		states[0] = a.initial;
 		for (int i = 0; i < s.length(); i++)
 			states[i+1] = new State();
-		State f = states[s.length()];
+		AbstractState f = states[s.length()];
 		f.accept = true;
 		f.transitions.add(new Transition(Character.MIN_VALUE, Character.MAX_VALUE, f));
 		for (int i = 0; i < s.length(); i++) {

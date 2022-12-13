@@ -59,8 +59,8 @@ final public class ShuffleOperations {
 	public static Automaton shuffle(Automaton a1, Automaton a2) {
 		a1.determinize();
 		a2.determinize();
-		Transition[][] transitions1 = Automaton.getSortedTransitions(a1.getStates());
-		Transition[][] transitions2 = Automaton.getSortedTransitions(a2.getStates());
+		AbstractTransition[][] transitions1 = Automaton.getSortedTransitions(a1.getStates());
+		AbstractTransition[][] transitions2 = Automaton.getSortedTransitions(a2.getStates());
 		Automaton c = new Automaton();
 		LinkedList<StatePair> worklist = new LinkedList<StatePair>();
 		HashMap<StatePair, StatePair> newstates = new HashMap<StatePair, StatePair>();
@@ -72,7 +72,7 @@ final public class ShuffleOperations {
 		while (worklist.size() > 0) {
 			p = worklist.removeFirst();
 			p.s.accept = p.s1.accept && p.s2.accept;
-			Transition[] t1 = transitions1[p.s1.number];
+			AbstractTransition[] t1 = transitions1[p.s1.number];
 			for (int n1 = 0; n1 < t1.length; n1++) {
 				StatePair q = new StatePair(t1[n1].to, p.s2);
 				StatePair r = newstates.get(q);
@@ -84,7 +84,7 @@ final public class ShuffleOperations {
 				}
 				p.s.transitions.add(new Transition(t1[n1].min, t1[n1].max, r.s));
 			}
-			Transition[] t2 = transitions2[p.s2.number];
+			AbstractTransition[] t2 = transitions2[p.s2.number];
 			for (int n2 = 0; n2 < t2.length; n2++) {
 				StatePair q = new StatePair(p.s1, t2[n2].to);
 				StatePair r = newstates.get(q);
@@ -129,11 +129,11 @@ final public class ShuffleOperations {
 				return null;
 		}
 		a.determinize();
-		Transition[][][] ca_transitions = new Transition[ca.size()][][];
+		AbstractTransition[][][] ca_transitions = new AbstractTransition[ca.size()][][];
 		int i = 0;
 		for (Automaton a1 : ca)
 			ca_transitions[i++] = Automaton.getSortedTransitions(a1.getStates());
-		Transition[][] a_transitions = Automaton.getSortedTransitions(a.getStates());
+		AbstractTransition[][] a_transitions = Automaton.getSortedTransitions(a.getStates());
 		TransitionComparator tc = new TransitionComparator(false);
 		ShuffleConfiguration init = new ShuffleConfiguration(ca, a);
 		LinkedList<ShuffleConfiguration> pending = new LinkedList<ShuffleConfiguration>();
@@ -161,19 +161,19 @@ final public class ShuffleOperations {
 					sb2.append(sb.charAt(j));
 				return sb2.toString();
 			}
-			Transition[] ta2 = a_transitions[c.a_state.number];
+			AbstractTransition[] ta2 = a_transitions[c.a_state.number];
 			for (int i1 = 0; i1 < ca.size(); i1++) {
 				if (c.shuffle_suspended)
 					i1 = c.suspended1;
-				loop: for (Transition t1 : ca_transitions[i1][c.ca_states[i1].number]) {
-					List<Transition> lt = new ArrayList<Transition>();
+				loop: for (AbstractTransition t1 : ca_transitions[i1][c.ca_states[i1].number]) {
+					List<AbstractTransition> lt = new ArrayList<>();
 					int j = Arrays.binarySearch(ta2, t1, tc);
 					if (j < 0)
 						j = -j - 1;
 					if (j > 0 && ta2[j - 1].max >= t1.min)
 						j--;
 					while (j < ta2.length) {
-						Transition t2 = ta2[j++];
+						AbstractTransition t2 = ta2[j++];
 						char min = t1.min;
 						char max = t1.max;
 						if (t2.min > min)
@@ -186,7 +186,7 @@ final public class ShuffleOperations {
 						} else
 							break;
 					}
-					Transition[] at = lt.toArray(new Transition[lt.size()]);
+					AbstractTransition[] at = lt.toArray(new AbstractTransition[lt.size()]);
 					Arrays.sort(at, tc);
 					char min = t1.min;
 					for (int k = 0; k < at.length; k++) {
@@ -222,7 +222,7 @@ final public class ShuffleOperations {
 
 	private static void add(Character suspend_shuffle, Character resume_shuffle, 
 			                LinkedList<ShuffleConfiguration> pending, Set<ShuffleConfiguration> visited, 
-			                ShuffleConfiguration c, int i1, Transition t1, Transition t2, char min, char max) {
+			                ShuffleConfiguration c, int i1, AbstractTransition t1, AbstractTransition t2, char min, char max) {
 		final char HIGH_SURROGATE_BEGIN = '\uD800'; 
 		final char HIGH_SURROGATE_END = '\uDBFF'; 
 		if (suspend_shuffle != null && min <= suspend_shuffle && suspend_shuffle <= max && min != max) {
@@ -265,8 +265,8 @@ final public class ShuffleOperations {
 	static class ShuffleConfiguration {
 		
 		ShuffleConfiguration prev;
-		State[] ca_states;
-		State a_state;
+		AbstractState[] ca_states;
+		AbstractState a_state;
 		char min;
 		int hash;
 		boolean shuffle_suspended;
@@ -285,7 +285,7 @@ final public class ShuffleOperations {
 			computeHash();
 		}
 		
-		ShuffleConfiguration(ShuffleConfiguration c, int i1, State s1, char min) {
+		ShuffleConfiguration(ShuffleConfiguration c, int i1, AbstractState s1, char min) {
 			prev = c;
 			ca_states = c.ca_states.clone();
 			a_state = c.a_state;
@@ -294,7 +294,7 @@ final public class ShuffleOperations {
 			computeHash();
 		}
 
-		ShuffleConfiguration(ShuffleConfiguration c, int i1, State s1, State s2, char min) {
+		ShuffleConfiguration(ShuffleConfiguration c, int i1, AbstractState s1, AbstractState s2, char min) {
 			prev = c;
 			ca_states = c.ca_states.clone();
 			a_state = c.a_state;
