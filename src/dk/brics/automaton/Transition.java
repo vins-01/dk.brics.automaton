@@ -54,6 +54,10 @@ public class Transition extends AbstractTransition {
 		super(min, max, to, internalState);
 	}
 
+	public Transition(char min, char max, AbstractState to, ConditionalState<AbstractInternalState> conditionalState)	{
+		super(min, max, to, conditionalState);
+	}
+
 	/**
 	 * Checks for equality.
 	 * @param obj object to compare with
@@ -83,7 +87,7 @@ public class Transition extends AbstractTransition {
 		int result = 1;
 		result = prime * result + min * 2;
 		result = prime * result + max * 3;
-		result = prime * result + ((internalState == null) ? 0 : internalState.hashCode());
+		result = prime * result + ((conditionalState == null) ? 0 : conditionalState.hashCode());
 		return result;
 	}
 

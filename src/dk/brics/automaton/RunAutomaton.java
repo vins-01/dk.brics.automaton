@@ -215,7 +215,7 @@ public class RunAutomaton implements Serializable {
 			int n = s.number;
 			accept[n] = s.accept;
 			for (int c = 0; c < points.length; c++) {
-				AbstractState q = s.step(points[c]);
+				AbstractState q = s.countingStep(points[c]);
 				final int pos = n * points.length + c;
 				// minThreshold[pos] = s.min;
 				// maxThreshold[pos] = s.max;

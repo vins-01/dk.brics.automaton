@@ -13,4 +13,13 @@ public abstract class AbstractInternalState {
 
     public abstract AbstractInternalState mergeWith(AbstractInternalState toMerge);
 
+    /**
+     * Executes the step-transition for this internal state.
+     *
+     * @return true if transition is valid, false otherwise
+     */
+    public abstract boolean step();
+
+    public abstract void reset();
+
 }

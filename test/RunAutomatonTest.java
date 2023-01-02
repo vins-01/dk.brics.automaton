@@ -11,9 +11,11 @@ public class RunAutomatonTest {
         Automaton a = r.toAutomaton();
         System.out.println("Match: " + a.toDot());
         final RunAutomaton runAutomaton = new RunAutomaton(a);
-        runAutomaton.run("abc");
-        String s = "abc";
-        System.out.println("Match: " + a.run(s));
+        System.out.println("Match (abc): " + runAutomaton.run("abc"));
+        System.out.println("Match (abababf): " + runAutomaton.run("abababf"));
+        System.out.println("Match (abababc): " + runAutomaton.run("abababc"));
+        System.out.println("Match (abababf): " + a.run("abababf"));
+        System.out.println("Match (abababc): " + a.run("ababaabc"));
     }
 
 }

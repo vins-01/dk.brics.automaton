@@ -10,4 +10,6 @@ public interface ITransition extends Serializable, Cloneable {
     AbstractState getDest();
 
     void appendDot(StringBuilder b);
+
+    boolean step(AbstractInternalState state, char c);
 }

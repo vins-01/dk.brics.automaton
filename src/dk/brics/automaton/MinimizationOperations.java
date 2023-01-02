@@ -385,7 +385,7 @@ final public class MinimizationOperations {
 			AbstractState s = newstates[n];
 			s.accept = states[s.number].accept;
 			for (AbstractTransition t : states[s.number].transitions)
-				s.transitions.add(new Transition(t.min, t.max, newstates[t.to.number]));
+				s.transitions.add(new Transition(t.min, t.max, newstates[t.to.number], t.conditionalState));
 		}
 		a.removeDeadTransitions();
 	}

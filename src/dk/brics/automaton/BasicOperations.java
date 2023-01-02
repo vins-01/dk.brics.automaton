@@ -31,6 +31,8 @@ package dk.brics.automaton;
 
 import java.util.*;
 
+import static dk.brics.automaton.Automaton.setStateNumbers;
+
 /**
  * Basic automata operations.
  */
@@ -194,6 +196,7 @@ final public class BasicOperations {
 	 */
 	static public Automaton repeat(Automaton a, int min, int max) {
 		AbstractState c = new CountState(min, max);
+		a.expandSingleton();
 		c.addEpsilon(a.initial);
 		for (AbstractState p : a.getAcceptStates()) {
 			p.addEpsilon(c);
@@ -673,9 +676,10 @@ final public class BasicOperations {
 		if (a.isSingleton())
 			return s.equals(a.singleton);
 		if (a.deterministic) {
+			a.reset();
 			AbstractState p = a.initial;
 			for (int i = 0; i < s.length(); i++) {
-				AbstractState q = p.step(s.charAt(i));
+				AbstractState q = p.countingStep(s.charAt(i));
 				if (q == null)
 					return false;
 				p = q;
@@ -683,7 +687,7 @@ final public class BasicOperations {
 			return p.accept;
 		} else {
 			Set<AbstractState> states = a.getStates();
-			Automaton.setStateNumbers(states);
+			setStateNumbers(states);
 			LinkedList<AbstractState> pp = new LinkedList<>();
 			LinkedList<AbstractState> pp_other = new LinkedList<>();
 			BitSet bb = new BitSet(states.size());

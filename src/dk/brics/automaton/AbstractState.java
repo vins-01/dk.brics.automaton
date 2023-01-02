@@ -79,6 +79,20 @@ public abstract class AbstractState implements IState {
         return null;
     }
 
+    public AbstractState countingStep(char c) {
+        for (AbstractTransition t : transitions)
+            if (t.step(this.internalState, c))
+                return executeTransition(t.to);
+        return null;
+    }
+
+    protected AbstractState executeTransition(AbstractState dest) {
+        if (dest == null || dest.internalState == null || dest.internalState.step()) {
+            return dest;
+        }
+        return null;
+    }
+
     /**
      * Performs lookup in transitions, allowing nondeterminism.
      * @param c character to look up

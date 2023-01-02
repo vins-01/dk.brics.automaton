@@ -364,6 +364,7 @@ public class Automaton implements Serializable, Cloneable {
 			List<AbstractTransition> st = s.getSortedTransitions(true);
 			s.resetTransitions();
 			AbstractState p = null;
+			AbstractInternalState ps = null;
 			int min = -1, max = -1;
 			for (AbstractTransition t : st) {
 				if (p == t.to) {
@@ -372,20 +373,22 @@ public class Automaton implements Serializable, Cloneable {
 							max = t.max;
 					} else {
 						if (p != null)
-							s.transitions.add(new Transition((char)min, (char)max, p));
+							s.transitions.add(new Transition((char)min, (char)max, p, ps));
 						min = t.min;
 						max = t.max;
+						ps = ConditionalState.toInternalState(t.conditionalState);
 					}
 				} else {
 					if (p != null)
-						s.transitions.add(new Transition((char)min, (char)max, p));
+						s.transitions.add(new Transition((char)min, (char)max, p, ps));
 					p = t.to;
 					min = t.min;
 					max = t.max;
+					ps = ConditionalState.toInternalState(t.conditionalState);
 				}
 			}
 			if (p != null)
-				s.transitions.add(new Transition((char)min, (char)max, p));
+				s.transitions.add(new Transition((char)min, (char)max, p, ps));
 		}
 		clearHashCode();
 	}
@@ -1081,5 +1084,13 @@ public class Automaton implements Serializable, Cloneable {
 	 */
 	public Automaton shuffle(Automaton a) {
 		return ShuffleOperations.shuffle(this, a);
+	}
+
+	public void reset() {
+		this.getStates()
+			.stream()
+			.map(state -> state.internalState)
+			.filter(Objects::nonNull)
+			.forEach(AbstractInternalState::reset);
 	}
 }
