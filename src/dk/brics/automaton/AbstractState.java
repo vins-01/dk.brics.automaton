@@ -73,9 +73,16 @@ public abstract class AbstractState implements IState {
      */
     @Override
     public AbstractState step(char c) {
+        AbstractTransition t = this.getTransition(c);
+        if (t != null)
+            return t.to;
+        return null;
+    }
+
+    public AbstractTransition getTransition(char c) {
         for (AbstractTransition t : transitions)
             if (t.min <= c && c <= t.max)
-                return t.to;
+                return t;
         return null;
     }
 

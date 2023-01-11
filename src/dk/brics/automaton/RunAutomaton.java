@@ -52,9 +52,9 @@ public class RunAutomaton implements Serializable {
 	int[] transitions; // delta(state,c) = transitions[state*points.length + getCharClass(c)]
 	char[] points; // char interval start points
 	int[] classmap; // map from char number to class class
-	int[] minThreshold;
-	int[] maxThreshold;
-	int[] counters;
+	ConditionalState<AbstractInternalState>[] conditionalTransitions;
+	ConditionalState<AbstractInternalState>[] conditionalStates;
+	AbstractInternalState[] internalCounters;
 
 	/** 
 	 * Sets alphabet table for optimal run performance. 
@@ -202,25 +202,29 @@ public class RunAutomaton implements Serializable {
 		initial = a.initial.number;
 		size = states.size();
 		accept = new boolean[size];
+		conditionalStates = new ConditionalState[size];
 		final int transitionSize = size * points.length;
 		transitions = new int[transitionSize];
-		minThreshold = new int[transitionSize];
-		maxThreshold = new int[transitionSize];
+		conditionalTransitions = new ConditionalState[transitionSize];
 		for (int n = 0; n < transitionSize; n++) {
 			transitions[n] = -1;
-			minThreshold[n] = Integer.MIN_VALUE;
-			maxThreshold[n] = Integer.MAX_VALUE;
+			conditionalTransitions[n] = null;
 		}
 		for (AbstractState s : states) {
 			int n = s.number;
 			accept[n] = s.accept;
+			conditionalStates[n] = ConditionalState.toConditionalState(s.internalState);
 			for (int c = 0; c < points.length; c++) {
-				AbstractState q = s.countingStep(points[c]);
+				// transition in state for character c.
+				AbstractTransition t = s.getTransition(points[c]);
+				AbstractState q = s.step(points[c]);
 				final int pos = n * points.length + c;
-				// minThreshold[pos] = s.min;
-				// maxThreshold[pos] = s.max;
-				if (q != null)
+				if (t != null) {
+					conditionalTransitions[pos] = t.conditionalState;
+				}
+				if (q != null) {
 					transitions[pos] = q.number;
+				}
 			}
 		}
 		if (tableize)
@@ -235,22 +239,36 @@ public class RunAutomaton implements Serializable {
 	 * transition function.)
 	 */
 	public int step(int state, char c) {
+		int pos = computePos(state, c);
+		AbstractInternalState internalCounter = internalCounters[state];
+		ConditionalState<AbstractInternalState> conditionalState = conditionalStates[state];
+		ConditionalState<AbstractInternalState> conditionalTransition = conditionalTransitions[pos];
+		if (conditionalState != null && internalCounter == null) {
+			internalCounter = ConditionalState.toInternalState(conditionalState);
+			internalCounters[state] = internalCounter;
+		}
+		if (internalCounter != null) {
+			internalCounter.step();
+		}
+		if (
+				(conditionalState == null || conditionalState.test(internalCounter)) &&
+				(conditionalTransition == null || conditionalTransition.test(internalCounter))
+		) {
+			state = transitions[pos];
+		} else {
+			state = -1;
+		}
+		return state;
+	}
+
+	private int computePos(int state, char c) {
 		int pos = state * points.length;
 		if (classmap == null) {
 			pos += getCharClass(c);
 		} else {
 			pos += classmap[c - Character.MIN_VALUE];
 		}
-		counters[pos]++;
-		if (
-				counters[pos] >= minThreshold[pos] &&
-				counters[pos] <= maxThreshold[pos]
-		) {
-			state = transitions[pos];
-		} else if (counters[pos] > maxThreshold[pos]) {
-			state = -1;
-		}
-		return state;
+		return pos;
 	}
 
 	/** 
@@ -259,7 +277,7 @@ public class RunAutomaton implements Serializable {
 	public boolean run(String s) {
 		int p = initial;
 		int l = s.length();
-		counters = new int[transitions.length];
+		internalCounters = new AbstractInternalState[conditionalStates.length];
 		for (int i = 0; i < l; i++) {
 			p = step(p, s.charAt(i));
 			if (p == -1)
