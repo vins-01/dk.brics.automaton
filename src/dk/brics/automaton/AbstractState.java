@@ -97,7 +97,7 @@ public abstract class AbstractState implements IState {
         if (dest == null || dest.internalState == null || dest.internalState.step()) {
             return dest;
         }
-        return null;
+        return this;
     }
 
     /**

@@ -1,5 +1,8 @@
 package dk.brics.automaton;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class InternalCountingState extends AbstractInternalState {
 
     public static class InternalCountingCondition<T extends AbstractInternalState> implements ConditionalState<T> {
@@ -84,6 +87,54 @@ public class InternalCountingState extends AbstractInternalState {
             merged = new InternalCountingState(min, max);
         }
         return merged;
+    }
+
+    public List<AbstractState> splitState(char minC, char maxC, boolean accept) {
+        List<AbstractState> splittedStates = new ArrayList<>(3);
+        long min = this.min;
+        long max = this.max;
+        AbstractState startingState = null;
+        if (this.min > 1) {
+            min = 1;
+            max = this.min - 1;
+            startingState = new CountState(min, max, !accept);
+            startingState.addTransition(
+                new Transition(minC, maxC, startingState, new InternalCountingCondition<>(min, max))
+            );
+            splittedStates.add(startingState);
+        }
+        long midMin = max < this.min ? this.min - max : this.min;
+        long midMax = max < this.max ? this.max - max : this.max;
+        final CountState midState = new CountState(midMin, midMax, accept);
+        midState.addTransition(
+            new Transition(minC, maxC, midState, new InternalCountingCondition<>(midMin, midMax - 1))
+        );
+        splittedStates.add(midState);
+
+        CountState finalState = null;
+        if (this.max < Long.MAX_VALUE) {
+            finalState = new CountState(1, Long.MAX_VALUE, !accept);
+            finalState.addTransition(
+                    new Transition(minC, maxC, finalState, new InternalCountingCondition<>(1, Long.MAX_VALUE))
+            );
+            splittedStates.add(finalState);
+        }
+
+        if (startingState != null) {
+            startingState.addTransition(
+                new Transition(minC, maxC, midState, new InternalCountingCondition<>(this.min, this.min))
+            );
+        }
+        if (finalState != null) {
+            midState.addTransition(
+                new Transition(minC, maxC, finalState, new InternalCountingCondition<>(midMax, midMax))
+            );
+        }
+        return splittedStates;
+    }
+
+    public boolean isAccept() {
+        return this.canStep(this.count, this.min, this.max);
     }
 
     private boolean canStep(long counter, long lower, long upper) {

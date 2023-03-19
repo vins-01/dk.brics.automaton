@@ -203,7 +203,7 @@ public class RunAutomaton implements Serializable {
 		size = states.size();
 		accept = new boolean[size];
 		conditionalStates = new ConditionalState[size];
-		final int transitionSize = size * points.length;
+			final int transitionSize = size * points.length;
 		transitions = new int[transitionSize];
 		conditionalTransitions = new ConditionalState[transitionSize];
 		for (int n = 0; n < transitionSize; n++) {
@@ -247,14 +247,35 @@ public class RunAutomaton implements Serializable {
 			internalCounter = ConditionalState.toInternalState(conditionalState);
 			internalCounters[state] = internalCounter;
 		}
+		/*
+		if (conditionalState != null && internalCounter == null) {
+			internalCounter = ConditionalState.toInternalState(conditionalState);
+			internalCounters[state] = internalCounter;
+		}
 		if (internalCounter != null) {
 			internalCounter.step();
 		}
+		 */
 		if (
-				(conditionalState == null || conditionalState.test(internalCounter)) &&
+				//(conditionalState == null || conditionalState.test(internalCounter)) &&
 				(conditionalTransition == null || conditionalTransition.test(internalCounter))
 		) {
-			state = transitions[pos];
+			int arrivalState = transitions[pos];
+			if (arrivalState >= 0) {
+				internalCounter = internalCounters[arrivalState];
+				conditionalState = conditionalStates[arrivalState];
+				if (conditionalState != null && internalCounter == null) {
+					internalCounter = ConditionalState.toInternalState(conditionalState);
+					internalCounters[arrivalState] = internalCounter;
+				}
+				if (internalCounter != null) {
+					internalCounter.step();
+				}
+				if (conditionalState != null && !conditionalState.test(internalCounter)) {
+					arrivalState = state;
+				}
+				state = arrivalState;
+			}
 		} else {
 			state = -1;
 		}
@@ -283,7 +304,7 @@ public class RunAutomaton implements Serializable {
 			if (p == -1)
 				return false;
 		}
-		return accept[p];
+		return accept[p] && (conditionalStates[p] == null || conditionalStates[p].test(internalCounters[p]));
 	}
 
 	/**

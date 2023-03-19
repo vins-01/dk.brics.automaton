@@ -242,12 +242,49 @@ final public class BasicOperations {
 	 */
 	static public Automaton complement(Automaton a) {
 		a = a.cloneExpandedIfRequired();
+		// final Iterator<AbstractTransition> iterator = a.initial.transitions.iterator();
+		final Iterator<AbstractState> states = a.getStates().iterator();
+		AbstractTransition t = null;
+		Map<AbstractState, AbstractTransition> mappedStates = new HashMap<>();
+		AbstractState s = null;
+		mapTransitionStates(mappedStates, a.getInitialState().transitions.iterator());
+		while (states.hasNext() && (s = states.next()) != null) {
+			final Iterator<AbstractTransition> iterator = s.transitions.iterator();
+			mapTransitionStates(mappedStates, iterator);
+		}
+		mappedStates.forEach(BasicOperations::splitState);
 		a.determinize();
 		a.totalize();
-		for (AbstractState p : a.getStates())
+		for (AbstractState p : a.getStates()) {
 			p.accept = !p.accept;
+		}
 		a.removeDeadTransitions();
 		return a;
+	}
+
+	private static void mapTransitionStates(Map<AbstractState, AbstractTransition> mappedStates, Iterator<AbstractTransition> iterator) {
+		AbstractTransition t;
+		while (iterator.hasNext() && (t = iterator.next()) != null) {
+			if (t.to != null && t.to.internalState != null && mappedStates.get(t.to) == null) {
+				mappedStates.put(t.to, t);
+			}
+		}
+	}
+
+	static public void splitState(AbstractState state, AbstractTransition t) {
+		if (state.internalState != null) {
+  			List<AbstractState> splittedStates = state.internalState.splitState(t.min, t.max, state.accept);
+			if (splittedStates != null && splittedStates.size() > 0) {
+				for (AbstractTransition transition : state.transitions) {
+					if (transition.max != t.max && transition.min != t.min) {
+						for (AbstractState s : splittedStates) {
+							s.addTransition(transition);
+						}
+					}
+				}
+				t.to = splittedStates.get(0);
+			}
+		}
 	}
 
 	/**
@@ -684,7 +721,7 @@ final public class BasicOperations {
 					return false;
 				p = q;
 			}
-			return p.accept;
+			return p.accept && (p.internalState == null || p.internalState.isAccept());
 		} else {
 			Set<AbstractState> states = a.getStates();
 			setStateNumbers(states);
