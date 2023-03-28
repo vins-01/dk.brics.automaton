@@ -113,7 +113,7 @@ final public class MinimizationOperations {
 						m2 = t;
 					}
 					if (triggers.get(m1).get(m2) == null)
-						triggers.get(m1).set(m2, new HashSet<IntPair>());
+						triggers.get(m1).set(m2, new HashSet<>());
 					triggers.get(m1).get(m2).add(new IntPair(n1, n2));
 				}
 				if (t1[k1].max < t2[k2].max)
@@ -385,7 +385,7 @@ final public class MinimizationOperations {
 			AbstractState s = newstates[n];
 			s.accept = states[s.number].accept;
 			for (AbstractTransition t : states[s.number].transitions)
-				s.transitions.add(new Transition(t.min, t.max, newstates[t.to.number], t.conditionalState));
+				s.transitions.add(new Transition(t.min, t.max, newstates[t.to.number], t.conditionalState, t.reset));
 		}
 		a.removeDeadTransitions();
 	}
@@ -486,7 +486,7 @@ final public class MinimizationOperations {
 	}
 
 	private static void splitTransitions(Set<AbstractState> states) {
-		TreeSet<Character> pointSet = new TreeSet<Character>();
+		TreeSet<Character> pointSet = new TreeSet<>();
 		for (AbstractState s : states) {
 			for (AbstractTransition t : s.getTransitions()) {
 				pointSet.add(t.min);
@@ -503,7 +503,7 @@ final public class MinimizationOperations {
 				}
 				SortedSet<Character> headSet = pointSet.headSet(t.max, true);
 				SortedSet<Character> tailSet = pointSet.tailSet(t.min, false);
-				SortedSet<Character> intersection = new TreeSet<Character>(headSet);
+				SortedSet<Character> intersection = new TreeSet<>(headSet);
 				intersection.retainAll(tailSet);
 				char start = t.min;
 				for (Character c : intersection) {

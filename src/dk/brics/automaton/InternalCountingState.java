@@ -99,7 +99,7 @@ public class InternalCountingState extends AbstractInternalState {
             max = this.min - 1;
             startingState = new CountState(min, max, !accept);
             startingState.addTransition(
-                new Transition(minC, maxC, startingState, new InternalCountingCondition<>(min, max))
+                new Transition(minC, maxC, startingState, new InternalCountingCondition<>(min, max), false)
             );
             splittedStates.add(startingState);
         }
@@ -107,7 +107,7 @@ public class InternalCountingState extends AbstractInternalState {
         long midMax = max < this.max ? this.max - max : this.max;
         final CountState midState = new CountState(midMin, midMax, accept);
         midState.addTransition(
-            new Transition(minC, maxC, midState, new InternalCountingCondition<>(midMin, midMax - 1))
+            new Transition(minC, maxC, midState, new InternalCountingCondition<>(midMin, midMax - 1), false)
         );
         splittedStates.add(midState);
 
@@ -115,19 +115,19 @@ public class InternalCountingState extends AbstractInternalState {
         if (this.max < Long.MAX_VALUE) {
             finalState = new CountState(1, Long.MAX_VALUE, !accept);
             finalState.addTransition(
-                    new Transition(minC, maxC, finalState, new InternalCountingCondition<>(1, Long.MAX_VALUE))
+                    new Transition(minC, maxC, finalState, new InternalCountingCondition<>(1, Long.MAX_VALUE), false)
             );
             splittedStates.add(finalState);
         }
 
         if (startingState != null) {
             startingState.addTransition(
-                new Transition(minC, maxC, midState, new InternalCountingCondition<>(this.min, this.min))
+                new Transition(minC, maxC, midState, new InternalCountingCondition<>(this.min, this.min), true)
             );
         }
         if (finalState != null) {
             midState.addTransition(
-                new Transition(minC, maxC, finalState, new InternalCountingCondition<>(midMax, midMax))
+                new Transition(minC, maxC, finalState, new InternalCountingCondition<>(midMax, midMax), true)
             );
         }
         return splittedStates;

@@ -50,12 +50,24 @@ public class Transition extends AbstractTransition {
 		super(min, max, to);
 	}
 
+	public Transition(char min, char max, AbstractState to, boolean reset)	{
+		super(min, max, to, reset);
+	}
+
 	public Transition(char min, char max, AbstractState to, AbstractInternalState internalState)	{
 		super(min, max, to, internalState);
 	}
 
+	public Transition(char min, char max, AbstractState to, AbstractInternalState internalState, boolean reset)	{
+		super(min, max, to, ConditionalState.toConditionalState(internalState), reset);
+	}
+
 	public Transition(char min, char max, AbstractState to, ConditionalState<AbstractInternalState> conditionalState)	{
-		super(min, max, to, conditionalState);
+		this(min, max, to, conditionalState, true);
+	}
+
+	public Transition(char min, char max, AbstractState to, ConditionalState<AbstractInternalState> conditionalState, boolean reset)	{
+		super(min, max, to, conditionalState, reset);
 	}
 
 	/**

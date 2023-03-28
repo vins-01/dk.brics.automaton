@@ -332,7 +332,7 @@ public class Automaton implements Serializable, Cloneable {
 			int maxi = Character.MIN_VALUE;
 			for (AbstractTransition t : p.getSortedTransitions(false)) {
 				if (t.min > maxi)
-					p.transitions.add(new Transition((char)maxi, (char)(t.min - 1), s));
+					p.transitions.add(new Transition((char)maxi, (char)(t.min - 1), s, t.conditionalState, t.reset));
 				if (t.max + 1 > maxi)
 					maxi = t.max + 1;
 			}
@@ -366,6 +366,7 @@ public class Automaton implements Serializable, Cloneable {
 			AbstractState p = null;
 			AbstractInternalState ps = null;
 			int min = -1, max = -1;
+			boolean reset = true;
 			for (AbstractTransition t : st) {
 				if (p == t.to) {
 					if (t.min <= max + 1) {
@@ -373,22 +374,24 @@ public class Automaton implements Serializable, Cloneable {
 							max = t.max;
 					} else {
 						if (p != null)
-							s.transitions.add(new Transition((char)min, (char)max, p, ps));
+							s.transitions.add(new Transition((char)min, (char)max, p, ps, reset));
 						min = t.min;
 						max = t.max;
+						reset = t.reset;
 						ps = ConditionalState.toInternalState(t.conditionalState);
 					}
 				} else {
 					if (p != null)
-						s.transitions.add(new Transition((char)min, (char)max, p, ps));
+						s.transitions.add(new Transition((char)min, (char)max, p, ps, reset));
 					p = t.to;
 					min = t.min;
 					max = t.max;
+					reset = t.reset;
 					ps = ConditionalState.toInternalState(t.conditionalState);
 				}
 			}
 			if (p != null)
-				s.transitions.add(new Transition((char)min, (char)max, p, ps));
+				s.transitions.add(new Transition((char)min, (char)max, p, ps, reset));
 		}
 		clearHashCode();
 	}
@@ -397,7 +400,7 @@ public class Automaton implements Serializable, Cloneable {
 	 * Returns sorted array of all interval start points. 
 	 */
 	char[] getStartPoints() {
-		Set<Character> pointset = new HashSet<Character>();
+		Set<Character> pointset = new HashSet<>();
 		pointset.add(Character.MIN_VALUE);
 		for (AbstractState s : getStates()) {
 			for (AbstractTransition t : s.transitions) {
@@ -639,7 +642,7 @@ public class Automaton implements Serializable, Cloneable {
 					if (s == initial)
 						a.initial = p;
 					for (AbstractTransition t : s.transitions)
-						p.transitions.add(new Transition(t.min, t.max, m.get(t.to)));
+						p.transitions.add(new Transition(t.min, t.max, m.get(t.to), t.conditionalState, t.reset));
 				}
 			}
 			return a;

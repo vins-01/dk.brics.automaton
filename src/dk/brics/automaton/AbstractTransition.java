@@ -24,6 +24,7 @@ public abstract class AbstractTransition implements ITransition {
      */
     char min;
     char max;
+    boolean reset = true;
     AbstractState to;
     ConditionalState<AbstractInternalState> conditionalState;
 
@@ -55,19 +56,19 @@ public abstract class AbstractTransition implements ITransition {
         this.to = to;
     }
 
+    public AbstractTransition(char min, char max, AbstractState to, boolean reset)	{
+        this(min, max, to, null, reset);
+    }
+
     public AbstractTransition(char min, char max, AbstractState to, AbstractInternalState internalState)	{
-        if (max < min) {
-            char t = max;
-            max = min;
-            min = t;
-        }
-        this.min = min;
-        this.max = max;
-        this.to = to;
-        this.conditionalState = ConditionalState.toConditionalState(internalState);
+        this(min, max, to, ConditionalState.toConditionalState(internalState), true);
     }
 
     public AbstractTransition(char min, char max, AbstractState to, ConditionalState<AbstractInternalState> conditionalState)	{
+        this(min, max, to, conditionalState, true);
+    }
+
+    public AbstractTransition(char min, char max, AbstractState to, ConditionalState<AbstractInternalState> conditionalState, boolean reset)	{
         if (max < min) {
             char t = max;
             max = min;
@@ -77,6 +78,7 @@ public abstract class AbstractTransition implements ITransition {
         this.max = max;
         this.to = to;
         this.conditionalState = conditionalState;
+        this.reset = reset;
     }
 
     /**

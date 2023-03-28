@@ -93,7 +93,7 @@ final public class BasicOperations {
 			for (Automaton a : l)
 				if (a.isEmpty())
 					return BasicAutomata.makeEmpty();
-			Set<Integer> ids = new HashSet<Integer>();
+			Set<Integer> ids = new HashSet<>();
 			for (Automaton a : l)
 				ids.add(System.identityHashCode(a));
 			boolean has_aliases = ids.size() != l.size();
@@ -179,7 +179,7 @@ final public class BasicOperations {
 	static public Automaton repeat(Automaton a, int min) {
 		if (min == 0)
 			return repeat(a);
-		List<Automaton> as = new ArrayList<Automaton>();
+		List<Automaton> as = new ArrayList<>();
 		while (min-- > 0)
 			as.add(a);
 		as.add(repeat(a));
@@ -199,7 +199,7 @@ final public class BasicOperations {
 		a.expandSingleton();
 		c.addEpsilon(a.initial);
 		for (AbstractState p : a.getAcceptStates()) {
-			p.addEpsilon(c);
+			p.addEpsilon(c, false);
 		}
 		return a;
 		/*if (min > max)
@@ -334,8 +334,8 @@ final public class BasicOperations {
 		AbstractTransition[][] transitions1 = Automaton.getSortedTransitions(a1.getStates());
 		AbstractTransition[][] transitions2 = Automaton.getSortedTransitions(a2.getStates());
 		Automaton c = new Automaton();
-		LinkedList<StatePair> worklist = new LinkedList<StatePair>();
-		HashMap<StatePair, StatePair> newstates = new HashMap<StatePair, StatePair>();
+		LinkedList<StatePair> worklist = new LinkedList<>();
+		HashMap<StatePair, StatePair> newstates = new HashMap<>();
 		StatePair p = new StatePair(c.initial, a1.initial, a2.initial);
 		worklist.add(p);
 		newstates.put(p, p);
@@ -451,7 +451,7 @@ final public class BasicOperations {
 	 * Complexity: linear in number of states.
 	 */
 	public static Automaton union(Collection<Automaton> l) {
-		Set<Integer> ids = new HashSet<Integer>();
+		Set<Integer> ids = new HashSet<>();
 		for (Automaton a : l)
 			ids.add(System.identityHashCode(a));
 		boolean has_aliases = ids.size() != l.size();
@@ -511,10 +511,12 @@ final public class BasicOperations {
 			for (int n = 0; n < points.length; n++) {
 				Set<AbstractState> p = new HashSet<>();
 				Set<AbstractState> internalStartingStates = new HashSet<>();
+				boolean resetStatus = false;
 				for (AbstractState q : s)
 					for (AbstractTransition t : q.transitions)
 						if (t.min <= points[n] && points[n] <= t.max) {
 							p.add(t.to);
+							resetStatus = resetStatus || t.reset;
 							if (q.internalState != null) {
 								internalStartingStates.add(q);
 							}
@@ -532,10 +534,15 @@ final public class BasicOperations {
                         max = (char) (points[n + 1] - 1);
                     else
                         max = Character.MAX_VALUE;
-					if (!internalStartingStates.isEmpty()) {
-						r.transitions.add(new Transition(min, max, q, mergeInternalStates(internalStartingStates)));
+					if (resetStatus) {
+						final AbstractInternalState internalState =
+								Optional.of(internalStartingStates)
+										.filter(states -> !states.isEmpty())
+										.map(BasicOperations::mergeInternalStates)
+										.orElse(null);
+						r.transitions.add(new Transition(min, max, q, internalState, resetStatus));
 					} else {
-						r.transitions.add(new Transition(min, max, q));
+						r.transitions.add(new Transition(min, max, q, resetStatus));
 					}
                 }
 			}

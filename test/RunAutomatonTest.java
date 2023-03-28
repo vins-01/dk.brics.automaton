@@ -215,8 +215,28 @@ public class RunAutomatonTest {
 
     @Test
     public void testNested() {
-        RegExp r = new RegExp("(ab{2,3}c){2,4}ab{1,2}c");
-        //RegExp r = new RegExp("a{3,6}");
+        RegExp r = new RegExp("(ab{2,3}c){2,4}");
         Automaton a = r.toAutomaton();
+        Assert.assertFalse("Match (a): ", a.run("a"));
+        Assert.assertFalse("Match (ab): ", a.run("ab"));
+        Assert.assertFalse("Match (abb): ", a.run("abb"));
+        Assert.assertFalse("Match (abbb): ", a.run("abbb"));
+        Assert.assertFalse("Match (abbc): ", a.run("abbc"));
+        Assert.assertFalse("Match (abbbc): ", a.run("abbbc"));
+        Assert.assertFalse("Match (abbbca): ", a.run("abbbca"));
+        Assert.assertFalse("Match (abbbcab): ", a.run("abbbcab"));
+        Assert.assertFalse("Match (abbbcabb): ", a.run("abbbcabb"));
+        Assert.assertFalse("Match (abbbcabbb): ", a.run("abbbcabbb"));
+        Assert.assertTrue("Match (abbbcabbc): ", a.run("abbbcabbc"));
+        Assert.assertTrue("Match (abbbcabbbc): ", a.run("abbbcabbbc"));
+        Assert.assertTrue("Match (abbbcabbcabbbc): ", a.run("abbbcabbcabbbc"));
+        Assert.assertTrue("Match (abbbcabbbcabbbc): ", a.run("abbbcabbbcabbbc"));
+        Assert.assertTrue("Match (abbbcabbcabbbcabbbc): ", a.run("abbbcabbcabbbcabbbc"));
+        Assert.assertTrue("Match (abbbcabbbcabbbcabbbc): ", a.run("abbbcabbbcabbbcabbbc"));
+        Assert.assertTrue("Match (abbcabbcabbc): ", a.run("abbcabbcabbc"));
+        Assert.assertTrue("Match (abbcabbcabbc): ", a.run("abbcabbbcabbc"));
+        Assert.assertTrue("Match (abbcabbcabbcabbc): ", a.run("abbcabbcabbcabbc"));
+        Assert.assertTrue("Match (abbcabbcabbcabbc): ", a.run("abbcabbcabbcabbc"));
+        Assert.assertFalse("Match (abbcabbcabbcabbcabbc): ", a.run("abbcabbcabbcabbcabbc"));
     }
 }

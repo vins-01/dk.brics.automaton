@@ -1,6 +1,7 @@
 package dk.brics.automaton;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public abstract class AbstractState implements IState {
 
@@ -89,15 +90,20 @@ public abstract class AbstractState implements IState {
     public AbstractState countingStep(char c) {
         for (AbstractTransition t : transitions)
             if (t.step(this.internalState, c))
-                return executeTransition(t.to);
+                return executeTransition(t);
         return null;
     }
 
-    protected AbstractState executeTransition(AbstractState dest) {
-        if (dest == null || dest.internalState == null || dest.internalState.step()) {
-            return dest;
+    protected AbstractState executeTransition(AbstractTransition t) {
+        AbstractState dest = this;
+        if (t.to != null) {
+            if (t.to.internalState != null)
+                t.to.internalState.step();
+            dest = t.to;
+            if (t.reset && this.internalState != null)
+                this.internalState.reset();
         }
-        return this;
+        return dest;
     }
 
     /**
@@ -113,12 +119,30 @@ public abstract class AbstractState implements IState {
     }
 
     void addEpsilon(AbstractState to) {
+        this.addEpsilon(to, null);
+    }
+
+    void addEpsilon(AbstractState to, Boolean reset) {
         if (to.accept)
             accept = true;
         if (this.internalState == null && to.internalState != null) {
             this.internalState = to.internalState;
         }
-        transitions.addAll(to.transitions);
+        copyTransition(to.transitions, reset);
+    }
+
+    private void copyTransition(Set<AbstractTransition> transitions, Boolean reset) {
+        this.transitions.addAll(
+            transitions
+                .stream()
+                .map(t ->
+                        new Transition(
+                                t.min, t.max, t.to, t.conditionalState,
+                                reset == null ? t.reset : reset
+                        )
+                )
+                .collect(Collectors.toSet())
+        );
     }
 
     /** Returns transitions sorted by (min, reverse max, to) or (to, min, reverse max) */
