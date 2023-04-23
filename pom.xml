@@ -47,7 +47,26 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jupiter.version>5.2.0</jupiter.version>
+    <junit-runner.version>1.2.0</junit-runner.version>
+    <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
+    <junit-platform-surefire-provider>1.2.0</junit-platform-surefire-provider>
   </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${jupiter.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-runner</artifactId>
+      <version>${junit-runner.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -143,6 +162,23 @@
               <value>build</value>
             </systemProperty>
           </systemProperties>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-surefire-provider</artifactId>
+            <version>${junit-platform-surefire-provider}</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <additionalClasspathElements>
+            <additionalClasspathElement>src/test/java/</additionalClasspathElement>
+          </additionalClasspathElements>
         </configuration>
       </plugin>
     </plugins>
