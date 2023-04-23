@@ -100,8 +100,10 @@ public abstract class AbstractState implements IState {
             if (t.to.internalState != null)
                 t.to.internalState.step();
             dest = t.to;
-            if (t.reset && this.internalState != null)
-                this.internalState.reset();
+            if (t.action != null) {
+                t.action.executeStartingStateAction(this);
+                t.action.executeArrivalStateAction(t.to);
+            }
         }
         return dest;
     }

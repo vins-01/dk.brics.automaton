@@ -1,7 +1,5 @@
-import dk.brics.automaton.Automaton;
-import dk.brics.automaton.BasicOperations;
-import dk.brics.automaton.RegExp;
-import dk.brics.automaton.RunAutomaton;
+package dk.brics.automaton;
+
 import org.junit.Assert;
 import org.junit.Test;
 

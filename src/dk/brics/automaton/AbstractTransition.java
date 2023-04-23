@@ -27,6 +27,7 @@ public abstract class AbstractTransition implements ITransition {
     boolean reset = true;
     AbstractState to;
     ConditionalState<AbstractInternalState> conditionalState;
+    TransitionAction action;
 
     /**
      * Constructs a new singleton interval transition.
@@ -34,8 +35,7 @@ public abstract class AbstractTransition implements ITransition {
      * @param to destination state
      */
     public AbstractTransition(char c, AbstractState to)	{
-        min = max = c;
-        this.to = to;
+        this(c, c, to);
     }
 
     /**
@@ -46,14 +46,7 @@ public abstract class AbstractTransition implements ITransition {
      * @param to destination state
      */
     public AbstractTransition(char min, char max, AbstractState to)	{
-        if (max < min) {
-            char t = max;
-            max = min;
-            min = t;
-        }
-        this.min = min;
-        this.max = max;
-        this.to = to;
+        this(min, max, to, true);
     }
 
     public AbstractTransition(char min, char max, AbstractState to, boolean reset)	{
@@ -79,6 +72,13 @@ public abstract class AbstractTransition implements ITransition {
         this.to = to;
         this.conditionalState = conditionalState;
         this.reset = reset;
+        initAction();
+    }
+
+    private void initAction() {
+        if (this.reset) {
+            this.action = TransitionActionFactory.getResetAction();
+        }
     }
 
     /**
