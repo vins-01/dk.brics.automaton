@@ -118,7 +118,7 @@ final public class BasicOperations {
 					Set<AbstractState> ns = aa.getAcceptStates();
 					for (AbstractState s : ac) {
 						s.accept = false;
-						s.addEpsilon(aa.initial);
+						s.addEpsilon(aa.initial, s.internalState);
 						if (s.accept)
 							ns.add(s);
 					}
@@ -199,7 +199,7 @@ final public class BasicOperations {
 		a.expandSingleton();
 		c.addEpsilon(a.initial);
 		for (AbstractState p : a.getAcceptStates()) {
-			p.addEpsilon(c, false);
+			p.addEpsilon(c, false, null);
 		}
 		return a;
 		/*if (min > max)

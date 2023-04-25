@@ -124,22 +124,27 @@ public abstract class AbstractState implements IState {
         this.addEpsilon(to, null);
     }
 
-    void addEpsilon(AbstractState to, Boolean reset) {
+    void addEpsilon(AbstractState to, AbstractInternalState state) {
+        this.addEpsilon(to, null, state);
+    }
+
+    void addEpsilon(AbstractState to, Boolean reset, AbstractInternalState state) {
         if (to.accept)
             accept = true;
         if (this.internalState == null && to.internalState != null) {
             this.internalState = to.internalState;
         }
-        copyTransition(to.transitions, reset);
+        copyTransition(to.transitions, reset, state);
     }
 
-    private void copyTransition(Set<AbstractTransition> transitions, Boolean reset) {
+    private void copyTransition(Set<AbstractTransition> transitions, Boolean reset, AbstractInternalState state) {
         this.transitions.addAll(
             transitions
                 .stream()
                 .map(t ->
                         new Transition(
-                                t.min, t.max, t.to, t.conditionalState,
+                                t.min, t.max, t.to,
+                                state == null ? t.conditionalState : ConditionalState.toConditionalState(state),
                                 reset == null ? t.reset : reset
                         )
                 )
