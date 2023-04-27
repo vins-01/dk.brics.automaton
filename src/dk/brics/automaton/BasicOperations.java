@@ -37,14 +37,14 @@ import static dk.brics.automaton.Automaton.setStateNumbers;
  * Basic automata operations.
  */
 final public class BasicOperations {
-	
+
 	private BasicOperations() {}
 
-	/** 
-	 * Returns an automaton that accepts the concatenation of the languages of 
-	 * the given automata. 
+	/**
+	 * Returns an automaton that accepts the concatenation of the languages of
+	 * the given automata.
 	 * <p>
-	 * Complexity: linear in number of states. 
+	 * Complexity: linear in number of states.
 	 */
 	static public Automaton concatenate(Automaton a1, Automaton a2) {
 		if (a1.isSingleton() && a2.isSingleton())
@@ -68,7 +68,7 @@ final public class BasicOperations {
 		a1.checkMinimizeAlways();
 		return a1;
 	}
-	
+
 	/**
 	 * Returns an automaton that accepts the concatenation of the languages of
 	 * the given automata.
@@ -148,7 +148,7 @@ final public class BasicOperations {
 		a.checkMinimizeAlways();
 		return a;
 	}
-	
+
 	/**
 	 * Returns an automaton that accepts the Kleene star (zero or more
 	 * concatenated repetitions) of the language of the given automaton.
@@ -185,7 +185,7 @@ final public class BasicOperations {
 		as.add(repeat(a));
 		return concatenate(as);
 	}
-	
+
 	/**
 	 * Returns an automaton that accepts between <code>min</code> and
 	 * <code>max</code> (including both) concatenated repetitions of the
@@ -289,7 +289,7 @@ final public class BasicOperations {
 
 	/**
 	 * Returns a (deterministic) automaton that accepts the intersection of
-	 * the language of <code>a1</code> and the complement of the language of 
+	 * the language of <code>a1</code> and the complement of the language of
 	 * <code>a2</code>. As a side-effect, the automata may be determinized, if not
 	 * already deterministic.
 	 * <p>
@@ -311,7 +311,7 @@ final public class BasicOperations {
 
 	/**
 	 * Returns an automaton that accepts the intersection of
-	 * the languages of the given automata. 
+	 * the languages of the given automata.
 	 * Never modifies the input automata languages.
 	 * <p>
 	 * Complexity: quadratic in number of states.
@@ -347,7 +347,7 @@ final public class BasicOperations {
 			for (int n1 = 0, b2 = 0; n1 < t1.length; n1++) {
 				while (b2 < t2.length && t2[b2].max < t1[n1].min)
 					b2++;
-				for (int n2 = b2; n2 < t2.length && t1[n1].max >= t2[n2].min; n2++) 
+				for (int n2 = b2; n2 < t2.length && t1[n1].max >= t2[n2].min; n2++)
 					if (t2[n2].max >= t1[n1].min) {
 						StatePair q = new StatePair(t1[n1].to, t2[n2].to);
 						StatePair r = newstates.get(q);
@@ -368,10 +368,10 @@ final public class BasicOperations {
 		c.checkMinimizeAlways();
 		return c;
 	}
-		
+
 	/**
 	 * Returns true if the language of <code>a1</code> is a subset of the
-	 * language of <code>a2</code>. 
+	 * language of <code>a2</code>.
 	 * As a side-effect, <code>a2</code> is determinized if not already marked as
 	 * deterministic.
 	 * <p>
@@ -406,7 +406,7 @@ final public class BasicOperations {
 				for (int n2 = b2; n2 < t2.length && t1[n1].max >= t2[n2].min; n2++) {
 					if (t2[n2].min > min1)
 						return false;
-					if (t2[n2].max < Character.MAX_VALUE) 
+					if (t2[n2].max < Character.MAX_VALUE)
 						min1 = t2[n2].max + 1;
 					else {
 						min1 = Character.MAX_VALUE;
@@ -420,11 +420,11 @@ final public class BasicOperations {
 				}
 				if (min1 <= max1)
 					return false;
-			}		
+			}
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Returns an automaton that accepts the union of the languages of the given automata.
 	 * <p>
@@ -444,7 +444,7 @@ final public class BasicOperations {
 		a1.checkMinimizeAlways();
 		return a1;
 	}
-	
+
 	/**
 	 * Returns an automaton that accepts the union of the languages of the given automata.
 	 * <p>
@@ -487,8 +487,8 @@ final public class BasicOperations {
 		determinize(a, initialset);
 	}
 
-	/** 
-	 * Determinizes the given automaton using the given set of initial states. 
+	/**
+	 * Determinizes the given automaton using the given set of initial states.
 	 */
 	static void determinize(Automaton a, Set<AbstractState> initialset) {
 		char[] points = a.getStartPoints();
@@ -512,16 +512,47 @@ final public class BasicOperations {
 				Set<AbstractState> p = new HashSet<>();
 				Set<AbstractState> internalStartingStates = new HashSet<>();
 				boolean resetStatus = false;
+				Map<AbstractState, List<ConditionalState<?>>> transitionState = new HashMap<>();
+				// TODO:
+				// transitions with different conditional states
+				// should lead to different states, we cannot merge
+				// them together with non-conditional ones
 				for (AbstractState q : s)
 					for (AbstractTransition t : q.transitions)
 						if (t.min <= points[n] && points[n] <= t.max) {
-							p.add(t.to);
-							resetStatus = resetStatus || t.reset;
-							if (q.internalState != null) {
-								internalStartingStates.add(q);
+							AbstractState toAdd = t.to;
+							if (t.conditionalState != null) {
+								List<ConditionalState<?>> conditionalStates = transitionState.get(toAdd);
+								if (conditionalStates == null) {
+									conditionalStates = new ArrayList<>();
+								}
+								conditionalStates.add(t.conditionalState);
+								final ArrayList<AbstractState> newStates =
+										new ArrayList<>(1);
+								newStates.add(toAdd);
+								toAdd = new State(mergeInternalStates(newStates));
+								transitionState.put(
+									t.to,
+									conditionalStates
+								);
 							}
+							p.add(toAdd);
+							resetStatus = resetStatus || t.reset;
+//							if (q.internalState != null) {
+//								internalStartingStates.add(q);
+//							}
 						}
 				if (!p.isEmpty()) {
+					final Set<AbstractState> pp = transitionState.keySet();
+					AbstractState qq = null;
+					if (!pp.isEmpty()) {
+						qq = newstate.get(pp);
+						if (qq == null) {
+							worklist.add(pp);
+							qq = new State(mergeInternalStates(pp));
+							newstate.put(pp, qq);
+						}
+					}
 					AbstractState q = newstate.get(p);
                     if (q == null) {
                         worklist.add(p);
@@ -534,16 +565,27 @@ final public class BasicOperations {
                         max = (char) (points[n + 1] - 1);
                     else
                         max = Character.MAX_VALUE;
-					if (resetStatus) {
+					r.transitions.add(new Transition(min, max, q, resetStatus));
+					final Collection<List<ConditionalState<?>>> conditionalStates = transitionState.values();
+					if (!conditionalStates.isEmpty()) {
 						final AbstractInternalState internalState =
-								Optional.of(internalStartingStates)
-										.filter(states -> !states.isEmpty())
-										.map(BasicOperations::mergeInternalStates)
-										.orElse(null);
-						r.transitions.add(new Transition(min, max, q, internalState, resetStatus));
-					} else {
-						r.transitions.add(new Transition(min, max, q, resetStatus));
+								conditionalStates
+									.stream()
+									.flatMap(Collection::stream)
+									.map(ConditionalState::toInternalState)
+									.reduce(new InternalCountingState(Long.MAX_VALUE, -1), AbstractInternalState::mergeWith);
+						r.transitions.add(new Transition(min, max, qq, internalState, resetStatus));
 					}
+//					if (resetStatus) {
+//						final AbstractInternalState internalState =
+//								Optional.of(internalStartingStates)
+//										.filter(states -> !states.isEmpty())
+//										.map(BasicOperations::mergeInternalStates)
+//										.orElse(null);
+//						r.transitions.add(new Transition(min, max, q, internalState, resetStatus));
+//					} else {
+//						r.transitions.add(new Transition(min, max, q, resetStatus));
+//					}
                 }
 			}
 		}
@@ -569,11 +611,11 @@ final public class BasicOperations {
 	}
 
 
-	/** 
+	/**
 	 * Adds epsilon transitions to the given automaton.
 	 * This method adds extra character interval transitions that are equivalent to the given
-	 * set of epsilon transitions. 
-	 * @param pairs collection of {@link StatePair} objects representing pairs of source/destination states 
+	 * set of epsilon transitions.
+	 * @param pairs collection of {@link StatePair} objects representing pairs of source/destination states
 	 *        where epsilon transitions should be added
 	 */
 	public static void addEpsilons(Automaton a, Collection<StatePair> pairs) {
@@ -631,7 +673,7 @@ final public class BasicOperations {
 		a.clearHashCode();
 		a.checkMinimizeAlways();
 	}
-	
+
 	/**
 	 * Returns true if the given automaton accepts the empty string and nothing else.
 	 */
@@ -650,7 +692,7 @@ final public class BasicOperations {
 			return false;
 		return !a.initial.accept && a.initial.transitions.isEmpty();
 	}
-	
+
 	/**
 	 * Returns true if the given automaton accepts all strings.
 	 */
@@ -663,9 +705,9 @@ final public class BasicOperations {
 		}
 		return false;
 	}
-	
+
 	/**
-	 * Returns a shortest accepted/rejected string. 
+	 * Returns a shortest accepted/rejected string.
 	 * If more than one shortest string is found, the lexicographically first of the shortest strings is returned.
 	 * @param accepted if true, look for accepted strings; otherwise, look for rejected strings
 	 * @return the string, null if none found
@@ -695,7 +737,7 @@ final public class BasicOperations {
 			if (q.accept == accepted) {
 				if (best == null || p.length() < best.length() || (p.length() == best.length() && p.compareTo(best) < 0))
 					best = p;
-			} else 
+			} else
 				for (AbstractTransition t : q.getTransitions()) {
 					String tp = path.get(t.to);
 					String np = p + t.min;
@@ -708,9 +750,9 @@ final public class BasicOperations {
 		}
 		return best;
 	}
-	
+
 	/**
-	 * Returns true if the given string is accepted by the automaton. 
+	 * Returns true if the given string is accepted by the automaton.
 	 * <p>
 	 * Complexity: linear in the length of the string.
 	 * <p>

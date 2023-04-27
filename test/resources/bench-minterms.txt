@@ -1,0 +1,14 @@
+.*[AC]B{70,70}CC.*;./minterms/minterms-between_12.txt
+.*A.*(JSNRBHG|JSNRHM|TOM).*([^K-U]QUM|IKSSUPRM)F[^CD][^CE]{7,128}C.*;./minterms/minterms-timeouted_2-merged.txt
+.*A.*(JSNRCHG|JSNRHM|TOM).*([^K-U]QUM|IKSSUPRM)F[^DE][^A-D]{7,128}D.*;./minterms/ms-to_1-merged.txt
+.*A.*[BD]C{43,43}D[^E].*;./minterms/minterms-between_10.txt
+.*A.*[BD]C{86,86}DD.*;./minterms/minterms-between_9.txt
+.*A.*B[C-F]{43,53}CEF[^C-F].*;./minterms/minterms-between_11-backup.txt
+.*A[^AB]{0,400}[CE]D{86,86}EE.*;./minterms/minterms-between_5-merged.txt
+.*A[^AB]{0,400}[CG][EF]{43,43}G[^DF].*;./minterms/minterms-between_6.txt
+.*A[^AB]{0,800}C[D-G]{43,53}DFG[^D-H].*;./minterms/minterms-timeouted_4-merged.txt
+.*ADCC[B-D]{200,200}.*;./minterms/minterms-between_1.txt
+.*BA{0,50}(EC|EE)A{0,10}[DE]{86,86}FF.*;./minterms/minterms-between_3.txt
+.*BA{0,50}(FD|FF)A{0,10}[E-G]{43,43}H[^CG].*;./minterms/minterms-between_4-merged.txt
+.*GDIIJFHE[AB]+[C-J]{52,52}([AB].*|B+.*);./minterms/minterms-between_13.txt
+.*IHEGFJDCA[BD-J]{60,60}A.*;./minterms/minterms-between_2.txt

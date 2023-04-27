@@ -1,0 +1,14 @@
+.*\x20j2se[^\x20]*(initial|max)-heap-size\s*\x20\s*(\x20|\x20)[^\2]{50};./yang2010/yang-rest_3.txt
+.*\x2FCSuserCGI\x2Eexe\x3FLogout\x2B[^\s]{96};./yang2010/yang2010-filtered-between-timeout_3.txt
+.*cache_lastpostdate\[[^\]]+\]=[^\x20\x3B\x3D]{30};./yang2010/yang-rest_6.txt
+.*connectID=[^&\x20\r\n]{25};./yang2010/yang-rest_7.txt
+.*get-dated-rev\x20\x20\x20\d{1,4}\x20([^T\x20\x20]{9}|[^\x20]{4}\x20[^\x20]{3}|[^\x20]{4}\x20[^\x20]{2}\x20[^\x20]{3});./yang2010/yang-rest_8.txt
+.*isComponentInstalled\s*\([^,\)]{25};./yang2010/yang-rest_9.txt
+.*mfcisapicommand=[^&\r\n\x20]{25};./yang2010/yang-rest_10.txt
+.*username=[^&\x20\r\n]{25};./yang2010/yang-rest_11.txt
+.*w3who.dll\x3F[^\r\n]{51};./yang2010/yang2010-filtered-between-timeout_1.txt
+.*wqPassword=[^\r\n\x20]{29};./yang2010/yang-rest_12.txt
+.{53}.*[aA][uU][tT][hH][eE][nN][tT][iI][cC][aA][tT][iI][oO][nN] [uU][nN][sS][uU][cC][cC][eE][sS][sS][fF][uU][lL];./yang2010/yang-rest_13.txt
+\x20\x20\x20.{2}\x20.{3}\x20\x20.{32}\x20;./yang2010/yang-rest_14.txt
+^[^\n]*[\x20-\xFF].*\nAccept-Language\x3A\s*[\S]{32};./yang2010/yang-rest_15.txt
+^Authorization\x20\s*Negotiate\s*((YE4G.{40}LgMc)|(YIIQ.{40}QUFB));./yang2010/yang-rest_18-backup.txt

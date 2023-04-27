@@ -1,0 +1,8 @@
+S-1-5-21-\d{5,15}\-\d{5,15}\-\d{5,15}-1101 ;./sagan/sagan-filtered-between_3.txt
+S-1-5-21-\d{5,15}\-\d{5,15}\-\d{5,15}-500 ;./sagan/sagan-filtered-between_1-backup.txt
+S-1-5-21-\d{5,15}\-\d{5,15}\-\d{5,15}-512 ;./sagan/sagan-filtered-between_4-backup.txt
+S-1-5-21-\d{5,15}\-\d{5,15}\-\d{5,15}-518 ;./sagan/sagan-filtered-between_7.txt
+S-1-5-21-\d{5,15}\-\d{5,15}\-\d{5,15}-519 ;./sagan/sagan-filtered-between_5-backup.txt
+S-1-5-21-\d{5,15}\-\d{5,15}\-\d{5,15}-520 ;./sagan/sagan-filtered-between_6-backup.txt
+S-1-5-21-\d{5,15}\-\d{5,15}\-\d{5,15}-556 ;./sagan/sagan-filtered-between_2-backup.txt
+User-Agent\x3a \{[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}\};./sagan/sagan-filtered-between_8-backup.txt

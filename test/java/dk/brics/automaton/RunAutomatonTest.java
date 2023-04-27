@@ -3,6 +3,11 @@ package dk.brics.automaton;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class RunAutomatonTest {
 
     @Test
@@ -236,5 +241,53 @@ public class RunAutomatonTest {
         Assert.assertTrue("Match (abbcabbcabbcabbc): ", a.run("abbcabbcabbcabbc"));
         Assert.assertTrue("Match (abbcabbcabbcabbc): ", a.run("abbcabbcabbcabbc"));
         Assert.assertFalse("Match (abbcabbcabbcabbcabbc): ", a.run("abbcabbcabbcabbcabbc"));
+    }
+
+    @Test
+    public void testComplex() throws IOException {
+        File file = new File("./test/resources/complex/regex-valid.txt");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader reader = new BufferedReader(fileReader);
+        String line = null;
+        String regex = reader.readLine();
+        RegExp r = new RegExp(regex);
+        Automaton a = r.toAutomaton();
+        System.out.println(a.toDot());
+        StringBuilder valid = new StringBuilder(reader.readLine());
+        while ((line = reader.readLine()) != null) {
+            valid.append("\n");
+            valid.append(line);
+        }
+        System.out.println("Match " + valid.toString() + " Result: " + a.run(valid.toString()));
+    }
+
+    @Test
+    public void testCount() throws IOException {
+        Files.list(Paths.get("./test/resources/bench"))
+                .filter(file ->  !Files.isDirectory(file))
+                .map(Path::toFile)
+                .map(file -> {
+                    try {
+                        return new BufferedReader(new FileReader(file));
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+                })
+                .forEach(reader -> {
+                    String line = null;
+                    RegExp r = null;
+                    Automaton a = null;
+                    try {
+                        while ((line = reader.readLine()) != null) {
+                            String regex =
+                                line.substring(0, line.lastIndexOf(';'));
+                            System.out.println(regex);
+                            r = new RegExp(regex);
+                            a = r.toAutomaton();
+                        }
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
     }
 }

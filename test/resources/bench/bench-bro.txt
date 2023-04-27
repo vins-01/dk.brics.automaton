@@ -1,0 +1,120 @@
+^([nN][aA][mM][eE]|[iI][dD]|[nN][uU][mM][bB][eE][rR]|[tT][oO][tT][aA][lL]|[bB][oO][uU][nN][dD][aA][rR][yY])=[\x20\x09\x0b]*[^\r\n\x3b\s\x2c]{300};./bro/bro-filtered-between_127-backup.txt
+^.* [aA][uU][tT][hH][eE][nN][tT][iI][cC][aA][tT][eE] [^\x0a]{100}\"\";./bro/bro-filtered-between_77.txt
+^.* [cC][hH][oO][wW][nN] [^\x0a]{100};./bro/bro-filtered-between_83.txt
+^.* [cC][pP][wW][dD] [^\x0a]{100};./bro/bro-filtered-between-timeout_8.txt
+^.* [cC][pP][wW][dD] [^\x0a]{100};./bro/bro-filtered-between-timeout_8-merged.txt
+^.* [lL][iI][sS][tT] [^\x0a]{100};./bro/bro-filtered-between_95.txt
+^.* [lL][iI][sS][tT] [^\x0a]{100};./bro/bro-filtered-between_95-merged.txt
+^.* [nN][eE][wW][eE][rR] [^\x0a]{100};./bro/bro-filtered-between_129-backup.txt
+^.* [zZ][iI][pP][cC][hH][kK] [^\x0a]{100};./bro/bro-rest_2.txt
+^.* [zZ][iI][pP][cC][hH][kK] [^\x0a]{100};./bro/bro-rest_2-backup.txt
+^.* BODY\[[^\]]{1024};./bro/bro-filtered-above_4.txt
+^.* CREATE [^\x0a]{1024};./bro/bro-filtered-above_5.txt
+^.* LOGIN [^\x0a]{100};./bro/bro-filtered-between_97.txt
+^.* LSUB [^\x0a]{100};./bro/bro-filtered-between_98.txt
+^.*[aA][uU][tT][hH][^\x0a]{50};./bro/bro-filtered-between-timeout_3.txt
+^.*[aA][uU][tT][hH][^\x0a]{50};./bro/bro-filtered-between-timeout_3-merged.txt
+^.*[aA][uU][tT][hH][oO][rR][iI][zZ][aA][tT][iI][oO][nN]: [bB][aA][sS][iI][cC] [^\x0A]{512};./bro/bro-filtered-between_79-merged.txt
+^.*[cC][eE][lL] [^\x0a]{100};./bro/bro-filtered-between_82.txt
+^.*[cC][mM][dD] [^\x0a]{100};./bro/bro-filtered-between-timeout_6.txt
+^.*[cC][mM][dD] [^\x0a]{100};./bro/bro-filtered-between-timeout_6-merged.txt
+^.*[cC][wW][dD] [^\x0a]{100};./bro/bro-filtered-between-timeout_9.txt
+^.*[cC][wW][dD] [^\x0a]{100};./bro/bro-filtered-between-timeout_9-merged.txt
+^.*[dD][eE][lL][eE] [^\x0a]{100};./bro/bro-filtered-between-timeout_11-merged.txt
+^.*[lL][iI][sS][tT][^\x0a]{50};./bro/bro-filtered-between_96.txt
+^.*[lL][iI][sS][tT][^\x0a]{50};./bro/bro-filtered-between_96-merged.txt
+^.*[mM][kK][dD] [^\x0a]{100};./bro/bro-filtered-between_99-merged.txt
+^.*[pP][aA][sS][sS][^\x0a]{50};./bro/bro-filtered-between-timeout_19.txt
+^.*[pP][aA][sS][sS][^\x0a]{50};./bro/bro-filtered-between-timeout_19-merged.txt
+^.*[rR][mM][dD] [^\x0a]{100};./bro/bro-filtered-between-timeout_22.txt
+^.*[rR][mM][dD] [^\x0a]{100};./bro/bro-filtered-between-timeout_22-backup.txt
+^.*[sS][iI][tT][eE] [^\x0a]{100};./bro/bro-filtered-between-timeout_25.txt
+^.*[sS][tT][aA][tT] [^\x0a]{100};./bro/bro-filtered-between-timeout_26.txt
+^.*[tT][xX][tT][uU][sS][eE][rR][nN][aA][mM][eE]=[^\x0A]{980};./bro/bro-filtered-between-timeout_27.txt
+^.*[tT][xX][tT][uU][sS][eE][rR][nN][aA][mM][eE]=[^\x0A]{980};./bro/bro-filtered-between-timeout_27-merged.txt
+^.*[uU][sS][eE][rR][^\x0a]{50};./bro/bro-filtered-between-timeout_29.txt
+^.*[uU][sS][eE][rR][^\x0a]{50};./bro/bro-filtered-between-timeout_29-backup.txt
+^.*[xX][tT][nN][dD][^\x0a]{50};./bro/bro-rest_1-backup.txt
+^.*\x0a\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74\x3a.{3,50}\x4f\x70\x65\x72\x61\x2f.*;./bro/bro-filtered-between-timeout_30-backup.txt
+^.*\x0a\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74\x3a\x20.{10,70}rv\x3a[0-2]\x2e[0-9].{0,30}Gecko\x2f.*;./bro/bro-filtered-between-timeout-rest_1.txt
+^.*\x0a\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74\x3a\x20.{10,90}Netscape\x2f[4-7].*;./bro/bro-filtered-between-timeout-rest_3.txt
+^.*\x0a\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74\x3a\x20.{10,90}Netscape\x2f[4-7].*;./bro/bro-filtered-between-timeout-rest_3-merged.txt
+^.*\x0a\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74\x3a\x20.{10,90}Netscape\x2f4\x2e[0-9].*;./bro/bro-filtered-between-timeout-rest_4-backup.txt
+^.*\x0a\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74\x3a\x20.{10,90}Netscape\x2f7.*;./bro/bro-filtered-between-timeout-rest_5-merged.txt
+^.*\x0a\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74\x3a\x20.{5,30}MSIE\x20[1-9]*.;./bro/bro-filtered-between-timeout-rest_7.txt
+^.*\x0a\x55\x73\x65\x72\x2d\x41\x67\x65\x6e\x74\x3a\x20.{5,30}MSIE\x20[1-9]*.;./bro/bro-filtered-between-timeout-rest_7-merged.txt
+^.*Content-Transfer-Encoding:[^\x0a]{100};./bro/bro-filtered-between_88.txt
+^.*Content-Type:[^\x0A]{50};./bro/bro-filtered-between-timeout_10.txt
+^.*FOLD [^\x0A]{256};./bro/bro-filtered-between-timeout_12.txt
+^.*FOLD [^\x0A]{256};./bro/bro-filtered-between-timeout_12-backup.txt
+^.*SEARCH \/ HTTP\/1\.1\x0d\x0aHost\x3a.{0,251}\x0d\x0a\x0d\x0a;./bro/bro-filtered-between_167-backup.txt
+^.*SEARCH \/ HTTP\/1\.1\x0D\x0AHost\x3A.{0,251}\x0D\x0A\x0D\x0A;./bro/bro-filtered-between_168-backup.txt
+^.{0,24}\x49\x53\x53\x50\x4e\x47\x52\x51;./bro/bro-filtered-between_4.txt
+^.{0,24}ISSPNGRQ;./bro/bro-filtered-between_3.txt
+^.{0,24}ISSPNGRQ;./bro/bro-filtered-between_3-merged.txt
+^.{0,92}\x38\x39\x3a\x3b\x3c\x3d\x3e\x3f;./bro/bro-filtered-between_5-backup.txt
+^.{24}.{0,17}\x4e\x41\x4d\x45\x4e\x41\x4d\x45;./bro/bro-filtered-between_17-backup.txt
+^.{24}.{0,17}NAMENAME;./bro/bro-filtered-between_16-backup.txt
+^.{53}.*[aA][uU][tT][hH][eE][nN][tT][iI][cC][aA][tT][iI][oO][nN] [uU][nN][sS][uU][cC][cC][eE][sS][sS][fF][uU][lL];./bro/bro-filtered-between_67.txt
+^.{53}.*[aA][uU][tT][hH][eE][nN][tT][iI][cC][aA][tT][iI][oO][nN] [uU][nN][sS][uU][cC][cC][eE][sS][sS][fF][uU][lL];./bro/bro-filtered-between_67-merged.txt
+^.{82}.*Login failed for user \x27sa\x27;./bro/bro-filtered-between_72-backup.txt
+^.{82}.*Login failed for user 'sa';./bro/bro-filtered-between_71-backup.txt
+^[nN][aA][mM][eE]=s*[^\r\n\x3b\x20\x09\x0b\x2c]{300};./bro/bro-filtered-between_128.txt
+^[nN][aA][mM][eE]=s*[^\r\n\x3b\x20\x09\x0b\x2c]{300};./bro/bro-filtered-between_128-backup.txt
+^\n*[\x20\x09\x0b][cC][rR][eE][aA][tT][eE][\x20\x09\x0b][^\n]{1024};./bro/bro-filtered-above_6.txt
+^\n*[\x20\x09\x0b][cC][rR][eE][aA][tT][eE][\x20\x09\x0b][^\n]{1024};./bro/bro-filtered-above_6-merged.txt
+^\n*[\x20\x09\x0b][fF][iI][nN][dD][\x20\x09\x0b][^\n]{100};./bro/bro-filtered-between_154-backup.txt
+^\n*[\x20\x09\x0b][lL][iI][sS][tT][\x20\x09\x0b][^\n]{100};./bro/bro-filtered-between_155-backup.txt
+^\n*[\x20\x09\x0b][pP][aA][rR][tT][iI][aA][lL].*[bB][oO][dD][yY]\.[pP][eE][eE][kK]\[[^\]]{1024};./bro/bro-filtered-above_7.txt
+^\n*[\x20\x09\x0b][pP][aA][rR][tT][iI][aA][lL].*[bB][oO][dD][yY]\.[pP][eE][eE][kK]\[[^\]]{1024};./bro/bro-filtered-above_7-merged.txt
+^\n*[\x20\x09\x0b][pP][aA][rR][tT][iI][aA][lL].*[bB][oO][dD][yY]\[[^\]]{1024};./bro/bro-filtered-above_8-merged.txt
+^\n*[\x20\x09\x0b][rR][eE][nN][aA][mM][eE][\x20\x09\x0b][^\n]{100};./bro/bro-filtered-between_158-backup.txt
+^\n*[\x20\x09\x0b]LOGIN[\x20\x09\x0b][^\n]{100};./bro/bro-filtered-between_157-backup.txt
+^\n*[aA][pP][oO][pP][\x20\x09\x0b][^\n]{256};./bro/bro-filtered-between_102-backup.txt
+^\n*[aA][pP][pP][eE][\x20\x09\x0b][^\n]{100};./bro/bro-filtered-between_104-backup.txt
+^\n*[aA][uU][tT][hH][\x20\x09\x0b][^\n]{100};./bro/bro-filtered-between_106-backup.txt
+^\n*[aA][uU][tT][hH][\x20\x09\x0b][^\n]{50};./bro/bro-filtered-between_107-backup.txt
+^\n*[aA][uU][tT][hH][iI][nN][fF][oO][\x20\x09\x0b]+[uU][sS][eE][rR][\x20\x09\x0b][^\n]{200};./bro/bro-filtered-between_105-backup.txt
+^\n*[aAlLlLoO][\x20\x09\x0b][^\n]{100};./bro/bro-filtered-between_101-backup.txt
+^\n*[eE][tT][rR][nN]][\x20\x09\x0b][^\n]{500};./bro/bro-filtered-between_111-backup.txt
+^\n*[eE][xX][pP][nN][^\n]{255,};./bro/bro-filtered-between_112-backup.txt
+^\n*[fF][iI][lL][eE]\x3a\x2f\x2f[^\n]{400};./bro/bro-filtered-between_113-backup.txt
+^\n*[fF][oO][lL][dD][\x20\x09\x0b][^\n]{256};./bro/bro-filtered-between_114-backup.txt
+^\n*[hH][eE][lL][oO][\x20\x09\x0b][^\n]{500};./bro/bro-filtered-between_117-backup.txt
+^\n*[hH][eE][lL][pP][\x20\x09\x0b][^\n]{500};./bro/bro-filtered-between_118-backup.txt
+^\n*[hH][tT]{2}[pP]\x3a\x2f\x2f[^\n]{400};./bro/bro-filtered-between_119-backup.txt
+^\n*[mM][dD][tT][mM][\x20\x09\x0b][^\n]{100};./bro/bro-filtered-between_125-backup.txt
+^\n*[pP][aA][sS][sS][\x20\x09\x0b][^\n]{50};./bro/bro-filtered-between_132-backup.txt
+^\n*[pP][rR][iI][vV][mM][sS][gG][\x20\x09\x0b]+[nN][iI][cC][kK][sS][eE][rR][vV][\x20\x09\x0b]+[iI][dD][eE][nN][tT][iI][fF][yY][\x20\x09\x0b][^\n]{100};./bro/bro-filtered-between_133-backup.txt
+^\n*[sS][sS][hH]-[\x20\x09\x0b][^\n]{200};./bro/bro-filtered-between_144-backup.txt
+^\n*[sS][tT][oO][uU][\x20\x09\x0b][^\n]{100};./bro/bro-filtered-between_145-backup.txt
+^\n*[uU][sS][eE][rR][\x20\x09\x0b][^\n]{49};./bro/bro-filtered-between_149-backup.txt
+^\n*[uU][sS][eE][rR][\x20\x09\x0b][^\n]{50,};./bro/bro-filtered-between_150-backup.txt
+^\n*[uU][sS][eE][rR][^\x0a]{49};./bro/bro-filtered-between_148-backup.txt
+^\n*[uU][sS][eE][rR][nN][aA][mM][eE]\:[^\n]{100};./bro/bro-filtered-between_147-backup.txt
+^\n*[vV][rR][fF][yY][^\n]{255,};./bro/bro-filtered-between_152-backup.txt
+^\n*[xX][tT][nN][dD][\x20\x09\x0b][^\n]{50};./bro/bro-filtered-between_160-backup.txt
+^\n*[xXmMkKdD][\x20\x09\x0b][^\n]{100};./bro/bro-filtered-between_159-backup.txt
+^\n*200[\x20\x09\x0b][^\n]{64};./bro/bro-filtered-between_100-backup.txt
+^\n*COPY[^s]{432};./bro/bro-filtered-between_109-backup.txt
+^\n*DELETE[^s]{432};./bro/bro-filtered-between_110-backup.txt
+^\n*GET[^s]{432};./bro/bro-filtered-between_115-backup.txt
+^\n*HEAD[^s]{432};./bro/bro-filtered-between_116-backup.txt
+^\n*LOCK[^s]{432};./bro/bro-filtered-between_122-backup.txt
+^\n*MKCOL[^s]{432};./bro/bro-filtered-between_123-backup.txt
+^\n*MOVE[^s]{432};./bro/bro-filtered-between_126-backup.txt
+^\n*POST[^s]{432};./bro/bro-filtered-between_131-backup.txt
+^\n*PUT[^s]{432};./bro/bro-filtered-between_134-backup.txt
+^\n*TRACE[^s]{432};./bro/bro-filtered-between_146-backup.txt
+^200 [^\x0a]{64};./bro/bro-filtered-between_15-backup.txt
+^ETRN [^\x0A]{500};./bro/bro-filtered-between_92-backup.txt
+^HELO [^\x0a]{500};./bro/bro-filtered-between_94-backup.txt
+^SSH-[^\x0a]{600};./bro/bro-filtered-between_169-backup.txt
+.* BODY\[[^\]]{1024};./bro/above-all2_10-backup.txt
+^.* [fF][iI][nN][dD] [^\x0a]{1024};./bro/above-all2_3-merged.txt
+^.* [rR][eE][nN][aA][mM][eE] [^\x0a]{1024};./bro/above-all2_4-merged.txt
+^.* BODY\.PEEK\[[^\]]{1024};./bro/above-all2_5-backup.txt
+^.* BODY\[[^\]]{1024};./bro/above-all2_6.txt
+^.* CREATE [^\x0a]{1024};./bro/above-all2_7.txt
+^\n*[\x20\x09\x0b][pP][aA][rR][tT][iI][aA][lL].*[bB][oO][dD][yY]\.[pP][eE][eE][kK]\[[^\]]{1024};./bro/above-all2_8.txt
+^\n*[\x20\x09\x0b][pP][aA][rR][tT][iI][aA][lL].*[bB][oO][dD][yY]\[[^\]]{1024};./bro/above-all2_9-backup.txt

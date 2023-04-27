@@ -1,0 +1,1244 @@
+    _secure_another_setting: ([A-Za-z0-9\+/]{342}==)$;./uniq/uniq-between-rest_28_33-backup.txt
+    _secure_setting:       ([A-Za-z0-9\+/]{342}==)$;./uniq/uniq-between-rest_3_28-backup.txt
+   ([a-zA-Z0-9\-]{36}) - ([^\n]+);./uniq/uniq-between-rest_31_2-backup.txt
+ \d{47}\.{3}$;./uniq/uniq-between-rest_13_33-backup.txt
+ {70} *;./uniq/uniq-between-rest_15_12-backup.txt
+ PROCESS(.{32})WORKING\n;./uniq/uniq-best_57-backup.txt
+#{255};./uniq/uniq-between2-rest_11_43-backup.txt
+%?([0-9]{1})([0-9]{1})([A-Z0-9 ]{11})([A-Z0-9 ]{2})([A-Z0-9 ]{10})([A-Z0-9 ]{4})([1-2]{1})([0-9]{3})([0-9]{3})([A-Z ]{3})([A-Z ]{3})(.*)\?;./uniq/uniq-timeouted2_5_9-merged.txt
+(([0-9]|[a-f]){32}-)*([0-9]|[a-f]){32}\.vurl\.;./uniq/uniq-between-rest_5_25-merged.txt
+(([a-f0-9]{64}));./uniq/uniq-rest3_4_1.txt
+((\d{8,14})|(\d{3,4}-)?\d{7,8})|(13[0-9]{9})|(\d{2,4}-\d{2,4}-\d{2,4});./uniq/uniq-timeouted_2.txt
+((a)b{28,}c|d)x;./uniq/uniq-between1-rest_17_12-backup.txt
+((http://|https://|//)[-a-zA-Z0-9@:%_\+.~\#?&=]{2,256}\.[a-z]{2,4}[^\n\r']*);./uniq/uniq-rest3_7_14-backup.txt
+(.)(.{11})(.{20})(.{32});./uniq/uniq-between-rest_22_14.txt
+(.)(.{11})(.{52});./uniq/uniq-between-rest_4_18.txt
+(.*)/objects/[0-9a-f]{2}/[0-9a-f]{38}$;./uniq/uniq-between1-rest_17_71.txt
+(.*)/objects/pack/pack-[0-9a-f]{40}\.idx$;./uniq/uniq-between-rest_29_41-merged.txt
+(.*)/objects/pack/pack-[0-9a-f]{40}\.pack$;./uniq/uniq-between-rest_15_30-merged.txt
+(.*)\.([a-f0-9]{32})\.(.*);./uniq/uniq-between-rest_11_3-backup.txt
+(.*)\[\d+:(\d+):\d+\]\s+(.+)\s+\[.+(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(:\d+){0,1}\s+\-\>\s+(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})(:\d+){0,1};./uniq/uniq-timeouted2_5_11.txt
+(.*t=)[a-zA-Z0-9]{32}(.*);./uniq/uniq-between1-rest_17_44.txt
+(.{1,76}\W);./uniq/uniq-between1-rest_18_13.txt
+(.{1,78}) (\|\| |$) ?;./uniq/uniq-between1-rest_16_39.txt
+(.{1,78})(?: +|$)\n?|(.{78});./uniq/uniq-between-rest_28_1-backup.txt
+(.{1,78}[^\s])(?:\s|$);./uniq/uniq-between1-rest_16_8.txt
+(.{1,980}[,])\s+(\S);./uniq/uniq-rest3_7_15-backup.txt
+(.{100});./uniq/uniq-between-rest_27_16.txt
+(.{100}.*),.*;./uniq/uniq-between1-rest_15_9.txt
+(.{2,60})\|.{0,200};./uniq/uniq-between1-rest_10_38.txt
+(.{40}[a-z0-9A-Z]*).+$;./uniq/uniq-between-rest_33_21.txt
+(.{50}).*;./uniq/uniq-between-rest_2_38.txt
+(.{50}).+;./uniq/uniq-between-rest_35_20.txt
+(.{512}[^ ]*[ ]);./uniq/uniq-between1-rest_10_75-merged.txt
+(.{60,75},);./uniq/uniq-between-rest_15_15.txt
+(.{60});./uniq/uniq-between-rest_25_13.txt
+(.{64});./uniq/uniq-between-rest_3_44.txt
+(.{64}).*;./uniq/uniq-between-rest_32_29.txt
+(.{69});./uniq/uniq-between-rest_28_38.txt
+(.{70}[^ \n]*) ([^ ]);./uniq/uniq-between-rest_7_2.txt
+(.{72});./uniq/uniq-between-rest_10_11.txt
+(.{76});./uniq/uniq-between-rest_21_24.txt
+(.{78});./uniq/uniq-between1-rest_16_9.txt
+(.{80});./uniq/uniq-between-rest_31_27.txt
+(.{80}\S+);./uniq/uniq-between-rest_14_8.txt
+(.|[\r\n]){1,2000};./uniq/unique-above-rest_1-backup.txt
+(.+)\s.+\s-\s\[(.+)\]\s(GET|POST|PUT|HEAD|OPTIONS|DELETE).+HTTP/1\.[0-1]\s[0-9]{3}\s([0-9]{1,20})\s.+;./uniq/uniq-rest3_10_17.txt
+(:[a-z0-9A-Z-]{1,50}:);./uniq/uniq-rest3_9_28-merged.txt
+(?:.){100,};./uniq/uniq-between-rest_4_40.txt
+(?:.+[-._])?([a-fA-F0-9]{40})(?:[-._].+)?\.torrent\.rtorrent;./uniq/uniq-best_35.txt
+(?:\[((?:[a-z]|\*){1,16})(?:[=\s]([^\x00-\x1F'<>\[\]]{1,2083}))?\])|(?:\[\/([a-z]{1,16})\]);./uniq/unique-above-rest_2-backup.txt
+(?:\d{11}-)\d{2}-[a-zA-Z_0-9]{4}-\d{1,8};./uniq/uniq-between1-rest_14_14.txt
+(?:^|[,&?])\s*([a-z0-9]{50,}=*)(?:\W|$);./uniq/uniq-between1-rest_14_59.txt
+(?:^|\D)([\d \-]{12,32})(?:$|\D);./uniq/uniq-rest3_9_10.txt
+(?:^|msid=)([0-9]{21}\.[0-9a-f]{21})(?:$|&);./uniq/uniq-between-rest_3_3.txt
+(?:^5[1-5]\d{14}$)|(?:^2(?:2(?:2[1-9]|[3-9]\d)\d{2}|[3-6]\d{4}|7(?:[01]\d{3}|20\d{2}))\d{10}$);./uniq/uniq-between-rest_31_18-backup.txt
+(?:0[xX])[A-F0-9]{40};./uniq/uniq-between-rest_13_32.txt
+(?:board=\d+)?((?:topic|threadid)=[\dmsg#\.\/]{1,40}(?:start=[\dmsg#\.\/]{1,40})?|action=profileu=\d+);./uniq/uniq-rest3_3_10.txt
+(?:CVSS:3\.0/)?[A-Za-z:/]{26,};./uniq/uniq-between-rest_22_28.txt
+(?:Domain )?(?:Expires|Expiration Date):\s+\w{3} (\w{3}) (\d{2}) (?:\d{2}:\d{2}:\d{2} \w{3}(?:[-+]\d{2}:\d{2})? )(\d{4});./uniq/uniq-timeouted2_5_13-backup.txt
+(?:charset|encoding)\s{0,10}=\s{0,10}[']? {0,10}([\w\-]{1,100});./uniq/uniq-rest3_3_21.txt
+(?i)(&|^)(?:jsessionid=[0-9a-z$]{10,}|sessionid=[0-9a-z]{16,}|phpsessid=[0-9a-z]{16,}|sid=[0-9a-z]{16,}|aspsessionid[a-z]{8}=[0-9a-z]{16,}|cfid=[0-9]+&cftoken=[0-9a-z-]+)(&|$);./uniq/uniq-between-rest_6_29.txt
+(?i)^[0-9a-f](?:[.][0-9a-f]){0,31}$;./uniq/uniq-between-rest_6_19.txt
+(?i)^[a-z][a-z0-9_]{0,127}$;./uniq/uniq-between-rest_11_22-backup.txt
+(?i)^[a-z0-9][a-z0-9._-]{0,127}$;./uniq/uniq-between-rest_13_22-backup.txt
+(?i)^[a-zA-Z][a-zA-Z-]{1,30}[a-zA-Z]$;./uniq/uniq-between1-rest_20_37.txt
+(?m)^Change-Id: (I[0-9a-fA-F]{40})\n?;./uniq/uniq-between-rest_34_35-backup.txt
+(?s)BBX\.context\.assets\['[0-9a-f]{32}'\]\.push\(({.+})\);./uniq/uniq-rest3_5_22.txt
+([\/\@])(\d{6})(.)([\d\.\s]{7})([NSns])(.)([\d\.\s]{8})([EWew])(.)(.*)$;./uniq/uniq-between1-rest_12_36.txt
+([\a-z0-9_\-\.]+)@([a-z0-9-]{1,64})\.([a-z]{2,10});./uniq/uniq-between-rest_31_22.txt
+([^.]{2,63})$;./uniq/uniq-between1-rest_10_65-merged.txt
+([^.]{63})[^.]+;./uniq/uniq-between1-rest_20_59.txt
+([^\n]{70});./uniq/uniq-between1-rest_10_35.txt
+([^\s\'\/&]{60});./uniq/uniq-rest3_1_20.txt
+([^\s]+) ([^\s]+) \(git+\+([^#\s]+)#([^\s]{40})\);./uniq/uniq-between-rest_35_36-merged.txt
+([0-7]{6}) [^ ]+ [0-9a-f]{40}\t(.*);./uniq/uniq-between-rest_3_37-merged.txt
+([0-9]{1,9999})\:([0-9]{1,9999});./uniq/unique-above-rest_4-backup.txt
+([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{1,2}:[0-9]{2}:[0-9]{2}(\.[0-9]{3})? [+\-]?[0-9]{1,2}:[0-9]{2}(\.[0-9]{3})?)[:\-\s]+;./uniq/uniq-between-rest_30_6.txt
+([0-9a-f]{16})[0-9a-f]{48};./uniq/uniq-between1-rest_11_20.txt
+-([0-9a-f]{32,40})\.[^.]+(?:\.map)?$;./uniq/uniq-between1-rest_11_16.txt
+([0-9a-f]{64});./uniq/uniq-between-rest_7_11.txt
+-([0-9a-f]{7,128})\.[^.]+\z;./uniq/uniq-between1-rest_10_68.txt
+([0-9a-f]{8})-*([0-9a-f]{4})-*(4[0-9a-f]{3})-*([89ab][0-9a-f]{3})-*([0-9a-f]{12});./uniq/uniq-timeouted_6.txt
+([0-9a-fA-F]){64};./uniq/uniq-between-rest_4_19.txt
+([0-9a-fA-F]{40}) ([0-9a-fA-F]{40}) refs\/(heads|tags)\/(.*)( |00|\u0000)|^(0000)$;./uniq/uniq-between-rest_2_12-backup.txt
+([0-9a-fA-F]{40})\s+refs/(heads|tags)/(.*);./uniq/uniq-between-rest_29_9-backup.txt
+([0-9a-fA-F]{64,});./uniq/uniq-between-rest_27_23.txt
+([0-9a-fA-F]{64})\/?$;./uniq/uniq-between-rest_17_28.txt
+([0-9A-Za-z\-_]{1,12}) \u0022b\u0022f #([0-9A-Za-z\-_\@]{8,10});./uniq/uniq-error_15.txt
+([a-f0-9]{3})\/([a-f0-9]{29})\/(.*)\.([^\.]+);./uniq/uniq-between1-rest_12_70.txt
+([a-f0-9]{40}) (.+);./uniq/uniq-between1-rest_19_43-merged.txt
+([a-f0-9]{64});./uniq/uniq-rest3_4_12.txt
+'([a-f0-9]{96})';./uniq/uniq-between-rest_2_27-backup.txt
+([a-fA-F0-9]{64});./uniq/uniq-between-rest_20_33.txt
+([A-Z]{2,3}\,\ [0-9]{1,2}\ [A-Z]{2,3}\ [0-9]{4}\ [0-9]{1,2}\:[0-9]{1,2}\:[0-9]{1,2}\ [\-|\+][0-9]{4}\ \(.*)\)+$;./uniq/uniq-between1-rest_10_39.txt
+([A-Z0-9\!\#\$\&\.\+\-\^\\_]{1,127})/([A-Z0-9\!\#\$\&\.\+\-\^\\_]{1,127});./uniq/uniq-between-rest_17_20.txt
+([A-Za-z_][A-Za-z0-9_]{2,30}|(__.*__))$;./uniq/uniq-between-rest_3_30-backup.txt
+([a-zA-Z0-9._-]{1,30}@[a-zA-Z0-9._-]{2,15}\.[a-zA-Z0-9._-]{2,15});./uniq/uniq-between-rest_28_21.txt
+(\[[^\[\]]{0,250})\n([^\[\]]{0,250}\]);./uniq/uniq-timeouted2_4_2.txt
+(\[|\()((\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}(\.\d+)?(\+|\-)\d{2})|infinity),((\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}(\.\d+)?(\+|\-)\d{2})|infinity)(\]|\));./uniq/uniq-rest3_5_24-backup.txt
+(\+[1-9]\d{0,3}) +\d{1,10} +([\d][\d \-]{0,24}[\d]);./uniq/uniq-between-rest_21_16.txt
+(\d\d/\d\d)    (.{38}) ((\w|\s){3}) ((\s)*-?(\.|\d)*,\d\d) ((\s)*-?(\.|\d)*,\d\d);./uniq/uniq-timeouted_49.txt
+(\d{4,4}-\d{2,2}-\d{2,2}).*(\d{2,2}:\d{2,2}):\d{2,2}.*(\d{4,4}-\d{2,2}-\d{2,2}).*(\d{2,2}:\d{2,2}):\d{2,2};./uniq/uniq-timeouted2_6_2-merged.txt
+(\d{4}-\d{2}-\d{2}).+(\d{2}:\d{2}):\d{2}.+(\d{4}-\d{2}-\d{2}).+(\d{2}:\d{2}):\d{2};./uniq/uniq-timeouted2_6_3-backup.txt
+(\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}.\d{6})\s-\s((?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?)$;./uniq/uniq-between1-rest_10_50.txt
+(\d{6})((?:C|D)R?)([0-9,]{15})(N\d{3}|NMSC)([0-9P ]{16});./uniq/uniq-between1-rest_16_54.txt
+(\d{6})((?:C|D)R?)([0-9,]{15})(N\d{3}|NMSC)([0-9P ]{16}|NONREF)(.*);./uniq/uniq-between-rest_25_1.txt
+(\S{100});./uniq/uniq-between-rest_32_42.txt
+(\S{8}-\S{4}-\S{4}-\S{4}-\S{12});./uniq/uniq-timeouted_7.txt
+(\w{60});./uniq/uniq-between1-rest_17_51.txt
+(\w{62})(\w);./uniq/uniq-between-rest_22_22.txt
+(^(\d{3,4}-)?\d{7,8})$|(13[0-9]{9});./uniq/uniq-between-rest_3_36.txt
+(^[^.]+)(.\w{2}-\w{4,9}-\d)?.(elasticbeanstalk.com|eb.amazonaws.com.cn)$;./uniq/uniq-timeouted2_6_4-backup.txt
+(^[a-z]:)?/.{1,50}$;./uniq/uniq-between-rest_33_41-merged.txt
+(^|[\s(,])((?:https?:\/\/|www\d{0,3}[.][a-z0-9.\-]{2,249}|[a-z0-9.\-]{2,250}[.][a-z]{2,4}\/)[-\w.!~*'(),/?:@&=+$#%]*);./uniq/uniq-rest3_2_22.txt
+(^|[\s(,<>])([^(,<>@\s]+@[a-z0-9.\-]{2,250}[.][a-z0-9\-]{2,32});./uniq/uniq-rest3_4_2-merged.txt
+(^|[\s(])([\w\-.]{2,64})@([\w\-.]{2,64})\.([a-z]{2,64})([)\s.,!?]|$);./uniq/uniq-rest3_5_25.txt
+(^|\s)(([a-zA-Z0-9_-]+):)?([a-zA-Z0-9]{40});./uniq/uniq-between-rest_11_25.txt
+(^|Locomotive::)(Content)*Entry([0-9a-fA-F]{24})$;./uniq/uniq-between-rest_7_1-backup.txt
+(^={77}$);./uniq/uniq-between-rest_11_8-backup.txt
+(^4\d{12}$)|(^4[0-8]\d{14}$)|(^(49)[^013]\d{13}$)|(^(49030)[0-1]\d{10}$)|(^(49033)[0-4]\d{10}$)|(^(49110)[^12]\d{10}$)|(^(49117)[0-3]\d{10}$)|(^(49118)[^0-2]\d{10}$)|(^(493)[^6]\d{12}$);./uniq/uniq-between1-rest_20_69-merged.txt
+(__.{38});./uniq/uniq-rest3_9_16.txt
+(-{69,71});./uniq/uniq-rest3_3_3-backup.txt
+(={77});./uniq/uniq-rest3_8_24-backup.txt
+(={80});./uniq/uniq-rest3_8_3-backup.txt
+(0-[a-z]+-d[0-9]-[a-z0-9]{32});./uniq/uniq-between1-rest_13_23-backup.txt
+(20\d{6}[0-9a-f]{13})@ecouser.net/([0-9a-f]{8});./uniq/uniq-between1-rest_19_40-backup.txt
+(-69,71);./uniq/uniq-between-rest_22_42-backup.txt
+(address .{0,60} changed | domain .{0,40} retired) .*\n          (has\s*been|was|have|will\s*be) \s* (forwarded|delivered);./uniq/uniq-timeouted_9-backup.txt
+(captchaservice\w{200,});./uniq/uniq-between-rest_6_1-backup.txt
+(card)[_]([\w-]{22});./uniq/uniq-between-rest_13_5-backup.txt
+(href=(/assets/app\.[a-f0-9]{64}\.css));./uniq/uniq-rest3_8_12-backup.txt
+(https?:\/\/)?((www\.)?([-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}[\s]([-a-zA-Z0-9@:%_\+.~#?&\/=]*)));./uniq/merged-bound-edited-unique_149-backup.txt
+(CHK\@[a-zA-Z0-9,~\-]{54})[\/ ]+(.*)\s*$;./uniq/uniq-between-rest_32_36-backup.txt
+(IOPlatformUUID = ([0-9A-F-]{36}));./uniq/uniq-rest3_8_13-backup.txt
+(outputImage|getImage)\?fileId=([a-z0-9A-Z]{24});./uniq/uniq-between-rest_28_30-backup.txt
+(plan)[_]([\w-]{22});./uniq/uniq-between-rest_18_19-backup.txt
+(previous [0-9a-f]{40})|boundary;./uniq/uniq-between1-rest_20_58-merged.txt
+(Queued up.*id:(.{24}));./uniq/uniq-rest3_3_7.txt
+(quicklatex.com-[a-f0-9]{32}_l3.)(png);./uniq/uniq-between-rest_19_20-backup.txt
+(s(?:h(?:k(?:l(?:i(?:z(?:z(?:ortch|i\ntz)|(?:ort|i)ch)|k(?:sa)?|tza|nk)|o(?:(?:(?:rbbado)?r)?p|ort)|u(?:r(?:ch|tz|k)|n\nk)|a(?:zitch|kle))|alo?ink|witz)?|l(?:o(?:o[kp]|r[kp]|ip)|i(?:k(?:le)?|pp)|ur[kp\n]|ak)|p(?:l(?:(?:oi|e)p|iple)|i(?:kk|sh)le|o(?:oosh|rk))|a(?:[fk]|sh(?:wik)?|zza\ntz|bamp)?|o(?:o(?:ka?|ga|o)|(?:mpa|ss)h)|n(?:i(?:kkle|p)|orkle)|i(?:f(?:fle)?|ka\n?)|t(?:o(?:in|r)|i)k|u(?:ffle|ka)|muzorft|wika?)|p(?:l(?:a(?:z(?:[ai]tc|oos)h|p(\n?:idy|ple)?|d(?:ish|unk)|sh(?:idy)?|t(?:ch)?|k)?|o(?:r(?:p(?:le)?|t(?:ch)?|k)|yd\noing|o?sh|it|p)|i(?:sh(?:idy|le)?|tch|p)|esh|urp)|r(?:o(?:in(?:g(?:(?:acho|doi)n\nk)?|k)|wmmm|p)|i(?:z(?:aw|z)itz|t(?:sits|z))|a(?:zo)?t)|a(?:(?:(?:ma)?m)?p|z(?:o\nosh|at)|sh(?:le)?|loosh|tz|k)?|o(?:o(?:sht?|f)|p(?:ple)?)|wa(?:p(?:po)?|ko|ng|t)\n|u(?:kkonk|tz?|sh)|ma(?:mp?|p)|itza?)|k(?:r(?:o(?:i(?:nch|k)|n(?:ch|k)|o(?:ok|m)\n|tch)|a(?:k(?:it)?|z[ai]tz|wk)|i(?:bble|cha?|tch|nk)|ee(?:k(?:le)?|ch|e)|uncha?)\n|l(?:o(?:r(?:(?:tc|s)h|k)|shitty|osh|p)|i(?:(?:zzor|t)ch|(?:sh)?k)|u(?:k(?:le)?|\nrk|sh)|azoncho|erch)|a(?:p(?:(?:lun|as)ch|roing)|z(?:ee|oo)ch)|w(?:a(?:(?:pp|k)o\n)?|(?:ee|on|i)k)|n(?:i(?:(?:ff|k)le|tch)|osh))|w(?:i(?:[ft]|z(?:za[kt]|ap)|padda\n|sh)|o(?:osh|rf))|c(?:h(?:l(?:oo[pt]|[ae]p|i[pt])|klurt)|reeeezt)|t(?:o(?:o(?:pf\nt|ng|f)|ink)|roinggoink|amp)|l(?:o(?:(?:bb|op)le|tch)|ur[kp]|apth|ice)|n(?:i(?:k\nker|p)|a[pt]|uffle|ork)|i(?:t(?:tzle|z)?|zz(?:otz|le))|m(?:a(?:c?k|sh)|ek)|(?:s(\n?:li|ss)|u)t|(?:azzik|ree)k|o(?:und|b))|g(?:a(?:s(?:h(?:k(?:litz(?:ka)?|utzga)|p\nlutzga|likt|ook)|(?:m[ai]t|kroo)ch|p(?:l(?:oo|u)sh)?)|d(?:o(?:i?ng|on)|a(?:ff|ng\n)|i(?:ff|nk))|r(?:(?:un)?k|rargh|oof)|z(?:o[ow]nt|ikka|ap)|l(?:oo(?:om|n)|ink)|h\n(?:o(?:ff|rk)|ak)|(?:plo[nr]|c)?k|flor|mop)?|l(?:o(?:o(?:[kt]|(?:ch|d)le|p(?:le)\n?)|r(?:[pt]|k(?:le)?|gle)|(?:ydoi|m)p|i(?:ng|p)|n [gt])|u(?:r(?:k(?:le)?|gle)|k(\n?:k?le)?|t(?:ch)?|nk|p)|a(?:n(?:gadang|k)|(?:kk|rg)le|(?:din|w)k|p)|i(?:k(?:ity|\nle|a)?|t(?:ch)?|nk|sh|p)|ee[pt])|r(?:o(?:wr(?:rooom)?|ink|on)|eedle|aw?k|unch|in\ng)|i(?:(?:shkl[ou]r|kkadi)k|(?:gazi )? ng)|o(?:o(?:glooom|ma|sh)|rshle|yng|nk)|u\n(?:(?:kgu|w)k|r(?:gle|n))|(?:hom|wa)p)|f(?:l(?:i(?:[kt]|f(?:f(?:l(?:aff|e))?)?|(\n?:badi)?p|n[gk]|zaff)|o(?:[fk]|o(?:[mnt]|f(?:ity)?)|r[fk]|ba)|a(?:(?:fflif)?f|d(\n?:at|ip)|badap|k)|eedle|u[kt])|w(?:i(?:zz(?:a(?:ch|p)|ish)?|sk(?:itty)?|p(?:ada)\n?|t)|a(?:(?:bada|ddap)p|p(?:ada)?|s ?k|ch|m)|o(?:[fp]|o(?:sh|f))|ee[np]?|ump)|a(\n?:g(?:roo(?:osh|n)|woosh|lork)|(?:sh(?:klor|un))?k|ba(?:dap)?|p(?:adda)?|roolana\n|zzat)|i(?:zz(?:azzit|itz)|tz(?:rower)?|d(?:dit|ip)|ff|p)|u(?:sh(?:shklork)?|rsh\n(?:glurk)?|nk(?:ada)?|mp|t)|o(?:o(?:[fnp]|sht?|woom|mp?)|ing|m?p|wm)|r(?:ugga|ac\nk|oom|it)|err[ai]p|sssh)|k(?:a(?:ch(?:u(?:nka?|gh)|o(?:nk|o)|aah)|p(?:oooshshish\n|la[km]|f)|sh(?:(?:in|oo)k|prit za)?|t(?:oo(?:n[gk]|f)|y)|z(?:a(?:sh|k)|ik|op)|(\n?:doon|rra|w)k|l(?:loon|oong)|k(?:roosh|a)?|bo(?:omm|ff)|h(?:eeee|ak))?|l(?:i(?:\nn(?:g(?:dinggoon)?|(?:kadin)?k)|(?:krun)?k)|o(?:o(?:n[gk]?|bada|onn)|n[gk]|ink|m\n?p)|a(?:k(?:kle)?|n[gk]|dwak)|u(?:m(?:ble|p)|pada|n?k))|r(?:u(?:nch(?:le)?|gazun\nch)|a(?:k(?:kle)?|rkle|sh)|i(?:k(?:it)?|dit)|eek)|i(?:(?:ttoo)?ng|(?:kati)?k|pf)\n|w(?:o(?:n[gk]|i?p)|ee[ek]|app)|o(?:o(?:kook|ng)|ff)|(?:erack|u)k)|t(?:h(?:o(?:o\n(?:noonn|mp?|f)?|ip(?:oing)?|m?p|rk|t)|w(?:i(?:[pt]|zzik)|o(?:c?k|p)|a[kpt]?|uk)\n|u(?:(?:gawun|nc)?k|(?:balu|m)p|rch|d)|l(?:u(?:ck|p)|i[kp]|oop)|a(?:p(?:loof)?|f\nf|k)|h(?:h[hu]t|lorp)|i(?:koosh|z))|i(?:k(?:a(?:tik)?|kak?)?|n(?:g(?:alinga)?|k)\n|p(?:pity)?)|o(?:o(?:[df]|w(?:it|oo)|n[gk]?|ong|mp)|n[gk]|ing|k)|w(?:ee(?:(?:dl)\n?e|n)|o(?:[kp]|ng))|a(?:k(?:ka)?|gak|p)?|z(?:o?o|wa|i)ng|(?:r[ou]m|ff)p|e(?:eoo|\nar)|ubba)|p(?:l(?:o(?:o(?:[mp]|(?:badoo)?f|sh)|r(?:[fk]|tch)|bble|i?p|nk)|a(?:[f\nkm]|pf?)|i(?:pple|nk|f)|u(?:nk|rp|f))|i(?:t(?:t(?:w(?:ee|oo)n|oo(?:ie)?)|ooie)|n\n[gk]|k)|a(?:[fkm]|t(?:w(?:eeee|ang))?|(?:da)?p)|w(?:o(?:(?:mp)?f|ing|k)|a(?:dak|\nm)|een)|o(?:[kpw]|i(?:n[gk]|t)|ffisss|ong)|h(?:oo[mno ]|lakffa|elop|wam)|u(?:ff(\n?:le|a)?|cka|tt)|f(?:fft|lap)|rawk|sssh)|b(?:l(?:o(?:o(?:[fp]|ma?|oot)|r[fpt]|bb\nle|it|nk|p)|a(?:p(?:ple)?|mp?|tch)|i(?:[bf]|(?:di)?t|nk)|ee(?:ble|gh|p)|u(?:[bt]\n|ka))|r(?:ee(?:(?:bee)?p|(?:dee)?t)|(?:(?:ood)?oo|nng)t|a(?:[kp]|vo)|rrapp|ing)|\no(?:o(?:m(?:er|a)?|ng)|mbah|rfft|il|ng)|a(?:[kmp]|r(?:ramm|f)|hoo|ng|sh)?|(?:ee[\ndy]oo|wee)p|z(?:own|z)t|u(?:mp|r)|ing)|d(?:o(?:o(?:(?:(?:tbwee)?|o)t|b(?:ad)?a|m\n[ap]?|n[kt]|dle|p)|i(?:[pt]|nk)|kka|ng?|mp|w)|a(?:k(?:k(?:a(?:dak)?|itydak)|dik)\n?|b(?:omp|wak|a)|p(?:ad?da)?|ng)?|i(?:[gt]|n(?:g(?:aling?a)?|k)?|k(?:ka)?|pad?da\n|mpah)|u(?:(?:bb|gg)a|rp)|r(?:ipple|oot)|ee(?:be|p))|c(?:h(?:a(?:k(?:(?:l[ai]|un\n)k|a))?|o(?:mp(?:ity|le)|[no]k|p)|i(?:ka(?:klak)?|[mr]?p)|u(?:kkunk|nka?|ga|h)|e\ne(?:om)?p)|l(?:a(?:tt(?:er|a)|n[gk]|ck|ka|p)|i(?:[cn]? k|p)|o(?:i?nk|mp)|unk)|r(\n?:u(?:nch(?:le)?|gazunch)|ash)|a[kw]|ook)|z(?:i(?:k(?:k(?:ik|a)|a)?|z(?:(?:azi|z\na)k)?|(?:di)?t|ngo|ch|p)|o(?:o(?:[ot]|ka)|w(?:nt|m)|ck|t)|a(?:[pt]|(?:zi)?k|chit\nty)|w(?:ee(?:[nt]|ch)|[io]t)|(?:glu|ni)k|litz|unch|eem)|w(?:h(?:o(?:osh|mp)|i(?:\nrr|sk)|a[kp]|eeah)|i(?:nk(?:ity)?|z)|a(?:[kp]|mp?)|ee(?:oooo)?|unk(?:ada)?|on[gk\n])|y(?:a(?:(?:a(?:ug|c)|hha)h|(?:gga)?k|rgh?)|u(?:k(?:kle)?|g)|i(?:ng|p)|eech)|h\n(?:u(?:ff(?:le|a)?|sh(?:le)?|m)|a(?:k(?:kle)?|ah|r)?|o(?:nk|ot)?|ee|ic|m)|r(?:o(\n?:om(?:ba)?|w[mr]|r)|umb(?:oom|le)|r(?:rrrr|ip)|a(?:wg)?h|ipf?)|a(?:r(?:g(?:le|h\n)?|argh)|h(?:weeeeee|h)|a(?:ak|rh)|ling|ooga|c?k|gh)|o(?:o(?:[fht]|o(?:[hm]|kk)|\nn[kt]|ga|mp)|g(?:gock|h)|nnnnnghk)|v(?:o(?:o(?:fen|m)|w[mn])|r(?:oo(?:o?n|m)|een\n)|ar?room)|u(?:m(?:p[fh]|ble)|(?:nkli)?k|[lr]p|gh)|m(?:a(?:bbit|m?p)|impah|uffle\n|mm)|e(?:c(?:ch|k)|ech)|l(?:aflatch|eddle)|(?:q[uw]ac|no)k|jugarum|inkle) ;./uniq/uniq-timeouted_10-backup.txt
+(Signature keyId=my key,algorithm=hmac-sha256,headers=date,signature=[0-9a-zA-Z/+]{43}=);./uniq/uniq-rest3_1_24-backup.txt
+(sites|spaces)\.[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}\.json;./uniq/uniq-timeouted2_6_5-backup.txt
+(src=(/assets/app\.head\.[a-f0-9]{64}\.js));./uniq/uniq-rest3_4_11-backup.txt
+(src=(main\.[a-z0-9]{0,32}\.js));./uniq/uniq-rest3_8_26-backup.txt
+(src=https://cdn\.example\.com/assets/app\.head\.[a-f0-9]{64}\.js);./uniq/uniq-rest3_3_13-backup.txt
+(sub)[_]([\w-]{22});./uniq/uniq-between1-rest_16_23-backup.txt
+(trace_id:\w{32});./uniq/uniq-rest3_5_13-backup.txt
+.*(/objects/[0-9a-f]{2}/[0-9a-f]{38})$;./uniq/uniq-between-rest_26_3.txt
+.*(\w{8}-\w{4}-\w{4}-\w{4}-\w{12});./uniq/uniq-between-rest_23_13.txt
+.*/#(.{0,255})#/$;./uniq/interesting_13-merged.txt
+.*/(objects/[0-9a-f]{2}/[0-9a-f]{38})$;./uniq/uniq-between-rest_28_40.txt
+.*/(objects/pack/pack-[0-9a-f]{40}\.pack)$;./uniq/uniq-between-rest_18_31-merged.txt
+.*[\t\n\r ]?(([0-9]{1,19})=([0-9]{4})([0-9]{3})(.*)\?).*;./uniq/uniq-rest3_3_27.txt
+.*[Cc]{2,3}(\d{5,})[CcAa]{3,6}(\d{5,})[CcAa]{2,3}(\d{5,})[Cc]{2,3}.*;./uniq/uniq-timeouted2_6_6.txt
+.*bind to ([0-9a-f]{40}).*;./uniq/uniq-between1-rest_15_53.txt
+.*boundary=([\d\w]{70});./uniq/uniq-between-rest_31_32.txt
+.*'skia_revision': '([0-9a-fA-F]{2,40})'.*;./uniq/uniq-between1-rest_12_11-merged.txt
+.*The zone with id '[0-9a-zA-Z-]{36}' was not found.*;./uniq/uniq-between1-rest_15_68.txt
+.\w{40} ([^()]+)($| \(.*\)$);./uniq/uniq-rest3_1_14.txt
+.{1,100}[.,?!:]|.{1,100}\s;./uniq/uniq-rest3_3_16.txt
+.{1,1019};./uniq/unique-above-rest_8-backup.txt
+.{1,1024};./uniq/unique-above-rest_9-backup.txt
+.{1,1600};./uniq/unique-above-rest_10-backup.txt
+.{1,2047};./uniq/unique-above-rest_11-backup.txt
+.{1,32767};./uniq/unique-above-rest_12-backup.txt
+.{1,50}[\w\=];./uniq/uniq-between2-rest_11_19.txt
+.{1,7168};./uniq/unique-above-rest_13-backup.txt
+.{1,8191};./uniq/unique-above-rest_14-backup.txt
+.{10,128}$;./uniq/uniq-between-rest_32_44-backup.txt
+.{191}(.{16})(.{16});./uniq/uniq-between1-rest_16_69.txt
+.{60};./uniq/uniq-between1-rest_11_4.txt
+.{71,}\n;./uniq/uniq-between-rest_32_2-merged.txt
+.{8}-.{4}-.{4}-.{12}-id;./uniq/uniq-timeouted_53.txt
+.{94};./uniq/uniq-between1-rest_20_12.txt
+.+\n([^\n]{30,70})$;./uniq/uniq-between-rest_18_41.txt
+.sprockets-manifest-[a-f0-9]{32}.json;./uniq/uniq-between-rest_12_13.txt
+.state 'test',[\n\r]* {8}url: '\/test'[\n\r]* {8}templateUrl: 'home\/test.tpl.html'[\n\r]* {8}controller: 'TestCtrl'[\n\r];./uniq/uniq-between-rest_32_3-merged.txt
+.state 'test.test',[\n\r]* {8}url: '\/test'[\n\r]* {8}templateUrl: 'home\/test.tpl.html'[\n\r]* {8}controller: 'TestCtrl'[\n\r];./uniq/uniq-timeouted2_6_7.txt
+.when '\/test',[\n\r]* {8}templateUrl: 'home\/test.tpl.html'[\n\r]* {8}controller: 'TestCtrl'[\n\r]* {8}controllerAs: 'test'[\n\r];./uniq/uniq-rest3_9_13.txt
+/(.*)/(objects/pack/pack-[0-9a-f]{40}\.pack)$;./uniq/uniq-between-rest_3_1-merged.txt
+/hello\n.{40};./uniq/uniq-timeouted2_4_9-merged.txt
+/nifi-api/connections/[a-f0-9\-]{36};./uniq/uniq-between-rest_32_12-backup.txt
+/nifi-api/controller-services/[a-f0-9\-]{36};./uniq/uniq-between-rest_35_28-backup.txt
+/nifi-api/controller-services/[a-f0-9\-]{36}/state;./uniq/uniq-between1-rest_18_8-backup.txt
+/nifi-api/controller-services/node/[a-f0-9\-]{36}/references;./uniq/uniq-between-rest_32_27-backup.txt
+/nifi-api/flow/connections/[a-f0-9\-]{36}/status;./uniq/uniq-between1-rest_14_18-backup.txt
+/nifi-api/flow/output-ports/[a-f0-9\-]{36}/status;./uniq/uniq-between-rest_28_43-backup.txt
+/nifi-api/flow/process-groups/(?:(?:root)|(?:[a-f0-9\-]{36}))/controller-services;./uniq/uniq-between-rest_28_26-backup.txt
+/nifi-api/flow/processors/[a-f0-9\-]{36}/status;./uniq/uniq-between1-rest_11_24-backup.txt
+/nifi-api/flow/processors/[a-f0-9\-]{36}/status/history;./uniq/uniq-between-rest_35_26-backup.txt
+/nifi-api/flow/remote-process-groups/[a-f0-9\-]{36}/status;./uniq/uniq-between-rest_31_15-backup.txt
+/nifi-api/flowfile-queues/[a-f0-9\-]{36}/drop-requests;./uniq/uniq-between1-rest_19_71-backup.txt
+/nifi-api/flowfile-queues/[a-f0-9\-]{36}/listing-requests/[a-f0-9\-]{36};./uniq/uniq-between-rest_31_39-backup.txt
+/nifi-api/input-ports/[a-f0-9\-]{36}/run-status;./uniq/uniq-between-rest_27_41-backup.txt
+/nifi-api/output-ports/[a-f0-9\-]{36};./uniq/uniq-between-rest_3_35-backup.txt
+/nifi-api/output-ports/[a-f0-9\-]{36}/run-status;./uniq/uniq-between-rest_17_13-backup.txt
+/nifi-api/process-groups/(?:(?:root)|(?:[a-f0-9\-]{36}))/controller-services;./uniq/uniq-between-rest_13_20-merged.txt
+/nifi-api/process-groups/(?:(?:root)|(?:[a-f0-9\-]{36}))/funnels;./uniq/uniq-between1-rest_10_23-backup.txt
+/nifi-api/process-groups/(?:(?:root)|(?:[a-f0-9\-]{36}))/input-ports;./uniq/uniq-between-rest_19_13-merged.txt
+/nifi-api/process-groups/(?:(?:root)|(?:[a-f0-9\-]{36}))/output-ports;./uniq/uniq-between1-rest_16_40.txt
+/nifi-api/process-groups/(?:(?:root)|(?:[a-f0-9\-]{36}))/processors;./uniq/uniq-between1-rest_11_38.txt
+/nifi-api/process-groups/(?:(?:root)|(?:[a-f0-9\-]{36}))/templates;./uniq/uniq-between-rest_15_23-backup.txt
+/nifi-api/process-groups/(?:(?:root)|(?:[a-f0-9\-]{36}))/variable-registry;./uniq/uniq-between1-rest_18_16.txt
+/nifi-api/processors/[a-f0-9\-]{36};./uniq/uniq-between-rest_35_15-backup.txt
+/nifi-api/processors/[a-f0-9\-]{36}/diagnostics;./uniq/uniq-between-rest_32_14-backup.txt
+/nifi-api/processors/[a-f0-9\-]{36}/run-status;./uniq/uniq-between-rest_21_28-backup.txt
+/nifi-api/provenance/[a-f0-9\-]{36};./uniq/uniq-between-rest_19_40-backup.txt
+/nifi-api/remote-process-groups/[a-f0-9\-]{36}/run-status;./uniq/uniq-between1-rest_15_44-backup.txt
+/nifi-api/reporting-tasks/[a-f0-9\-]{36};./uniq/uniq-between-rest_5_14-backup.txt
+/nifi-api/reporting-tasks/[a-f0-9\-]{36}/run-status;./uniq/uniq-between-rest_27_39-backup.txt
+/nifi-api/tenants/user-groups/[a-f0-9\-]{36};./uniq/uniq-between-rest_11_19-backup.txt
+/nifi-api/versions/process-groups/(?:(?:root)|(?:[a-f0-9\-]{36}));./uniq/uniq-between-rest_23_4-backup.txt
+/rusqbins/((?i)[A-F0-9]{8}\-[A-F0-9]{4}\-4[A-F0-9]{3}\-[89AB][A-F0-9]{3}\-[A-F0-9]{12})/requests/?$;./uniq/uniq-between-rest_20_18-backup.txt
+/templates/[a-f0-9\-]{36}/download;./uniq/uniq-between1-rest_16_36-backup.txt
+/world\n.{40};./uniq/uniq-timeouted2_4_5.txt
+::c([ad]{1,704})r$;./uniq/uniq-between-rest_34_13.txt
+:[a-z0-9A-Z_]{1,50}:;./uniq/uniq-between-rest_23_33-backup.txt
+:HasExtendedXMP\s*(=\s*[']|>)(\w{32});./uniq/uniq-rest3_4_19-backup.txt
+@\s{0,5}[A-Za-z]{1,13}\s{0,5}\{\s{0,5}[^@{}=,\s]{0,100}\s{0,5},[\s\S]*\};./uniq/uniq-rest3_3_19.txt
+[ =]{25}={50}[ =]{25};./uniq/uniq-between-rest_11_1.txt
+[&#]([0-9A-Za-z]{10,48})[&#];./uniq/uniq-between1-rest_15_66-merged.txt
+[\d\D]{100};./uniq/uniq-between1-rest_11_1.txt
+[\d-]{10}T[\d:+]{14};./uniq/uniq-between-rest_31_28.txt
+[\s\S]{1,8192};./uniq/unique-above-rest_15-backup.txt
+[\s\S]{100};./uniq/uniq-between1-rest_15_3.txt
+[\w\./]{3,10} +[\w\./]{1,400} +[\w\./]{1,20}.+;./uniq/uniq-between-rest_6_5.txt
+[\w\d]{64};./uniq/uniq-between1-rest_15_71.txt
+[\w]{64};./uniq/uniq-between-rest_4_35.txt
+[\x20\x20]\x20.{6}(?:RSA1|RSA2|DSS1|DSS2).{20};./uniq/uniq-error_30.txt
+[^\x00-\x21\xff]{1,250}$;./uniq/uniq-between-rest_1_33.txt
+[-_.0-9A-Za-z]{1,64}@[-_0-9A-Za-z]{1,255}[-_.0-9A-Za-z]{1,255};./uniq/uniq-between-rest_23_24-backup.txt
+[0-9]{10}_[a-zA-Z0-9]{34,};./uniq/uniq-between-rest_7_19.txt
+[0-9]{64};./uniq/uniq-between-rest_35_41.txt
+[0-9a-f]{128};./uniq/uniq-between1-rest_12_6.txt
+[0-9a-f]{32}(-data)?\.[0-9a-z]+;./uniq/uniq-between1-rest_20_25.txt
+-[0-9a-f]{32}.css$;./uniq/uniq-between1-rest_12_41-backup.txt
+[0-9a-f]{40} \d+ (\d+);./uniq/uniq-between-rest_16_25.txt
+[0-9a-f]{40} refs\/notes\/;./uniq/uniq-between1-rest_11_54.txt
+[0-9a-f]{64};./uniq/uniq-between-rest_22_31.txt
+[0-9a-f]{8}([0-9a-f]{8}).{24}([0-9a-f]{4})$;./uniq/uniq-between-rest_15_36.txt
+[0-9a-f]{8}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{12};./uniq/uniq-timeouted_15.txt
+[0-9a-f]{8}-[0-9a-f-]{27};./uniq/uniq-between1-rest_12_63.txt
+[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f??]{4}-[0-9a-f]{12}$;./uniq/uniq-between-rest_10_37.txt
+[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}.+;./uniq/uniq-between1-rest_19_15.txt
+[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[8,9,a,b][0-9a-f]{3}-[0-9a-f]{12};./uniq/uniq-between1-rest_13_4.txt
+[0-9a-f]{8}\-?[0-9a-f]{4}\-?4[0-9a-f]{3}\-?[89ab][0-9a-f]{3}\-?[0-9a-f]{12};./uniq/uniq-timeouted2_6_8.txt
+[0-9a-fA-F]{8}-?[0-9a-fA-F]{4}-?[0-9a-fA-F]{4}-?[0-9a-fA-F]{4}-?[0-9a-fA-F]{12};./uniq/uniq-timeouted_16.txt
+[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12};./uniq/uniq-between-rest_14_40.txt
+[13][a-km-zA-HJ-NP-Z1-9]{25,34};./uniq/uniq-between-rest_19_10.txt
+[1-9a-km-zA-LMNP-Z]{51,111};./uniq/uniq-between-rest_11_21.txt
+[a-f0-9]{60,}$;./uniq/uniq-between-rest_16_38.txt
+[a-f0-9]{64};./uniq/uniq-between-rest_18_22.txt
+[a-f0-9]{8}-?[a-f0-9]{4}-?[a-f0-9]{4}-?[a-f0-9]{4}-?[a-f0-9]{12};./uniq/uniq-timeouted_56.txt
+[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12};./uniq/uniq-timeouted_57.txt
+[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}.+;./uniq/uniq-rest3_2_7.txt
+[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[8|9|aA|bB][a-f0-9]{3}-[a-f0-9]{12};./uniq/uniq-between-rest_16_32.txt
+[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12};./uniq/uniq-between-rest_19_1.txt
+[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}\.[a-z]+;./uniq/uniq-between-rest_21_31.txt
+[a-f0-9]{8}[a-f0-9]{4}4[a-f0-9]{3}[89ab][a-f0-9]{3}[a-f0-9]{12};./uniq/uniq-timeouted_17.txt
+[a-fA-F0-9]{128};./uniq/uniq-between-rest_24_19.txt
+[A-Fa-f0-9]{128};./uniq/uniq-rest3_2_16.txt
+[A-Fa-f0-9]{64};./uniq/uniq-between-rest_24_21.txt
+[a-fA-F0-9]{64};./uniq/uniq-between1-rest_13_8.txt
+[a-z]{3,4} ([a-z]{3}) (\d{1,2}) (\d{1,2}):(\d{2}):(\d{2}) ([+-]\d{2}:?\d{2}) (\d{4});./uniq/uniq-between-rest_31_3.txt
+[A-Z]{64};./uniq/uniq-between-rest_25_26.txt
+[a-z]{64};./uniq/uniq-between-rest_30_31.txt
+[A-Z]+ [0-9A-Za-z/\s]{2,45} - [A-Z][a-z]+ 20[0-9]{2}.*;./uniq/uniq-between1-rest_15_1-backup.txt
+[a-z_][a-z0-9_]{2,30}$;./uniq/uniq-between-rest_20_16-backup.txt
+[a-z0-9._%+-]{1,64}@(?:[a-z0-9-]{1,63}\.){1,125}[a-z]{2,63};./uniq/merged-bound-edited-unique_95-backup.txt
+[a-z0-9A-Z]{64};./uniq/uniq-between1-rest_14_47.txt
+[A-Za-z]{64};./uniq/uniq-between-rest_11_15.txt
+[A-Za-z0-9]{1,1024};./uniq/unique-above-rest_16-backup.txt
+[a-zA-Z0-9-_\.]{3,64}$;./uniq/uniq-between1-rest_19_8-backup.txt
+[idm]_\w{32};./uniq/uniq-between-rest_26_14.txt
+\$([A-Za-z0-9]{16,64})$;./uniq/uniq-rest3_5_28.txt
+\$?([\w\d]{40})(~|=)([\w\d]{1,19}) ([\w-]+);./uniq/uniq-between-rest_25_38.txt
+\$2a\$\d+\$(.{23});./uniq/uniq-best_58.txt
+\$31\$(\d\d?)\$(.{43});./uniq/uniq-rest3_6_1-backup.txt
+\$5\$[A-z\d\./]{0,16}\$[A-z\d\./]{43}$;./uniq/uniq-rest3_6_2-backup.txt
+\$6\$[A-z\d\./]{0,16}\$[A-z\d\./]{86}$;./uniq/uniq-rest3_6_3-backup.txt
+\$routeProvider[\n\r]* {6}.when '\/test',[\n\r]* {8}templateUrl: 'home\/test.tpl.html'[\n\r]* {8}controller: 'TestCtrl'[\n\r]* {8}controllerAs: 'test'[\n\r];./uniq/uniq-rest3_6_4-backup.txt
+\( `name` = (:[0-9a-z]{32}) AND `age` = (:[0-9a-z]{32}) \);./uniq/uniq-between1-rest_19_22-backup.txt
+\*{27} \d\. row \*{27};./uniq/uniq-rest3_6_11-backup.txt
+\.(part\d+|r\d+|rar|0+|0*10?|zipr\d{2,3}|zipx?)(\s*\.rar)*($|[ )\]-])|[a-f0-9]{32}\.[1-9]\d{1,2}.*\(\d+\/\d{2,}\)$;./uniq/uniq-rest3_5_15-backup.txt
+\.*tmnsessionid\%3D(\w{32})\.*;./uniq/uniq-between1-rest_16_22-backup.txt
+\.{100,};./uniq/uniq-between1-rest_16_44-backup.txt
+\/([a-zA-Z0-9_-]{7,14})\/([a-zA-Z0-9_-]{7,14})\.(.{1,4})};./uniq/uniq-between1-rest_16_24-backup.txt
+\/.{1,32}\/.{3};./uniq/uniq-between1-rest_16_2.txt
+\/\* -{30} [$\w]+ -{30} \*\/;./uniq/uniq-between1-rest_15_50-backup.txt
+\/assets\/ixti-[a-f0-9]{32}.gif;./uniq/uniq-between-rest_6_20-backup.txt
+\/css\/style.[a-f0-9]{32}.css;./uniq/uniq-between-rest_19_21-backup.txt
+\/fake-backend\/employees\/.{36}$;./uniq/uniq-between1-rest_10_4-backup.txt
+\/id\/(\S{40});./uniq/uniq-best_55-backup.txt
+\/media\/css\/[u|s]\.[a-f0-9]{32}\.[0-9]{10}\.css;./uniq/uniq-rest3_2_18-backup.txt
+\/static\/res\/[a-z\d]{32}\.;./uniq/uniq-between-rest_4_29-backup.txt
+\:\-{2056,};./uniq/unique-rest_11-merged.txt
+\[%(\s*)(source|_bip|_client|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})#[a-zA-Z0-9_\-#:.$@*[\],?()]*(\s*)%\];./uniq/uniq-rest3_6_14-backup.txt
+\[%(\s*)(source|_bip|_client|\w*\.\w*|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})#[a-zA-Z0-9_\-#:.$@*[\],?()]*(\s*)%\];./uniq/uniq-rest3_6_15-backup.txt
+\[(https?|news|ftp|mailto|gopher|irc):\/\/[^\]\| ]{4,1500}([\| ].*)?\];./uniq/uniq-above-rest_1-merged.txt
+\[.*\]|Y{2,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS;./uniq/uniq-timeouted2_6_10-backup.txt
+\[[\d-]{10} [\d:.]{12}] \[warn] log from a renderer process;./uniq/uniq-between-rest_30_28-backup.txt
+\[[\d-]{10} [\d:.]{12}] \[warn] Log from nw.js;./uniq/uniq-between-rest_21_10-backup.txt
+\[\n\s*[^\[\{\}\]]{0,100}\];./uniq/uniq-best_5.txt
+\[color=(?:#[\da-fA-F]{3}|#[\da-fA-F]{6}|[A-Za-z]{1,20}|rgb\(\d{1,3}, ?\d{1,3}, ?\d{1,3}\))\]\s*\[/color\];./uniq/uniq-between-rest_38_1-backup.txt
+\{\{([A-Za-z0-9 ]){0,99}\}\};./uniq/uniq-between1-rest_20_18-backup.txt
+\-{54}.+\-{54};./uniq/uniq-between-rest_38_2-merged.txt
+\{gfm-extraction-([0-9a-f]{32})\};./uniq/uniq-between-rest_15_27-backup.txt
+\A((\d{1,2}[-\/]\d{1,2}[-\/]\d{4})|(\d{4}[-\/]\d{1,2}[-\/]\d{1,2})|(\d{1,2}-[A-Za-z]{3,4}-\d{4})|([A-Za-z]{3,4} +\d{1,2} \d{2,4}))(T| +)(\d{1,2}:\d{2}(:\d{2})?(\.\d+)? ?(PM|AM|pm|am)?((-|\+)\d{2}:?\d{2})?Z?)\z;./uniq/uniq-between-rest_17_10-backup.txt
+\A(?:[-]{50}|Content-Type:[ ]*message/rfc822);./uniq/uniq-between-rest_18_1-backup.txt
+\A([0-9a-f]{128})\ +[!-~]+\n\z;./uniq/uniq-between-rest_21_37-backup.txt
+\A(\w+) (.{1,250}) ([0-9]+) ([0-9]+) ([0-9]+)\r\n;./uniq/uniq-between-rest_25_28-backup.txt
+\A(sha256:)?[0-9a-f]{64}\z;./uniq/uniq-between1-rest_11_6-backup.txt
+\A.{2080}Microsoft Excel 5.0 Worksheet;./uniq/unique-rest_15-merged.txt
+\A.{60,}\n\Z;./uniq/uniq-rest3_5_9-backup.txt
+\A/images/email.[a-f0-9]{32}.png\z;./uniq/uniq-between1-rest_18_32-backup.txt
+\A[^:]+:\$2[aby]\$\d{2}\$.{53}\z;./uniq/uniq-between-rest_38_10-backup.txt
+\A[0-9a-f]{128}\z;./uniq/uniq-between-rest_32_43-backup.txt
+\A[0-9a-zA-Z\=\-\+\/]{138}\Z;./uniq/uniq-between1-rest_13_44-backup.txt
+\A[a-f0-9]{60}.html\z;./uniq/uniq-between-rest_24_15-backup.txt
+\A[a-v0-9]{5,1024}\Z;./uniq/unique-above-rest_18-backup.txt
+\A[a-z0-9]{64}\z;./uniq/uniq-between-rest_4_8-backup.txt
+\A[A-Za-z0-9\+/]{342}==\z;./uniq/uniq-between1-rest_13_33-merged.txt
+\A[A-Za-z0-9\+\/]{342}==\z;./uniq/uniq-between-rest_2_20.txt
+\A[a-zA-Z0-9][a-zA-Z0-9\-\\_\.]{2,34}[a-zA-Z0-9]\z;./uniq/uniq-between-rest_18_21.txt
+\A\$(.{1,79})\*([0-9A-F]{2})\r\n\Z;./uniq/uniq-between-rest_38_12-merged.txt
+\A\$[0-9a-z]{2}\$[0-9]{2}\$[A-Za-z0-9\.\/]{53}\z;./uniq/uniq-between-rest_38_14-backup.txt
+\A\$2(a?)\$([0-9]{2})\$\n\t\t\t\t([./A-Za-z0-9]{22})([./A-Za-z0-9]{31})\z;./uniq/uniq-between-rest_38_18.txt
+\A\$2[ayb]\$[0-9]{2}\$[A-Za-z0-9\.\/]{53}\z;./uniq/uniq-between-rest_38_20-backup.txt
+\A\$2a?\$\d\d\$[./0-9A-Za-z]{53};./uniq/uniq-between-rest_38_22-backup.txt
+\A\$5\$[a-zA-Z0-9./]{16}\$[a-zA-Z0-9./]{43}\z;./uniq/uniq-between-rest_38_24-backup.txt
+\A\$5\$0123456789abcdef\$[a-zA-Z0-9./]{43}\z;./uniq/uniq-between-rest_38_25-backup.txt
+\A\$5\$rounds=1234\$salty\$[a-zA-Z0-9./]{43}\n\z;./uniq/uniq-between-rest_38_26-backup.txt
+\A\$6\$[a-zA-Z0-9./]{16}\$[a-zA-Z0-9./]{86}\n\z;./uniq/uniq-between-rest_38_27-backup.txt
+\A\$6\$[a-zA-Z0-9./]{16}\$[a-zA-Z0-9./]{86}\z;./uniq/uniq-between-rest_38_28-backup.txt
+\A\$6\$0123456789abcdef\$[a-zA-Z0-9./]{86}\z;./uniq/uniq-between-rest_38_29-backup.txt
+\A\$6\$rounds=1000\$[a-zA-Z0-9./]{16}\$[a-zA-Z0-9./]{86}\z;./uniq/uniq-between-rest_38_30-backup.txt
+\A\$6\$rounds=5678\$[a-zA-Z0-9./]{16}\$[a-zA-Z0-9./]{86}\z;./uniq/uniq-between-rest_38_31-backup.txt
+\A\$6\$rounds=5678\$salted\$[a-zA-Z0-9./]{86}\z;./uniq/uniq-between-rest_38_32-backup.txt
+\A\$6\$salted\$[a-zA-Z0-9./]{86}\z;./uniq/uniq-between-rest_38_33-backup.txt
+\A\/attachment\/([a-f0-9\-]{36})\/(.*);./uniq/uniq-between1-rest_19_16-backup.txt
+\A\{.*\}([0-9a-fA-F]{32})([!-~]{32})\z;./uniq/uniq-between1-rest_18_28-merged.txt
+\A\n                \s+ (\d+) \s+ ([A-Fa-f0-9]{40})\n            ;./uniq/uniq-between-rest_17_1-backup.txt
+\A10{900}9{100}\z;./uniq/uniq-between-rest_28_8-backup.txt
+\A10{99}1\z;./uniq/uniq-between1-rest_10_27-backup.txt
+\Adelete (.{1,250})\s?([0-9]*)\r\n;./uniq/uniq-between-rest_4_36.txt
+\AEJ\[(\d):([A-z0-9+=/]{44}):([A-z0-9+=/]{32}):(.+)\\]\z;./uniq/uniq-between-rest_38_37-backup.txt
+\AEJ\[(\d):([A-Za-z0-9+=/]{44}):([A-Za-z0-9+=/]{32}):(.+)\\]\z;./uniq/uniq-between-rest_38_38-backup.txt
+\Aget (.{1,250})\s*\r\n;./uniq/uniq-between-rest_27_13-merged.txt
+\Aobjects/[0-9a-f]{2}/[0-9a-f]{38}\z;./uniq/uniq-between-rest_28_29-backup.txt
+\Aobjects/pack/pack-[0-9a-f]{40}\.pack\z;./uniq/uniq-between-rest_22_15-backup.txt
+\Aset (.{1,250}) ([0-9]+) ([0-9]+) ([0-9]+)\r\n;./uniq/uniq-between-rest_33_10-merged.txt
+\ASprdAuth apiKey=test, data=post https:\/\/api.spreadshirt.net\/api\/v1\/orders [0-9]+, sig=[0-9a-f]{40}, sessionId=abcd-1234\Z;./uniq/uniq-rest3_5_10-backup.txt
+\d[ \d-]{15,22};./uniq/uniq-timeouted2_4_3-merged.txt
+\d{17}_foo_\d{14}_00000.warc.open;./uniq/uniq-between-rest_34_26.txt
+\n(X-Habeas-SWE-1:.{0,512}X-Habeas-SWE-9:[^\n]{0,64}\n);./uniq/uniq-timeouted2_4_11-merged.txt
+\n[-=]{3,80}\n;./uniq/uniq-between-rest_35_40-merged.txt
+\n\n\*\*\*.+([a-z0-9]{32}).+\*\*\*$;./uniq/uniq-between1-rest_20_10-backup.txt
+\n\s{25,26};./uniq/uniq-timeouted2_4_6-backup.txt
+\n\s{25};./uniq/uniq-best_44-backup.txt
+\nCreating migrations.\d{4}-\d{2}-\d{2}-\d{6}_hello.up.sql\nCreating migrations.\d{4}-\d{2}-\d{2}-\d{6}_hello.down.sql\n        ;./uniq/uniq-between-rest_27_26-backup.txt
+\r\n\r\n\/\/ This works in non-strict mode(?:.){1,304};./uniq/uniq-rest3_3_8-merged.txt
+\s([VASFXBDEIL\.]{6})\s(\S{3,20})\s;./uniq/uniq-between-rest_28_42-backup.txt
+\s*\*{3}[0-9a-f\-]{36}\*{3}\s*;./uniq/uniq-between-rest_38_40.txt
+\S{100,};./uniq/uniq-rest3_8_27.txt
+\s{255,};./uniq/uniq-between-rest_21_11.txt
+\S{50};./uniq/uniq-between1-rest_15_25.txt
+\S{8}-\S{4}-\S{4}-\S{4}-\S{12};./uniq/uniq-timeouted2_6_13.txt
+\s+inet (\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) netmask (([0-9a-f]){1,8}) broadcast (\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3});./uniq/uniq-between-rest_1_6.txt
+^         :bar => b{97}...\n;./uniq/uniq-rest3_3_23-backup.txt
+^         :foo => a{97}...\n;./uniq/uniq-rest3_7_25-backup.txt
+^      [0-9a-f]{64}$;./uniq/uniq-between-rest_24_13-backup.txt
+^  (.{40,}) - (can be restored)$;./uniq/uniq-between-rest_24_22-backup.txt
+^  (.{40,}) - (OK|NOT FOUND|CORRUPT|FOUND: (.*))$;./uniq/uniq-between1-rest_12_51-backup.txt
+^ (.{30}) .* (.{30}) $;./uniq/uniq-best_42-backup.txt
+^ ([^/]+) / (\d+) / (-?\d+) / (.*) / ([a-fA-F0-9]{32}) (?: / (sh\.\d+\.\d+))? $;./uniq/uniq-between-rest_2_42-backup.txt
+^ ([^/]+) / (\d+) / (-?\d+) / ([^/]*) / ([a-fA-F0-9]{32}) (?: / (sh\.\d+\.\d+))? $;./uniq/uniq-between1-rest_16_57.txt
+^ (\w{10})    # product ID\n          (\w)        # processing stage flag\n          (\w{3})     # originator ID\n          (\d{8}) _   # start_day\n          (\d{6}) _   # start_time\n          (\d{8})     # duration\n          (\w)        # phase id\n          (\d{3}) _   # cycle number within phase\n          (\d{5}) _   # relative orbit number within cycle\n          (\d{5}) _   # absolute orbit number\n          (\d{4})     # product file counter\n          \. (\w\w)   # satellite ID\n       ;./uniq/uniq-between1-rest_10_45-backup.txt
+^ => appveyor_artifacts.py [\.]{15,79} [\d]{5,6} bytes\n$;./uniq/uniq-between1-rest_14_61-backup.txt
+^((?:@[^/]{1,100}\/)?[^@]{1,100})(?:@(.{1,100}))?$;./uniq/uniq-between1-rest_16_73.txt
+^((?:[\w\-.!~*|\/?=+\$,%#]|&amp){0,100})$;./uniq/uniq-rest3_6_26-backup.txt
+^(([^\/:@&_\*]+)\.)[^\/:@&_\*\-\.]{2,63}$;./uniq/uniq-between-rest_32_6-backup.txt
+^(([a-z]{2,3})(-([A-Z][a-z]{3}))?(-([A-Z]{2}|[0-9]{3}))?)((-([a-zA-Z0-9]{5,8}|[0-9][a-zA-Z0-9]{3}))*)$|^(root)$;./uniq/uniq-between1-rest_17_13-backup.txt
+^(([a-zA-Z][-a-zA-Z0-9_]{0,255})|(([a-z][a-z0-9_-]{0,255}):)+([a-zA-Z][-a-zA-Z0-9_]{0,255}))$;./uniq/uniq-between1-rest_16_46-merged.txt
+^((\(\d{2,3}\))|(\d{3}\-))?(\(0\d{2,3}\)|0\d{2,3}-)?[1-9]\d{6,7}(\-\d{1,4})?$;./uniq/uniq-between1-rest_12_52.txt
+^((`[\w-]{1,64}`|[\w-]{1,64})\.)*(`[\w-]{1,64}`|[\w-]{1,64})( (asc|desc))?$;./uniq/uniq-between-rest_30_41.txt
+^((file|folder)\.[0-9a-f]{16}\.[0-9A-F]{16}!\d+|folder\.[0-9a-f]{16})$;./uniq/uniq-between-rest_21_33.txt
+^((https?|ftp):\/\/)(www\.)?\S{0,30}\.\S+$;./uniq/uniq-between-rest_2_25.txt
+^((sha256\.[a-f0-9]{64})|(sif\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}))$;./uniq/uniq-between-rest_29_36.txt
+^((www\.)?(\*\.)?[A-Za-z0-9]+([\-\.]{1,2}[A-Za-z0-9]+)*\.[A-Za-z]{2,40}(:[0-9]{1,40})?(\/.*)?)$;./uniq/uniq-between-rest_2_32.txt
+^(.){0,255}$;./uniq/uniq-between-rest_28_17.txt
+^(.){1,64}$;./uniq/uniq-between1-rest_12_76.txt
+^(.*)(?:ASPSESSIONID[a-zA-Z]{8}=[a-zA-Z]{24})(?:&(.*))?$;./uniq/uniq-between-rest_14_10.txt
+^(.*)(?:phpsessid=[0-9a-zA-Z]{32})(?:&(.*))?$;./uniq/uniq-between1-rest_11_27.txt
+^(.*)-(\d+)-g([a-fA-F0-9]{7,40})(-dirty)?$;./uniq/uniq-between1-rest_16_53.txt
+^(.*)/(\d+|%[^%]+%|env_\w+_[a-f0-9A-F]{32,})$;./uniq/uniq-between-rest_29_34.txt
+^(.*)_\d+_[A-Z0-9]{32}$;./uniq/uniq-rest3_1_16.txt
+^(.{0,256}):?[a-zA-Z][-_a-zA-Z0-9]{0,255}$;./uniq/uniq-between-rest_30_14.txt
+^(.{0,256}):?a-zA-Z][-_a-zA-Z0-9]{0,255}\[[-a-zA-Z0-9]{1,256}\]$;./uniq/uniq-best_65.txt
+^(.{0,76})\s;./uniq/uniq-between1-rest_19_17.txt
+^(.{2,250}) ([0-9]{4,10}) ([^,]{2,80}) *(,.+)?$;./uniq/uniq-timeouted2_4_8.txt
+^(.{23}Z)\t[a-g0-9\-]{36}\t((?s).*)\n;./uniq/uniq-between1-rest_11_8.txt
+^(.{255});./uniq/uniq-between-rest_36_2.txt
+^(.{3,1000})$;./uniq/uniq-between1-rest_17_33.txt
+^(.{3,50})$;./uniq/uniq-between-rest_22_27.txt
+^(.{30,70})\s;./uniq/uniq-between-rest_10_3.txt
+^(.{30}) (.{20}) (.{20}) (.+);./uniq/uniq-between-rest_22_12.txt
+^(.{330}[^\.]+\.).*;./uniq/uniq-between1-rest_10_30.txt
+^(.{345,}\w+)\W.*;./uniq/uniq-between1-rest_14_24.txt
+^(.{40,60})[ \t]*([\{[:\(]);./uniq/uniq-between-rest_20_1.txt
+^(.{5})\s([0-9#]{2})\s([A-Z#]{2})\s(L)\s(.{30})\s([YN])\s([YN])\s([YNCT])\s([YN])\s([YN])\s([YN])\s([YN])\s([YN])\s([YN])\s([0-9]{2})\s([YNC])\s([AOC]);./uniq/uniq-rest3_9_11.txt
+^(.{5})\s([0-9#]{2})\s([YN])\s([YN])\s([YN])\s([YN])\s([YN])\s([YN])\s([YN])\s([YN])\s([CF])\s([+A])\s([DMY\s])\s([0-9]{8})\s([0-9]{10})\s([YN])\s([YN])\s([YN])\s([0-9]{2})\s([YN])\s([YN])\s([YN])\s([YN])$;./uniq/uniq-between1-rest_20_68.txt
+^(.{50}\S*).*;./uniq/uniq-between2-rest_11_27.txt
+^(.{512});./uniq/uniq-between-rest_21_22.txt
+^(.{52,})\n+;./uniq/uniq-between-rest_6_16.txt
+^(.{60}).;./uniq/uniq-between-rest_14_29.txt
+^(.{64});./uniq/uniq-between-rest_5_2.txt
+^(.{990});./uniq/uniq-between1-rest_11_3.txt
+^(.+) Android Application - (.*) Build\/(.+)  - [0-9A-F]{8,8}-[0-9A-F]{4,4}-[0-9A-F]{4,4}-[0-9A-F]{4,4}-[0-9A-F]{12,12}$;./uniq/uniq-between-rest_33_44.txt
+^(.+)-([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12});./uniq/uniq-between-rest_36_11.txt
+^(:?(([a-zA-Z]{1})|([a-zA-Z]{1}[a-zA-Z]{1})|([a-zA-Z]{1}[0-9]{1})|([0-9]{1}[a-zA-Z]{1})|([a-zA-Z0-9][-_a-zA-Z0-9]{0,61}[a-zA-Z0-9]))\.)+([a-zA-Z]{2,13}|(xn--[a-zA-Z0-9]{2,30}))$;./uniq/uniq-between-rest_11_23.txt
+^(?:!([-0-9a-z.]{1,40})!)?([-.\w]{10,1200})$;./uniq/unique-rest_18-backup.txt
+^(?:(?:((?:`[\w-]{1,64}`|[\w-]{1,64}))(?:\.))?(`[\w-]{1,64}`|[\w-]{1,64})(?: (asc|desc))?)$;./uniq/uniq-rest3_1_3.txt
+^(?:(?:(?:00\s?|\+)44\s?|0)(?:1\d{8,9}|[23]\d{9}|7(?:[1345789]\d{8}|624\d{6})))$;./uniq/uniq-between1-rest_10_64.txt
+^(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))$;./uniq/uniq-between-rest_37_12.txt
+^(?:[01]{48}0(?:001|010|011|100|101)[01]{12}10[01]{62}|0{128})$;./uniq/uniq-timeouted_62.txt
+^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|0{8}-0{4}-0{4}-0{4}-0{12})$;./uniq/uniq-between-rest_34_23.txt
+^(?:[1-9][0-9]*/)?[a-f0-9]{40}$;./uniq/uniq-between1-rest_14_48.txt
+^(?:[a-z]{2}_)?[A-z0-9]{32}$;./uniq/uniq-between-rest_23_35.txt
+^(?:[a-z0-9]\.|[a-z0-9][-a-z0-9]{0,61}[a-z0-9]\.)*(?:com|edu|gov|int|mil|net|org|biz|info|name|museum|coop|aero|[a-z][a-z])$;./uniq/uniq-between1-rest_14_31.txt
+^(?:[a-z0-9A-Z]{32}|[-a-z0-9]{2,28}|\$[A-Z][A-Z0-9_]*)$;./uniq/uniq-between2-rest_11_38.txt
+^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|(222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11}|6[27][0-9]{14})$;./uniq/uniq-between-rest_20_28.txt
+^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|(222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11}|62[0-9]{14})$;./uniq/uniq-between2-rest_11_39.txt
+^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$;./uniq/uniq-timeouted_24.txt
+^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6011[0-9]{12}|3(?:0[0-5]|[68][0-9])[0-9]{11}|3[47][0-9]{13})$;./uniq/uniq-between-rest_19_26.txt
+^(?:eval|local-test_logging\.js|[a-f0-9]{40}\.js);./uniq/uniq-between1-rest_17_1.txt
+^(?:When )?I request a course with id ([a-f0-9]{24}) for an org with id ([a-f0-9]{24})$;./uniq/uniq-between1-rest_17_63.txt
+^(?:When )?I request a course with id ([a-f0-9]{24}) for that school$;./uniq/uniq-between-rest_28_22.txt
+^(?:When )?I request a section with id ([a-f0-9]{24}) for that org$;./uniq/uniq-between-rest_20_37.txt
+^(?:When )?I request a section with id ([a-f0-9]{24}) for that school$;./uniq/uniq-between1-rest_10_19.txt
+^(?:When )?I request a school with id ([a-f0-9]{24}) for that org$;./uniq/uniq-between1-rest_16_20.txt
+^(?:When )?I request a student with id ([a-f0-9]{24}) for an org with id ([a-f0-9]{24})$;./uniq/uniq-between-rest_36_8.txt
+^(?:When )?I request a student with id ([a-f0-9]{24}) for that org$;./uniq/uniq-between1-rest_19_55.txt
+^(?:When )?I request a student with id ([a-f0-9]{24}) for that school$;./uniq/uniq-between-rest_26_21.txt
+^(?:When )?I request a teacher with id ([a-f0-9]{24}) for that org$;./uniq/uniq-between1-rest_13_30.txt
+^(?:When )?I request a teacher with id ([a-f0-9]{24}) for that school$;./uniq/uniq-between-rest_4_1.txt
+^(?:When )?I request an org with id ([a-f0-9]{24})$;./uniq/uniq-between1-rest_17_76.txt
+^(?:When )?I request sections for an org with id ([a-f0-9]{24}) and a school with id ([a-f0-9]{24})$;./uniq/uniq-between-rest_26_34.txt
+^(?:When )?I request students for an org with id ([a-f0-9]{24}) and a school with id ([a-f0-9]{24})$;./uniq/uniq-between-rest_29_2.txt
+^(?:When )?I request students for an organization with id ([a-f0-9]{24})$;./uniq/uniq-between1-rest_17_3.txt
+^(?:When )?I request teachers for an org with id ([a-f0-9]{24}) and a school with id ([a-f0-9]{24})$;./uniq/uniq-between1-rest_12_34.txt
+^(?:When )?I request the current term for an org with id ([a-f0-9]{24}) and a school with id ([a-f0-9]{24})$;./uniq/uniq-between-rest_30_40.txt
+^(?i)([0-9a-h]{128})$;./uniq/uniq-between1-rest_17_68.txt
+^(?i)([0-9a-h]{64})$;./uniq/uniq-between-rest_25_44.txt
+^(?i)[0-9a-z\,\s\.\-]{1,255}$;./uniq/uniq-between-rest_10_15.txt
+^(?i)[0-9a-z\\_\.\-]{1,100}:[0-9]+$;./uniq/uniq-between-rest_17_12.txt
+^(?i:[a-z0-9.]{1,50})$;./uniq/uniq-between1-rest_10_55.txt
+^(?i:0x)?([a-fA-F0-9]{10,64})$;./uniq/uniq-between-rest_20_26.txt
+^([*]|[a-z0-9][a-z0-9\-]{0,62})(?:\.([*]|[a-z0-9][a-z0-9\-]{0,62}))*$;./uniq/uniq-between-rest_3_16.txt
+^([\+][0-9]{1,3}[ \.\-])?([\(]{1}[0-9]{2,6}[\)])?([0-9 \.\-\/]{3,20})((x|ext|extension)[ ]?[0-9]{1,4})?$;./uniq/uniq-between-rest_27_14.txt
+^([\w\-\./_=]){0,64}\*$;./uniq/uniq-between-rest_38_44.txt
+^([\w\-_+]+(?:\.[\w\-_+]+)*)@((?:[\w\-]+\.)*\w[\w\-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$;./uniq/uniq-between1-rest_12_7-backup.txt
+^([\w\-+]+(?:\.[\w\-+]+)*)@((?:[\w\-]+\.)*\w[\w\-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$;./uniq/uniq-between-rest_39_1.txt
+^([\w]+(?:\.[\w]+)*)@((?:[\w]+\.)*\w[\w]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$;./uniq/uniq-between-rest_6_37-merged.txt
+^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$;./uniq/uniq-between-rest_34_43.txt
+^([^\/:*<>|]{1,20}:)?(\$DCC2\$10240#[^\/:*<>|]{1,20}#)?[a-f0-9]{32}$;./uniq/uniq-rest3_10_5-backup.txt
+^([^\/:*<>|]{1,20}:)?[a-f0-9]{32}(:[^\/:*<>|]{1,20})?$;./uniq/uniq-rest3_4_22-backup.txt
+^([^\x20]{1,79})\x20(\x20|\x20)\x20([^\x20]*)(.)[^\x20]*\x20(.*)$;./uniq/uniq-error_13.txt
+^([^-]+)-([A-Za-z0-9+/=]{44,88})(\?[\x21-\x7E]*)*$;./uniq/uniq-between-rest_2_11-backup.txt
+^([0-9]{5})(.{64})\n;./uniq/uniq-between1-rest_10_31-backup.txt
+^([0-9]+) (.+) ([0-9a-fA-F]{40})(\s+[0-9]+|\s+-)?\t(.+)$;./uniq/uniq-between2-rest_11_18.txt
+^([0-9]+) (.+) ([0-9a-fA-F]{40})\t(.+)$;./uniq/uniq-between1-rest_18_36-backup.txt
+^([0-9a-f]{32,80})_[a-z]{2}$;./uniq/uniq-between-rest_17_17-merged.txt
+^([0-9a-f]{32})-([0-9a-f]{32})\.;./uniq/uniq-between1-rest_16_35-backup.txt
+^([0-9a-f]{40,})\s+refs/changes/[0-9a-f]{2}/([0-9]+)/(.+)$;./uniq/uniq-between-rest_11_11-backup.txt
+^([0-9a-f]{40})\s+(.+)$;./uniq/uniq-between1-rest_11_32-backup.txt
+^([0-9a-f]{64}) .+;./uniq/uniq-between1-rest_17_72-backup.txt
+^([0-9a-f]{8})([0-9a-f]{32})([0-9a-f]{256})$;./uniq/uniq-between-rest_34_5-backup.txt
+^([0-9a-f]{8})([0-9a-f]{32})([0-9a-f]{64})([0-9a-f]{66})$;./uniq/uniq-between-rest_15_39-backup.txt
+^([0-9a-fA-F]{40})\s+tags\/(.+)(\^[0-9]+|\~[0-9]+)$;./uniq/uniq-between-rest_19_9-backup.txt
+^([0-9a-z](?:[_-]?[0-9a-z]){1,35}|\+)/(devices)/([0-9a-z](?:[_-]?[0-9a-z]){1,35}|\+)/(events|up|down)([0-9a-z/]+)?$;./uniq/uniq-between1-rest_18_29-backup.txt
+^([ABC])\t([0-9]{1,20})\tCREATED\t(\S+)\t([0-9]{1,20})\t([+-]?[0-9]{1,20}|NONE)\t(\S+)\t(.*)$;./uniq/uniq-between1-rest_17_45.txt
+^([A-F,0-9]){512}$;./uniq/uniq-between-rest_3_14-backup.txt
+^([a-f0-9]{40}) refs/tags/(\S+)(\^\{\})?$;./uniq/uniq-between-rest_39_3-backup.txt
+^([a-f0-9]{64})$;./uniq/uniq-between-rest_20_36-backup.txt
+^([a-f0-9A-F]{32})(\+[0-9]+)?((\+[B-Z][A-Za-z0-9@_-]*)*)(\+A([a-f0-9A-F]{40})@([a-f0-9A-F]{8}))((\+[B-Z][A-Za-z0-9@_-]*)*)$;./uniq/uniq-between1-rest_11_36-backup.txt
+^([a-fA-F0-9][a-fA-F0-9]){1,32}$;./uniq/uniq-between1-rest_19_75-backup.txt
+^([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12})|([a-fA-F0-9]{8}[a-fA-F0-9]{4}[a-fA-F0-9]{4}[a-fA-F0-9]{4}[a-fA-F0-9]{12})$;./uniq/uniq-timeouted_63.txt
+^([a-z\d][a-z\d-]{0,61}[a-z\d])\.tumblr\.com/;./uniq/uniq-between-rest_13_34.txt
+^([a-z][0-9a-zA-Z_]{1,63})$;./uniq/uniq-between-rest_22_5.txt
+^([a-z0-9!@*#_-]{8,60})+$;./uniq/uniq-between-rest_18_8-backup.txt
+^([a-z0-9]([a-z0-9\-]{0,61}[a-z0-9])?\.)*[a-z0-9]([a-z0-9\-]{0,61}[a-z0-9])?\.[a-z0-9]([a-z0-9\-]{0,61}[a-z0-9])?$;./uniq/uniq-between1-rest_16_71-backup.txt
+^([-a-z0-9]{1,63})(\.[-a-z0-9]{1,63}){1,}$;./uniq/uniq-between1-rest_16_32.txt
+^([a-z0-9-]{1,63}\.)*[a-z0-9-]{1,63}$;./uniq/uniq-between-rest_34_1-merged.txt
+^([a-z0-9]{40})\s+(.+)$;./uniq/uniq-between-rest_26_38-backup.txt
+^([A-Z0-9]{8,12}|[b-zB-Z0-9]{15}|NOQUEUE): (.+)$;./uniq/uniq-between-rest_33_16-backup.txt
+^([a-z0-9-]+)/([a-z0-9-])+/([a-zA-Z0-9_-]{1,63})$;./uniq/uniq-between1-rest_12_40-backup.txt
+^([A-Za-z]\d{7}|\s{8}) ([A-Za-z]\d{7}|\s{8}) ([0-9a-fA-F]{8}|\s{8}) ([0-9a-fA-F]{8});./uniq/uniq-timeouted2_7_8-backup.txt
+^([A-Za-z]\d{7}|\s{8}) ([A-Za-z]\d{7}|\s{8}) ([0-9a-fA-F]{8}|\s{8}) ([0-9a-fA-F]{8}) (.*)$;./uniq/uniq-timeouted2_7_9-backup.txt
+^([a-zA-Z_][a-zA-Z0-9_-]*) ([a-zA-Z0-9][a-zA-Z0-9.-]*) *([0-9T:+-]{24,24}) *(.*);./uniq/uniq-between1-rest_12_8-backup.txt
+^([A-Za-z0-9._-]+):([A-Za-z0-9._-]+):([A-Za-z0-9+/]{341}[AQgw]==)$;./uniq/uniq-between-rest_5_22-backup.txt
+^([a-zA-Z0-9]){64}$;./uniq/uniq-between1-rest_18_6-backup.txt
+^([a-zA-Z0-9-]{1,63}\.)+[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$;./uniq/uniq-between-rest_36_7-backup.txt
+^([a-zA-Z0-9]{1}[a-zA-Z0-9_-]{1,62}){1}(\.[a-zA-Z0-9]{1}[a-zA-Z0-9_-]{1,62})+$;./uniq/uniq-between-rest_37_9-backup.txt
+^([a-zA-Z0-9]{10,100})$;./uniq/uniq-between-rest_34_2-merged.txt
+^([a-zA-Z0-9]{76} )+[a-zA-Z0-9]{76}$;./uniq/uniq-between-rest_15_16-backup.txt
+^([a-zA-Z0-9-_.]{1,100})\/([a-zA-Z0-9-_.]{1,100})$;./uniq/uniq-between1-rest_20_70-backup.txt
+^([a-zA-Z0-9_-]){1,160}$;./uniq/uniq-between-rest_26_12-backup.txt
+^([a-zA-Z0-9_-]){1,80}$;./uniq/uniq-between1-rest_20_11-merged.txt
+^([a-zA-Z0-9_][a-zA-Z0-9_-]{0,62})(\.[a-zA-Z0-9_][a-zA-Z0-9_-]{0,62})*[._]?$;./uniq/uniq-between-rest_16_20-backup.txt
+^([a-zA-Z0-9_]{1}[a-zA-Z0-9_-]{0,62}){1}(\.[a-zA-Z0-9_]{1}[a-zA-Z0-9_-]{0,62})*[\._]?$;./uniq/uniq-between-rest_34_37-backup.txt
+^(\$2[axy]|\$2)\$[0-9]{2}\$[a-z0-9\/.]{53}$;./uniq/uniq-between-rest_39_4-backup.txt
+^(\$cisco4\$)?[a-z0-9\/.]{43}$;./uniq/uniq-between-rest_35_6-backup.txt
+^(\$django\$\*1\*)?pbkdf2_sha256\$[0-9]+\$[a-z0-9]+\$[a-z0-9\/+=]{44}$;./uniq/uniq-between-rest_39_5-backup.txt
+^(\$chap\$0\*)?[a-f0-9]{32}[\*:][a-f0-9]{32}(:[0-9]{2})?$;./uniq/uniq-between-rest_27_27-backup.txt
+^(\$md5,rounds=[0-9]+\$|\$md5\$rounds=[0-9]+\$|\$md5\$)[a-z0-9\/.]{0,16}(\$|\$\$)[a-z0-9\/.]{22}$;./uniq/uniq-between-rest_39_6-backup.txt
+^(\$snefru\$)?[a-f0-9]{64}$;./uniq/uniq-between-rest_20_20-backup.txt
+^(\$wbb3\$\*1\*)?[a-f0-9]{40}[:*][a-f0-9]{40}$;./uniq/uniq-between-rest_26_22-backup.txt
+^(\.|[a-zA-Z0-9_\-]{1,255})(/[a-zA-Z0-9_/\-]{0,255})(\?.*)?$;./uniq/uniq-between-rest_25_21-merged.txt
+^(\+49[ \.\-])?([\(]{1}[0-9]{1,6}[\)])?([0-9 \.\-\/]{3,20})((x|ext|extension)[ ]?[0-9]{1,4})?$;./uniq/uniq-between-rest_39_7-backup.txt
+^(\+49[ \.\-]?)?([\(]{1}[0-9]{1,6}[\)])?([0-9 \.\-\/]{3,20})((x|ext|extension)[ ]?[0-9]{1,4})?$;./uniq/uniq-between-rest_39_8-backup.txt
+^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}),(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}),(\d+),(\d+),..,.*$;./uniq/uniq-rest3_7_12.txt
+^(\d{1,4}[ \.\/\-][A-Z]{3,9}([ \.\/\-]\d{1,4})?|[A-Z]{3,9}[ \.\/\-]\d{1,4}([ \.\/\-]\d{1,4})?|\d{1,4}[ \.\/\-]\d{1,4}([ \.\/\-]\d{1,4})?)( \d{1,2}:\d{1,2}(:\d{1,2})?)?$;./uniq/uniq-between-rest_4_22.txt
+^(\d{1,9})\.(\d{1,9})(?:\.|-([a-z]+))(\d{1,9})(\.\d{1,9})?$;./uniq/uniq-between1-rest_16_59-backup.txt
+^(\d{1,9})\.(\d{1,9})\.(\d{1,9})(\.\d{1,9})?-([^-]+)-([^-]+)$;./uniq/uniq-between-rest_15_22.txt
+^(\d{16})|(\d{17}[\da-zA-Z])$;./uniq/uniq-between1-rest_15_64.txt
+^(\d{2}-\w{3}-\d{4}\s+\d{2}:\d{2}:\d{2}\.\d{3})\s+client\s+(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})#\d+:\s+query:\s+(.*)\s+IN\s+(\w+)\s+\+\s+\((\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\)$;./uniq/uniq-between-rest_30_42.txt
+^(\d{2}-\w{3}-\d{4}\s+\d{2}:\d{2}:\d{2}\.\d{3})\s+client\s+(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})#\d+\s+\(.+\):\s+query:\s+(.*)\s+IN\s+(\w+)\s+\+\w*\s+\((\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\)$;./uniq/uniq-between1-rest_15_63-backup.txt
+^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\d{0,4}([+-]{1}\d{2}:\d{2}|Z)$;./uniq/uniq-between1-rest_15_55-backup.txt
+^(\d{6})(\d{4})?(C|D|RC|RD)\D?(\d{1,12},\d{0,2})((?:N|F).{3})(NONREF|.{0,16})(?:$|\/\/)(.*);./uniq/uniq-rest3_1_2-backup.txt
+^(\d{8})(.{58})(\d{5})(.{30})(\d\d)(\d);./uniq/uniq-between-rest_35_38-backup.txt
+^(\d+)-g([a-fA-F0-9]{7,40})(-dirty)?$;./uniq/uniq-between1-rest_15_24-backup.txt
+^(\s{27,30}\s*|\t{5})(.*)$;./uniq/uniq-between1-rest_20_60-backup.txt
+^(\w[\w\-.]{0,254})$;./uniq/uniq-between-rest_39_12-backup.txt
+^(\w+)-(\w+).([a-z0-9-]{36}|([a-z/+]+)$);./uniq/uniq-between-rest_6_41-backup.txt
+^({SSHA})?[a-z0-9\+\/]{32,38}?(==)?$;./uniq/uniq-between1-rest_17_10-backup.txt
+^(0[23][0-9a-fA-F]{64})|(04[0-9a-fA-F]{128})$;./uniq/uniq-between-rest_35_35-backup.txt
+^(0x)?([0-9a-f]{40}|[0-9A-F]{40})$;./uniq/uniq-between1-rest_15_13-backup.txt
+^(0x)?[0-9A-F]{512}$;./uniq/uniq-between-rest_20_43-backup.txt
+^(0x)?[0-9A-F]{64}$;./uniq/uniq-between1-rest_12_29-backup.txt
+^(0x)?[0-9a-f]{64}$;./uniq/uniq-between-rest_13_23-backup.txt
+^(-0x|0x)?[0-9a-fA-F]{64}$;./uniq/uniq-between1-rest_14_2-backup.txt
+^(0x|0X)[a-fA-F0-9]{64}$;./uniq/uniq-between-rest_23_22-backup.txt
+^(6011|65\d{2}|64[4-9]\d)\d{12}|(62\d{14})$;./uniq/uniq-rest3_9_22.txt
+^(6334[5-9]([0-9]{11}|[0-9]{13,14}))|(6767([0-9]{12}|[0-9]{14,15}))$;./uniq/uniq-timeouted_64.txt
+^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$;./uniq/uniq-between-rest_19_42-backup.txt
+^(application|audio|font|image|message|model|multipart|text|video)/[a-zA-Z0-9.\-+]{1,100}$;./uniq/uniq-between-rest_39_15-merged.txt
+^(blockchain:)((\/\/[a-fA-F0-9]{64})?)\/(tx|block|address)\/([a-fA-F0-9]{64})$;./uniq/uniq-between-rest_19_19-backup.txt
+^(cacheline_[a-fA-F0-9]{1,50}|cl_[a-fA-F0-9]{1,50})$;./uniq/uniq-rest3_1_13.txt
+^(cacheline_[a-zA-Z0-9]{1,50}|cl_[a-zA-Z0-9]{1,50})$;./uniq/uniq-between-rest_34_39-merged.txt
+^(ff){16}011b01040064007801010101fe(ab){254}$;./uniq/uniq-between1-rest_15_20.txt
+^(ff){16}011c01040064007801010101ff(ab){255}$;./uniq/uniq-between-rest_31_13.txt
+^(ff){16}012001040064007801010101ffff0100(ab){256}$;./uniq/uniq-between1-rest_13_11.txt
+^(ff){16}012101040064007801010101ffff0101(ab){257}$;./uniq/uniq-between-rest_18_18.txt
+^(HTTP|http(s)?:\/\/(www\.)?[A-Za-z0-9]+([\-\.]{1,2}[A-Za-z0-9]+)*\.[A-Za-z]{2,40}(:[0-9]{1,40})?(\/.*)?)$;./uniq/uniq-between1-rest_11_44-backup.txt
+^(http|https)://steamcommunity.com/openid/id/[0-9]{15,25}$;./uniq/uniq-between-rest_35_43-backup.txt
+^(record|gtable|app|applet|workflow|globalworkflow|job|analysis|project|container|file|database)-[0-9A-Za-z]{24}$;./uniq/uniq-between-rest_20_22-backup.txt
+^(revert: )?(feat|fix|docs|style|refactor|perf|test|workflow|ci|chore|build)(\(.+\))?: .{1,50};./uniq/uniq-between-rest_1_8.txt
+^(revert: )?(feat|fix|polish|docs|style|refactor|perf|test|workflow|ci|chore|types)(\(.+\))?: .{1,50};./uniq/uniq-rest3_9_12-backup.txt
+^(revert: )?(feat|fix|polish|docs|style|refactor|perf|test|workflow|ci|chore|types|build|merge)(\(.+\))?: .{1,50};./uniq/uniq-between-rest_18_36-merged.txt
+^(S:)?[a-f0-9]{40}(:)?[a-f0-9]{20}$;./uniq/uniq-between-rest_17_14-backup.txt
+^.{0,100}$;./uniq/uniq-between-rest_33_19-backup.txt
+^.{0,256}EndData[\x0d\x0a]+;./uniq/uniq-between-rest_2_8-backup.txt
+^.{1,253}$;./uniq/uniq-between-rest_2_39-backup.txt
+^.{1,256}$;./uniq/uniq-between1-rest_12_19-backup.txt
+^.{100};./uniq/uniq-between1-rest_16_43-backup.txt
+^.{1080}(M\.K\.|M!K!|FLT4|FLT8|[5-9]CHN|[1-3][0-9]CH);./uniq/unique-rest2_1-backup.txt
+^.{60,}\n$;./uniq/uniq-rest3_7_21-backup.txt
+^.{60}$;./uniq/uniq-between1-rest_16_3-backup.txt
+^.{65,};./uniq/uniq-between1-rest_11_42-backup.txt
+^.{76,}$;./uniq/uniq-between-rest_13_8-backup.txt
+^.{77,};./uniq/uniq-between-rest_26_43-backup.txt
+^.{8}(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2}).(.{15})([NS])(\d{8})([EW])(\d{9})(\d{8});./uniq/uniq-timeouted_65-backup.txt
+^/.*/tmp/golang/src/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$;./uniq/uniq-between-rest_31_40-backup.txt
+^/.*/tmp/java/src/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$;./uniq/uniq-between-rest_14_14-backup.txt
+^/.*/tmp/python/src/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$;./uniq/uniq-between-rest_2_44-backup.txt
+^/arvados/v1/collections/([0-9a-fA-F]{32}\+[0-9]+)+$;./uniq/uniq-between-rest_19_30-backup.txt
+^/claim-work/([a-zA-Z0-9_-]{1,22})/([a-zA-Z0-9_-]{1,22})$;./uniq/uniq-between1-rest_16_68.txt
+^/internal/task/([a-zA-Z0-9_-]{22})/runs/([0-9]+)/put-artifact/(.*)$;./uniq/uniq-between-rest_21_21-backup.txt
+^/trireme/[a-zA-Z0-9_\-:.$%]{1,64}$;./uniq/uniq-between-rest_39_18-backup.txt
+^/trireme_uid/[a-zA-Z0-9_\-]{1,32}(/[0-9]{1,32}){0,1}$;./uniq/uniq-between-rest_7_17.txt
+^:[0-7]{6} [0-7]{6} [0-9a-fA-F]{40} [0-9a-fA-F]{40} ([ACDMR])\d{0,3}\t(.+)(?:\t(.+))?$;./uniq/uniq-between-rest_39_19-backup.txt
+^:[0-9]{6} [0-9]{6} [0-9a-f]{40} [0-9a-f]{40} ([ACDMRTUX])[0-9]{0,3}\t(.+)$;./uniq/uniq-between1-rest_17_7-backup.txt
+^:61:(\d{6})(C|D)(\d+),(\d{0,2})\w{4}\w{1}(\d{9}|NONREF|EREF)(.*)$;./uniq/uniq-between1-rest_12_55-merged.txt
+^[ -~]{0,200}[!-~]$;./uniq/uniq-between-rest_13_31.txt
+^[ -~]{16,64}$;./uniq/uniq-between1-rest_19_68.txt
+^[ <\[]{0,2}TOWN[ >\]]{0,2}[ _-]{0,3}[ <\[]{0,2}www\.town\.ag[ >\]]{0,2}[ _-]{0,3}[ <\[]{0,2}partner of www.ssl-news\.info[ >\]]{0,2}[ _-]{0,3}\[\d+\/\d+\][ _-]{0,3}(|#34)(.+)\.(par|vol|rar|nfo).*(|#34).+yEnc$;./uniq/uniq-rest3_6_27-backup.txt
+^[!-~]{1,250}$;./uniq/uniq-between1-rest_16_60.txt
+^[!-~]{64}$;./uniq/uniq-between-rest_24_20.txt
+^[#&+.~][^\s]{1,99}|![A-Z0-5]{5}[^\s]{1,94}$;./uniq/uniq-best_59-backup.txt
+^[-.:_\/\w ]{1,255}$;./uniq/uniq-between1-rest_16_62-backup.txt
+^[.\w-]{1,64}$;./uniq/uniq-rest3_9_8-backup.txt
+^[\sa-z0-9_-]{1,200}$;./uniq/uniq-between1-rest_19_31-backup.txt
+^[\u0020-\u007E\u00A0-\u00FF]{1,100}$;./uniq/uniq-between-rest_1_39-backup.txt
+^[\u0430-\u044fa-z0-9.-]{2,255}$;./uniq/uniq-between-rest_2_13.txt
+^[\w /-]{0,256}[\w -]{1,253}\.js$;./uniq/uniq-between1-rest_11_39.txt
+^[\w\-.]{1,80}$;./uniq/uniq-between-rest_39_22-backup.txt
+^[\w\-\.~/_=#]{1,512}$;./uniq/uniq-between-rest_2_30-backup.txt
+^[\w\-~\/\.]{1,400}$;./uniq/uniq-between-rest_17_3-backup.txt
+^[\w\d]{4,64}$;./uniq/uniq-rest3_9_27-backup.txt
+^[-\w\u0430-\u044f\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u0105\u00e6\u00e7\u0107\u00e8\u00e9\u00ea\u00eb\u0119\u0153\u00ec\u00ed\u00ef\u00ee\u0142\u0144\u00f0\u00f2\u00f3\u00f4\u00f5\u00f6\u00f8\u015b\u00f9\u00fa\u00fb\u00f1\u00fc\u00fd\u00ff\u017c\u017a\u00df\u00de\u010f\u01110-9#~!$%^&*_=+\/`\|}{\'?]+(\.[-\w\u0430-\u044f\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u0105\u00e6\u00e7\u0107\u00e8\u00e9\u00ea\u00eb\u0119\u0153\u00ec\u00ed\u00ef\u00ee\u0142\u0144\u00f0\u00f2\u00f3\u00f4\u00f5\u00f6\u00f8\u015b\u00f9\u00fa\u00fb\u00f1\u00fc\u00fd\u00ff\u017c\u017a\u00df\u00de\u010f\u01110-9#~!$%^&*_=+\/`\|}{\'?]+)*@([\w\u0430-\u044f\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u0105\u00e6\u00e7\u0107\u00e8\u00e9\u00ea\u00eb\u0119\u0153\u00ec\u00ed\u00ef\u00ee\u0142\u0144\u00f0\u00f2\u00f3\u00f4\u00f5\u00f6\u00f8\u015b\u00f9\u00fa\u00fb\u00f1\u00fc\u00fd\u00ff\u017c\u017a\u00df\u00de\u010f\u01110-9_][-\w\u0430-\u044f\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u0105\u00e6\u00e7\u0107\u00e8\u00e9\u00ea\u00eb\u0119\u0153\u00ec\u00ed\u00ef\u00ee\u0142\u0144\u00f0\u00f2\u00f3\u00f4\u00f5\u00f6\u00f8\u015b\u00f9\u00fa\u00fb\u00f1\u00fc\u00fd\u00ff\u017c\u017a\u00df\u00de\u010f\u01110-9_]*(\.[-\w\u0430-\u044f\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u0105\u00e6\u00e7\u0107\u00e8\u00e9\u00ea\u00eb\u0119\u0153\u00ec\u00ed\u00ef\u00ee\u0142\u0144\u00f0\u00f2\u00f3\u00f4\u00f5\u00f6\u00f8\u015b\u00f9\u00fa\u00fb\u00f1\u00fc\u00fd\u00ff\u017c\u017a\u00df\u00de\u010f\u01110-9_]+)*([\w\u0430-\u044f\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u0105\u00e6\u00e7\u0107\u00e8\u00e9\u00ea\u00eb\u0119\u0153\u00ec\u00ed\u00ef\u00ee\u0142\u0144\u00f0\u00f2\u00f3\u00f4\u00f5\u00f6\u00f8\u015b\u00f9\u00fa\u00fb\u00f1\u00fc\u00fd\u00ff\u017c\u017a\u00df\u00de\u010f\u0111]+)|(\.[\w\u0430-\u044f\u00e0\u00e1\u00e2\u00e3\u00e4\u00e5\u0105\u00e6\u00e7\u0107\u00e8\u00e9\u00ea\u00eb\u0119\u0153\u00ec\u00ed\u00ef\u00ee\u0142\u0144\u00f0\u00f2\u00f3\u00f4\u00f5\u00f6\u00f8\u015b\u00f9\u00fa\u00fb\u00f1\u00fc\u00fd\u00ff\u017c\u017a\u00df\u00de\u010f\u0111]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$;./uniq/uniq-between-rest_2_5-backup.txt
+^[\w][\w.-]{0,127}$;./uniq/uniq-between-rest_26_41-backup.txt
+^[\w-]{1,63}$;./uniq/uniq-between1-rest_12_2-backup.txt
+^[\w]{32}:[\w]{32}$;./uniq/uniq-between2-rest_11_24-backup.txt
+^[\w-]{6,128}$;./uniq/uniq-between-rest_21_42-backup.txt
+^[\w+=,.@-]{1,64}$;./uniq/uniq-between-rest_31_23-backup.txt
+^[\x00-\x7F]{8,63}$;./uniq/uniq-between-rest_2_6-backup.txt
+^[\x20-\x7E]{0,127}$;./uniq/uniq-between-rest_1_30.txt
+^[\x20-\x7E]{0,64}$;./uniq/uniq-between-rest_2_1.txt
+^[\x20-\x7E]{1,128}$;./uniq/uniq-between-rest_1_26-backup.txt
+^[\x20-\x7E]{1,64}$;./uniq/uniq-between-rest_30_19-backup.txt
+^[\x21-\x7e]{1,255}$;./uniq/uniq-between-rest_1_31-backup.txt
+^[\x21-\x7e]{20,1024}$;./uniq/unique-rest2_3-backup.txt
+^[^*]{1,255}$;./uniq/uniq-between-rest_20_31.txt
+^[^.]{1,63}(\.[^.]{1,63})*$;./uniq/uniq-between-rest_5_34.txt
+^[^\.][\w\-\.]{0,255}$;./uniq/uniq-between-rest_3_2-backup.txt
+^[^\.]{1,63}(\.[^\.]{1,63})*\.?$;./uniq/uniq-between-rest_29_35.txt
+^[^\/:*<>|]{1,20}[:]{2,3}([^\/:*<>|]{1,20})?:[a-f0-9]{48}:[a-f0-9]{48}:[a-f0-9]{16}$;./uniq/uniq-rest3_1_1-backup.txt
+^[^\x00-\x1F<>]{0,256}$;./uniq/uniq-between-rest_2_3-merged.txt
+^[^\x00-\x1F<>]{0,512}$;./uniq/uniq-between-rest_1_27.txt
+^[^<>*%&:\?.+/]{0,127}[^<>*%&:\?.+/\s]$;./uniq/uniq-between1-rest_16_65.txt
+^[-+].{79};./uniq/uniq-between-rest_27_1-backup.txt
+^[+a-z0-9A-Z_-]{0,63}$;./uniq/uniq-between-rest_31_26.txt
+^[01]{1,128}$;./uniq/uniq-between-rest_19_12-backup.txt
+^[0-9]{1,309}\.[0-9]{1,2}$;./uniq/uniq-between1-rest_12_44-backup.txt
+^[0-9]{4}:[a-f0-9]{16}:[a-f0-9]{2080}$;./uniq/unique-rest2_4-backup.txt
+^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\.[0-9]{3}([-+][0-9]{2}:[0-9]{2}|Z)$;./uniq/uniq-between1-rest_18_37-backup.txt
+^[0-9]{6} (blob|tree) ([0-9a-f]{40})\t(.+)$;./uniq/uniq-between-rest_2_22-backup.txt
+^[0-9a-f:]{2,64}$;./uniq/uniq-between-rest_18_6-backup.txt
+^[0-9a-f]{32}$|^[a-zA-Z0-9]{40,64}$;./uniq/uniq-between1-rest_14_5.txt
+^[0-9a-f]{40} Braid: Update mirror 'skit1' to '[0-9a-f]{7}'$;./uniq/uniq-between-rest_34_38-backup.txt
+^[0-9a-f]{40} Braid: Update mirror 'skit-layouts' to '[0-9a-f]{7}'$;./uniq/uniq-between-rest_31_38-backup.txt
+^[0-9a-f]{56}$;./uniq/uniq-between-rest_6_15.txt
+^[0-9a-f]{64}$;./uniq/uniq-between-rest_24_3.txt
+^[0-9a-f]{8}-?[0-9a-f]{4}-?[1-5][0-9a-f]{3}-?[89ab][0-9a-f]{3}-?[0-9a-f]{12}$;./uniq/uniq-between-rest_35_13-backup.txt
+^[0-9a-f]{96}$;./uniq/uniq-rest3_10_1.txt
+^[0-9A-Fa-f]{64};./uniq/uniq-between-rest_5_29.txt
+^[0-9a-fA-F]{64}$;./uniq/uniq-between-rest_20_6.txt
+^[0-9A-Fa-f]{66}$;./uniq/uniq-between-rest_16_36.txt
+^[0-9A-HJ-NP-Za-km-z]{70,80}$;./uniq/uniq-between-rest_20_15-backup.txt
+^[0-9a-z][0-9a-z-]{0,30}[0-9a-z]$;./uniq/uniq-between-rest_33_17-merged.txt
+^[0-9A-Z]{52}$;./uniq/uniq-between-rest_34_33.txt
+^[0-9a-z]{64}$;./uniq/uniq-between-rest_5_30.txt
+^[0-9a-z]+\$[0-9a-z]+\$[0-9a-z]+\$[A-Za-z0-9]{16,64}$;./uniq/uniq-between-rest_39_28.txt
+^[0-9a-z]+\$[0-9a-z]+\$[0-9a-z]+\$[A-Za-z0-9]{16,64}\$[A-Za-z0-9]{32,1024}$;./uniq/unique-rest2_5-merged.txt
+^[0-9a-z_]{3,255}$;./uniq/uniq-between-rest_19_44-merged.txt
+^[0-9A-Za-z._-]{0,100}$;./uniq/uniq-between-rest_4_10.txt
+^[0-9a-zA-Z/+]*={0,2}([0-9a-f]{40})$;./uniq/uniq-between1-rest_16_55-backup.txt
+^[0-9a-zA-Z\-\\_]{0,500}$;./uniq/uniq-between1-rest_19_64-merged.txt
+^[0-9A-Za-z\\_\.]{0,50}$;./uniq/uniq-between1-rest_14_33-backup.txt
+^[0-9A-Za-z\\_\-]{1,63}$;./uniq/uniq-between-rest_30_35.txt
+^[0-9a-zA-Z\\_]{1,64}$;./uniq/uniq-between-rest_23_12-backup.txt
+^[0-9a-zA-Z]{1}[0-9a-zA-Z_\-]{0,127}$;./uniq/uniq-between-rest_29_20-backup.txt
+^[0-9a-zA-Z]{64}$;./uniq/uniq-between-rest_5_16.txt
+^[0-9a-zA-Z]{80,}$;./uniq/uniq-between1-rest_10_5.txt
+^[0-9A-Za-z_\-\. \)\(]{1,100}$;./uniq/uniq-between1-rest_15_48-merged.txt
+^[0-9A-Za-z_\-\.]{1,100}$;./uniq/uniq-between-rest_36_13-backup.txt
+^[0-9a-zA-Z_-]{1,50}$;./uniq/uniq-between1-rest_14_25.txt
+^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{106}$;./uniq/uniq-between-rest_27_24-backup.txt
+^[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{95}$;./uniq/uniq-between2-rest_11_33-backup.txt
+^[1-9a-km-zA-HJ-NP-Z]{1,111}$;./uniq/uniq-between-rest_5_18.txt
+^[ab]{64}$;./uniq/uniq-between-rest_33_6-backup.txt
+^[a-f0-9]{128}$;./uniq/uniq-between-rest_29_42.txt
+^[a-f0-9]{130}(:[a-f0-9]{40})?$;./uniq/uniq-between1-rest_14_74-backup.txt
+^[a-f0-9]{1329}$;./uniq/unique-rest2_6-merged.txt
+^[a-f0-9]{256}$;./uniq/uniq-between-rest_4_38.txt
+^[a-f0-9]{256}:[a-f0-9]{256}:[a-f0-9]{16}:[a-f0-9]{16}:[a-f0-9]{320}:[a-f0-9]{16}:[a-f0-9]{40}:[a-f0-9]{40}:[a-f0-9]{40}$;./uniq/uniq-between-rest_30_18.txt
+^[a-f0-9]{28,56}$;./uniq/uniq-between-rest_15_28-merged.txt
+^[a-f0-9]{32,}  [^ ].*$;./uniq/uniq-between1-rest_15_76-backup.txt
+^[a-f0-9]{32}:.{30}$;./uniq/uniq-between1-rest_16_47-backup.txt
+^[a-f0-9]{32}:[a-f0-9]{32}$;./uniq/uniq-between-rest_18_17.txt
+^[a-f-0-9]{32}:[a-f-0-9]{32}$;./uniq/uniq-between1-rest_10_72-backup.txt
+^[a-f0-9]{40}:[^*]{1,25}$;./uniq/uniq-between2-rest_11_36.txt
+^[a-f0-9]{51}$;./uniq/uniq-between1-rest_12_73.txt
+^[a-f0-9]{56}$;./uniq/uniq-between1-rest_15_4.txt
+^[a-f0-9]{64}$;./uniq/uniq-between-rest_16_31.txt
+^[a-f0-9]{64}(:.+)?$;./uniq/uniq-between-rest_20_5-backup.txt
+^[a-f0-9]{64}:[a-f0-9]{32}:[0-9]{5}:[a-f0-9]{608}$;./uniq/uniq-between-rest_19_39.txt
+^[a-f0-9]{70}$;./uniq/uniq-between1-rest_10_11.txt
+^[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12}\Z;./uniq/uniq-between-rest_26_1-backup.txt
+^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}_Basecall_2D_(.*)$;./uniq/uniq-between-rest_19_5-backup.txt
+^[a-f0-9A-F]{136}$;./uniq/uniq-between-rest_35_42-merged.txt
+^[a-fA-F\d]{128}$;./uniq/uniq-between-rest_6_30-backup.txt
+^[a-fA-F\d]{32}:[a-fA-F\d]{32}$;./uniq/uniq-between-rest_27_21-backup.txt
+^[a-fA-F\d]{64}$;./uniq/uniq-between-rest_24_2-backup.txt
+^[a-fA-F0-9]{32}:[a-zA-z0-9]{32}$;./uniq/uniq-between1-rest_12_56.txt
+^[a-fA-f0-9]{64}$;./uniq/uniq-between-rest_10_21.txt
+^[a-fA-F0-9]{64}$;./uniq/uniq-between-rest_24_36-merged.txt
+^[A-Fa-f0-9]{64}$;./uniq/uniq-between1-rest_17_32.txt
+^[a-fA-F0-9]{64}-[0-9]{10}$;./uniq/uniq-between-rest_33_27-backup.txt
+^[a-z\d\-_\s\.]{3,150}$;./uniq/uniq-between1-rest_16_50-backup.txt
+^[a-z\d\-_\s]{3,150}$;./uniq/uniq-between-rest_3_31-backup.txt
+^[a-z\d][a-z\d\._-]{1,230}[a-z\d]$;./uniq/uniq-between-rest_22_4-merged.txt
+^[A-z\d]{50}$;./uniq/uniq-between-rest_5_24.txt
+^[a-z\u0430-\u044f\u0451\d][\w-\.]{1,61}[a-z\u0430-\u044f\u0451\d]\.[a-z\u0430-\u044f\u0451]{2,}$;./uniq/uniq-between-rest_39_30.txt
+^[a-z](?:_?[a-z0-9])*:\$2[aby]?\$\d{1,2}\$[./A-Za-z0-9]{53}$;./uniq/uniq-between-rest_39_31-backup.txt
+^[a-z][0-9a-z_\-:\./]{0,199}$;./uniq/uniq-between-rest_39_32-backup.txt
+^[a-z][0-9a-zA-Z_]{0,63}$;./uniq/uniq-between-rest_29_24-merged.txt
+^[a-z][a-z_0-9]{0,254}$;./uniq/uniq-between-rest_16_15-backup.txt
+^[a-z][a-z0-9-]{0,62}$;./uniq/uniq-between-rest_5_8-merged.txt
+^[a-z][a-z0-9]{2,64}@(yahoo-inc\.com|uk\.yahoo-inc\.com|yahoo-corp\.jp|tumblr\.com|yahoo\.com)$;./uniq/uniq-between-rest_31_25-backup.txt
+^[a-z][a-zA-Z0-9_-]{1,62}$;./uniq/uniq-between1-rest_14_17-backup.txt
+^[a-z]{1,50}$;./uniq/uniq-between-rest_35_8-backup.txt
+^[a-z]{1}[a-z0-9-._]{1,50}$;./uniq/uniq-between1-rest_12_53-backup.txt
+^[a-z_\x7f-\xff][a-z0-9_\x7f-\xff]{0,60}$;./uniq/uniq-between-rest_39_33-backup.txt
+^[a-z0-9.]{1,50}$;./uniq/uniq-between-rest_13_17.txt
+^[a-z0-9-.]{1,64}$;./uniq/uniq-between1-rest_13_20-backup.txt
+^[a-z0-9'\(\)\+_\-,\.\/:=\?\ ]{0,69}[a-z0-9'\(\)\+_\-,\.\/:=\?]$;./uniq/uniq-between-rest_39_34.txt
+^[a-z0-9\-\,\s]{1,500}$;./uniq/uniq-between-rest_20_23.txt
+^[a-z0-9\-_]{2,50}$;./uniq/uniq-between-rest_25_11-merged.txt
+^[a-z0-9](([a-z0-9\-[^\-])){1,61}[a-z0-9]$;./uniq/uniq-between-rest_39_35.txt
+^[a-z0-9][a-z0-9\.\-]{1,61}[a-z0-9]$;./uniq/uniq-between-rest_26_8.txt
+^[a-z0-9][a-z0-9\._-]{1,253}[a-z0-9]$;./uniq/uniq-between-rest_29_28.txt
+^[a-z0-9][a-z0-9\-]{2,62}$;./uniq/uniq-between1-rest_11_31.txt
+^[a-z0-9][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$;./uniq/uniq-between-rest_31_43-backup.txt
+^[a-z0-9-]{0,50}$;./uniq/uniq-between1-rest_13_35-merged.txt
+^[a-z0-9-]{1,63}$;./uniq/uniq-between-rest_2_29.txt
+^[a-z0-9-]{1,64}$;./uniq/uniq-between-rest_31_7-backup.txt
+^[a-z0-9-]{1,64}?$;./uniq/uniq-between1-rest_13_18.txt
+^[a-z0-9]{10,64}$;./uniq/uniq-between-rest_6_32-merged.txt
+^[a-z0-9]{128}$;./uniq/uniq-between-rest_17_25.txt
+^[a-z0-9]{32}/[a-z0-9]{32}$;./uniq/uniq-between1-rest_15_69.txt
+^[A-Z0-9]{4}SG([0-9A-F]{24})DLK([0-9A-F]{32})$;./uniq/uniq-between1-rest_10_33-backup.txt
+^[a-z0-9]{40}|[a-z0-9]{70}$;./uniq/uniq-between-rest_19_2.txt
+^[a-z0-9]{56}$;./uniq/uniq-between-rest_20_4.txt
+^[a-z0-9]{6,}[-_a-z0-9]{12,}[a-z0-9]{6,}\s*\z;./uniq/uniq-between1-rest_18_5.txt
+^[a-z0-9]{64}$;./uniq/uniq-between-rest_15_29.txt
+^[A-Z0-9]{64}$;./uniq/uniq-between-rest_25_33.txt
+^[a-z0-9_.-]{1,64}$;./uniq/uniq-between-rest_27_22-backup.txt
+^[a-z0-9_.-]{3,255}$;./uniq/uniq-rest3_10_10-backup.txt
+^[a-z0-9_]{1,60}$;./uniq/uniq-between-rest_3_24-backup.txt
+^[a-z0-9_]{3,250}$;./uniq/uniq-between-rest_31_14-merged.txt
+^[a-z0-9_-]{3,250}(\.(\[\d+\]|[a-z0-9_-]{1,250}))*$;./uniq/uniq-between1-rest_14_23.txt
+^[a-z0-9-_]+_([a-f0-9]{40}(\-[a-z0-9]+)?)\.tar\.gz$;./uniq/uniq-between-rest_25_32.txt
+^[A-Z0-9<]{88}$;./uniq/uniq-between-rest_15_35.txt
+^[a-z0-9A-Z:_-]{1,255}$;./uniq/uniq-between-rest_22_7-merged.txt
+^[a-z0-9A-Z][a-z0-9A-Z\-]{0,61}[a-z0-9A-Z]|[a-zA-Z]$;./uniq/uniq-between1-rest_15_60.txt
+^[a-z0-9A-Z][a-z0-9A-Z_-]{0,149}$;./uniq/uniq-between-rest_18_9-backup.txt
+^[a-z0-9A-Z]{100}$;./uniq/uniq-between-rest_26_11.txt
+^[a-z0-9A-Z_-]{0,63}$;./uniq/uniq-between1-rest_12_67-merged.txt
+^[a-zA-Z\d\-_\s]{2,50}$;./uniq/uniq-between1-rest_11_23-backup.txt
+^[a-zA-Z\d_\.]{2,64}$;./uniq/uniq-between1-rest_11_35-merged.txt
+^[a-zA-Z\s]{3,50}$;./uniq/uniq-between1-rest_16_28-backup.txt
+^[a-zA-Z][-_!a-zA-Z0-9]{2,149}$;./uniq/uniq-between1-rest_20_8-merged.txt
+^[a-zA-Z][-_a-zA-Z0-9]{0,255}$;./uniq/uniq-between1-rest_17_40-merged.txt
+^[a-zA-Z][-_a-zA-Z0-9]{0,99}$;./uniq/uniq-between1-rest_15_12-merged.txt
+^[a-zA-Z][a-z0-9A-Z\-]{0,61}[a-z0-9A-Z]$;./uniq/uniq-between-rest_36_33-merged.txt
+^[A-Za-z][A-Za-z0-9\.\-_]{1,50}$;./uniq/uniq-between-rest_26_5.txt
+^[a-zA-Z][a-zA-Z0-9\-_]{0,63}$;./uniq/uniq-between-rest_4_37-backup.txt
+^[a-zA-Z][a-zA-Z0-9-]{0,127}$;./uniq/uniq-between-rest_5_27-backup.txt
+^[a-zA-Z][-a-zA-Z0-9]{1,49}$;./uniq/uniq-between-rest_18_35-merged.txt
+^[A-Za-z][A-Za-z0-9]{2,62}$;./uniq/uniq-between-rest_18_29-merged.txt
+^[a-zA-Z][A-Za-z0-9_]{1,150}$;./uniq/uniq-between1-rest_13_22-backup.txt
+^[a-zA-Z]\w{0,143}$;./uniq/uniq-between-rest_27_35-backup.txt
+^[a-zA-Z]{1}[a-zA-Z0-9]{1,255}$;./uniq/uniq-between-rest_36_6.txt
+^[a-zA-Z]{2,}\.[a-zA-Z0-9][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9]?(\.[a-zA-Z0-9][a-zA-Z0-9\-]{0,61}[a-zA-Z0-9]?)+$;./uniq/uniq-between1-rest_11_29-backup.txt
+^[A-Za-z]{2,6}(\.[A-Za-z0-9-]{1,63})+$;./uniq/uniq-between1-rest_19_51.txt
+^[a-zA-Z]{4,99}$;./uniq/uniq-between-rest_10_7-merged.txt
+^[a-zA-Z_][0-9a-zA-Z_]{0,62}$;./uniq/uniq-between1-rest_20_63-backup.txt
+^[a-zA-Z_][a-zA-Z0-9_]{0,127}$;./uniq/uniq-between-rest_10_4.txt
+^[a-zA-Z_-]{1,100}$;./uniq/uniq-between1-rest_19_2-backup.txt
+^[a-zA-Z0-9- ]{1,63}$;./uniq/uniq-between-rest_14_19-backup.txt
+^[A-Za-z0-9,+/=-]{20,200}$;./uniq/uniq-between-rest_36_43-backup.txt
+^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$;./uniq/uniq-error_20-backup.txt
+^[a-zA-Z0-9.@_-]{1,100}$;./uniq/uniq-between1-rest_13_2.txt
+^[a-zA-Z0-9.\-]{2,256}\.[a-z]{2,6}$;./uniq/uniq-between1-rest_11_34-merged.txt
+^[a-zA-Z0-9.\-_]{1,255}$;./uniq/uniq-between-rest_16_26-merged.txt
+^[a-zA-Z0-9-.]{0,63}$;./uniq/uniq-between-rest_4_15-backup.txt
+^[a-zA-Z0-9.]{1,128}$;./uniq/uniq-between1-rest_19_33-backup.txt
+^[a-zA-Z0-9._~-]{43,128}$;./uniq/uniq-between1-rest_19_24-backup.txt
+^[a-zA-Z0-9/-]{60,80}={0,2}$;./uniq/uniq-between-rest_12_1-merged.txt
+^[A-Za-z0-9/_\-\.]{0,512}$;./uniq/uniq-between-rest_2_37-merged.txt
+^[a-zA-Z0-9/+=]{20,60}$;./uniq/uniq-between1-rest_14_34-backup.txt
+^[A-Za-z0-9\.\-_]{1,255}$;./uniq/uniq-between1-rest_18_1-merged.txt
+^[A-Za-z0-9\.-]{1,100}$;./uniq/uniq-between1-rest_16_16-merged.txt
+^[A-Za-z0-9\-\.]{0,511}[A-Za-z0-9\.]$;./uniq/uniq-between-rest_2_31.txt
+^[a-zA-Z0-9\-\.]{3,255}$;./uniq/uniq-between-rest_18_25-backup.txt
+^[a-zA-Z0-9\-_.]{1,64}$;./uniq/uniq-between1-rest_15_58-merged.txt
+^[A-Za-z0-9\-_]{1,128}$;./uniq/uniq-between1-rest_11_58-merged.txt
+^[a-zA-Z0-9\+\/=\-.:_ ]{1,250}$;./uniq/uniq-between-rest_39_38-backup.txt
+^[a-zA-Z0-9\u4E00-\u9FA5]{1}[a-zA-Z0-9\u4E00-\u9FA5-]{0,62}$;./uniq/uniq-between-rest_1_38-merged.txt
+^[a-zA-Z0-9][-._a-zA-Z0-9]{0,48}([a-zA-Z0-9])?$;./uniq/uniq-between-rest_32_31-backup.txt
+^[a-zA-Z0-9][\w-./~]{0,258}([a-zA-Z0-9])?$;./uniq/uniq-between-rest_39_39-backup.txt
+^[A-Za-z0-9][A-Za-z0-9!#$&^_-]{0,126}$;./uniq/uniq-between-rest_11_26-merged.txt
+^[A-Za-z0-9][A-Za-z0-9\.\-\\_\:]{1,61}[A-Za-z0-9]$;./uniq/uniq-between1-rest_19_69.txt
+^[A-Za-z0-9][A-Za-z0-9\.\-]{1,255}$;./uniq/uniq-between-rest_23_6-merged.txt
+^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+$;./uniq/uniq-between1-rest_17_6.txt
+^[A-Za-z0-9-]{1,100}$;./uniq/uniq-between1-rest_11_21.txt
+^[a-zA-Z0-9-]{1,128}$;./uniq/uniq-between-rest_35_32-merged.txt
+^[a-zA-Z0-9]{1}[a-zA-Z0-9-]{0,63}$;./uniq/uniq-between1-rest_11_13.txt
+^[a-zA-Z0-9]{16,128}$;./uniq/uniq-between-rest_4_27.txt
+^[a-zA-Z0-9]{2,64}$;./uniq/uniq-between-rest_18_28-backup.txt
+^[a-zA-Z0-9]{58}$;./uniq/uniq-between-rest_28_20.txt
+^[a-zA-Z0-9]{64}$;./uniq/uniq-between-rest_27_40.txt
+^[a-zA-Z0-9_.:-]{1,128}$;./uniq/uniq-between-rest_28_19-merged.txt
+^[a-zA-Z0-9_.-]{1,128}$;./uniq/uniq-between1-rest_14_11-merged.txt
+^[-A-Za-z0-9_.]{1,255}$;./uniq/uniq-between-rest_35_17-merged.txt
+^[-a-zA-Z0-9_.]{3,255}$;./uniq/uniq-between-rest_10_23-merged.txt
+^[a-zA-Z0-9_.-]{3,50}$;./uniq/uniq-between-rest_22_18-backup.txt
+^[a-zA-Z0-9_.]{4,256}$;./uniq/uniq-between-rest_29_32-merged.txt
+^[A-Za-z0-9_/]{1,50}\.png$;./uniq/uniq-between-rest_16_22-backup.txt
+^[a-zA-Z0-9_:.@\-()+,=$!*'%]{1,254}$;./uniq/uniq-rest3_7_1-backup.txt
+^[a-zA-Z0-9_\-.:@]{1,256}$;./uniq/uniq-between-rest_39_42-backup.txt
+^[a-zA-Z0-9_\-.]{3,128}$;./uniq/uniq-between-rest_39_44-backup.txt
+^[a-zA-Z0-9_\-\:\.]{1,500}$;./uniq/uniq-between-rest_35_16.txt
+^[a-zA-Z0-9_\-]{1,50}$;./uniq/uniq-between1-rest_11_17-merged.txt
+^[a-zA-Z0-9_\-+=:\/@\.]{1,127}$;./uniq/uniq-between-rest_40_1-backup.txt
+^[a-zA-Z0-9_\-+=:\/@\.]{1,255}$;./uniq/uniq-between-rest_40_2-backup.txt
+^[a-zA-Z0-9_][]a-zA-Z0-9_\.\-]{0,127}$;./uniq/uniq-between1-rest_20_38-merged.txt
+^[a-zA-Z0-9-_]{1,255}$;./uniq/uniq-between1-rest_14_37-backup.txt
+^[a-zA-Z0-9_]{1,64}$;./uniq/uniq-between-rest_6_42-merged.txt
+^[a-zA-Z0-9-_]{1,64}$;./uniq/uniq-between1-rest_12_31-backup.txt
+^[a-zA-Z0-9_-]{1,64}\/[a-zA-Z0-9_:.@\-()+,=$!*'%]{1,254}$;./uniq/uniq-rest3_7_2-backup.txt
+^[A-Za-z0-9_]{10,59}$;./uniq/uniq-between1-rest_16_10.txt
+^[a-zA-Z0-9-_]{4,100}$;./uniq/uniq-between1-rest_10_59-backup.txt
+^[A-Za-z0-9_-]{40,50}$;./uniq/uniq-between-rest_2_36-backup.txt
+^[a-zA-Z0-9~._-]{43,128}$;./uniq/uniq-between-rest_3_17.txt
+^[a-zA-Z0-9+\(\)/.$_][a-zA-Z0-9+\(\)/.$_-]{0,199}$;./uniq/uniq-rest3_10_16-backup.txt
+^[A-Za-z0-9+=/]{80}$;./uniq/uniq-between-rest_33_29.txt
+^[c][123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$;./uniq/uniq-between1-rest_20_55-backup.txt
+^[fadtFADT]{65}$;./uniq/uniq-between-rest_12_15-backup.txt
+^[gatcn]{11,50}$;./uniq/uniq-between-rest_13_42-backup.txt
+^[LK][123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{51}$;./uniq/uniq-between1-rest_19_20-backup.txt
+^\$[0-9a-z]{2}\$[0-9]{2}\$[A-Za-z0-9\.\/]{53}$;./uniq/uniq-between-rest_40_7-backup.txt
+^\$\w{2}\$\w{5,}\$[\w\/\=\+]{11,64}\$[\w\/\=\+]{1,256}$;./uniq/uniq-between-rest_40_10.txt
+^\$1\$.{0,8}\$[a-z0-9\/\.]{22}$;./uniq/uniq-between-rest_40_11-merged.txt
+^\$2[aby]\$[0-9]{2}\$.{53}$;./uniq/uniq-between-rest_40_13-backup.txt
+^\$2[aby]\$\d+\$.{50,};./uniq/uniq-between-rest_40_14-backup.txt
+^\$2[axy]?\$\d{2}\$[./a-zA-Z0-9]{53}$;./uniq/uniq-between-rest_40_15-backup.txt
+^\$2[ayb]\$.{56}$;./uniq/uniq-between-rest_40_19-backup.txt
+^\$2[a-z]?\$([0-9]+)\$(.{22})(.{31})$;./uniq/uniq-between-rest_40_20-backup.txt
+^\$5\$([!-~]{1,8})\$[!-~]{43}$;./uniq/uniq-between-rest_40_23-backup.txt
+^\$5\$(rounds=[0-9]+\$)?[a-z0-9\/.]{0,16}\$[a-z0-9\/.]{43}$;./uniq/uniq-between-rest_40_24-backup.txt
+^\$5\$.{0,22}\$[a-z0-9\/\.]{43,69}$;./uniq/uniq-between-rest_40_25-backup.txt
+^\$6\$(rounds=[0-9]+\$)?[a-z0-9\/.]{0,16}\$[a-z0-9\/.]{86}$;./uniq/uniq-between-rest_40_26-backup.txt
+^\$6\$.{0,22}\$[a-z0-9\/\.]{86}$;./uniq/uniq-between-rest_40_27-backup.txt
+^\.breakfast-manifest-[0-9a-f]{32}.json$;./uniq/uniq-rest3_1_21-backup.txt
+^\.sprockets-manifest-[0-9a-f]{32}.json$;./uniq/uniq-between1-rest_14_67-backup.txt
+^\.sprockets-manifest-[a-f0-9]{32}.json;./uniq/uniq-between1-rest_14_50-backup.txt
+^\/[a-z]\/(\d{8})\/(\w{40})\/(\d{2,3})x(\d{2,3})-(\w{4}).(\w{3})(?:\?(.*))?$;./uniq/uniq-between-rest_15_32-backup.txt
+^\/docker\/[0-9a-f]{64}(\/docker\/[0-9a-f]{64});./uniq/uniq-between-rest_35_23-backup.txt
+^\/webhooks\/(\d+)\/[A-Za-z0-9-_]{64,};./uniq/uniq-between1-rest_11_47-backup.txt
+^\:(\d{6}) (\d{6}) (\w{40}) (\w{40}) (\w{1}[0-9]*)\t(.*)$;./uniq/uniq-between-rest_18_40-backup.txt
+^\-{58};./uniq/uniq-between-rest_18_5-backup.txt
+^\{isa = PBXBuildFile fileRef = [A-Z0-9]{24}\}$;./uniq/uniq-rest3_3_4-backup.txt
+^\{PKCS5S2\}[a-z0-9\/+]{64}$;./uniq/uniq-between-rest_18_37-backup.txt
+^\d{1,30}\.\d{1,30}\.\d{1,30};./uniq/uniq-between1-rest_18_9.txt
+^\d{1,4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,9})?(Z|[+-]\d{2}:\d{2});./uniq/uniq-between1-rest_12_64-backup.txt
+^\d{10,11}|\d{3}\.\d{3}\.\d{3}-\d{2}$;./uniq/uniq-between-rest_36_34.txt
+^\D{10,50}19|20\d{2};./uniq/uniq-between-rest_32_18.txt
+^\d{1200}$;./uniq/unique-rest2_9-backup.txt
+^\d{13,14}|\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$;./uniq/uniq-timeouted_34-backup.txt
+^\d{4}[\- ]?\d{4}[\- ]?\d{4}[\- ]?\d{4}$|^\d{4}[\- ]?\d{6}[\- ]?\d{5}$;./uniq/uniq-timeouted2_7_14.txt
+^\d+(\.\d+)?\.\.\d+(\.\d+)?$|^\d{4}\/\d{2}\/\d{2}@\d{2}:\d{2}:\d{2}\.\.\d{4}\/\d{2}\/\d{2}@\d{2}:\d{2}:\d{2}$;./uniq/uniq-rest3_1_7.txt
+^\n[a-z0-9]([a-z0-9\-]{0,61}[a-z0-9])?  # host\n(\.[a-z0-9\-_]{0,62}[a-z0-9])*       # domain\n\.?                                  # trailing dot\n$;./uniq/uniq-between-rest_34_28-backup.txt
+^\s*(...)\s*(\d{1,14})\s*(\d{1,14})\s*(\d{1,14})\s*(\d{1,14})\s*$;./uniq/uniq-between1-rest_19_13-merged.txt
+^\s*([^:\s][^:\n]{2,29})\s*:\s*\S;./uniq/uniq-between-rest_5_13.txt
+^\s*(\d{1,14})\s*(\d{1,14})\s*(\d{1,14})\s*(\d{1,14})\s*(\d{1,14})\s*$;./uniq/uniq-between-rest_15_44.txt
+^\s*Change-Id: *I[a-f0-9]{40}$;./uniq/uniq-between1-rest_17_18-backup.txt
+^\S.{0,1022}$;./uniq/unique-rest2_10-merged.txt
+^\S{2,50}$;./uniq/uniq-rest3_10_7-merged.txt
+^\w[\w_\.-]{1,61}\w$;./uniq/uniq-between1-rest_17_30.txt
+^\w{1,100}\/\w{1,100};./uniq/uniq-between1-rest_12_39-merged.txt
+^\w{1,64}$;./uniq/uniq-between-rest_19_22-merged.txt
+^\w{3},\s(\d{2})\s(\w{3})\s(\d{2,4})\s(\d{1,2}):(\d{2}):(\d{2})\s.{1,21}$;./uniq/uniq-between-rest_27_5-backup.txt
+^\w{6,9},\s(\d{2})-(\w{3})-(\d{2})\s(\d{2}):(\d{2}):(\d{2})\s.{3,20}$;./uniq/uniq-between1-rest_14_42-backup.txt
+^\w{9}-\w{9}-\w{9}-\w{9}-\w{9}$;./uniq/uniq-rest3_3_25-backup.txt
+^\x20\x20{50};./uniq/uniq-error_26-backup.txt
+^\x20BitTorrent protocol.{48}$;./uniq/uniq-error_27-backup.txt
+^`{32} example\n((?s).*)\n\.\n(?:|((?s).*)\n)`{32}$|^#{1,6} *(.*)$;./uniq/uniq-rest3_9_23.txt
+^={10,100}$;./uniq/uniq-between1-rest_18_25-backup.txt
+^={77}$;./uniq/uniq-between2-rest_11_32-backup.txt
+^={80}$;./uniq/uniq-between1-rest_12_35-backup.txt
+^0{127};./uniq/uniq-between1-rest_11_50-backup.txt
+^0x[0-9a-f]{64}$;./uniq/uniq-between-rest_35_39.txt
+^0x[0-9a-zA-Z]{64}$;./uniq/uniq-between1-rest_20_51.txt
+^0x[ABCDEF0-9]{8,64}$;./uniq/uniq-between-rest_30_26-backup.txt
+^0x[a-f0-9]{4}[a-f0-9]{16}[a-f0-9]{64}$;./uniq/uniq-between1-rest_17_14.txt
+^0x[a-f0-9]{60}\s0x[a-f0-9]{40}$;./uniq/uniq-between2-rest_11_28.txt
+^0x[a-f0-9]{64}$;./uniq/uniq-between-rest_21_3.txt
+^0x[a-f0-9]{66}$;./uniq/uniq-between-rest_35_19.txt
+^0x0100[a-f0-9]{48}$;./uniq/uniq-between1-rest_17_64.txt
+^0x0100[a-f0-9]{88}$;./uniq/uniq-between-rest_30_43.txt
+^1{11}|2{11}|3{11}|4{11}|5{11}|6{11}|7{11}|8{11}|9{11}|0{11}$;./uniq/uniq-between1-rest_16_31.txt
+^12[0-9]{9}|13[0-9]{9}|14[579]{1}[0-9]{8}|15[012356789]{1}[0-9]{8}|17[0135678]{1}[0-9]{8}|18[0-9]{9}$;./uniq/uniq-timeouted_36-backup.txt
+^234[5-9]\d{1000}$;./uniq/uniq-between-rest_20_42-backup.txt
+^3.{15}|(2131|1800).{11}$;./uniq/uniq-between1-rest_14_21.txt
+^420[0-9]{5}([0-9]{4}[0-9]{4}[0-9]{4}[0-9]{4}[0-9]{4}[0-9]{2})$;./uniq/uniq-timeouted_68-backup.txt
+^6P[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{56}$;./uniq/uniq-between1-rest_11_51-backup.txt
+^A-[A-Za-z0-9:]{95}$;./uniq/uniq-between-rest_34_30-backup.txt
+^Apache-Session-([a-z0-9]{32})\.lock$;./uniq/uniq-between-rest_36_4-backup.txt
+^arn:aws:cognito-identity:[^:]+:[0-9]{12}:identitypool/[^:]+:([0-9a-f]){8}-([0-9a-f]){4}-([0-9a-f]){4}-([0-9a-f]){4}-([0-9a-f]){12}$;./uniq/uniq-timeouted2_8_1-backup.txt
+^arn:aws:config:[\w-]+:\d{12}:aggregation-authorization/\d{12}/[\w-]+$;./uniq/uniq-between1-rest_10_54-backup.txt
+^arn:aws:kms:[a-z]{2}-[a-z]+-\d{1}:[0-9]{12}:key/[a-z0-9-]{36}$;./uniq/uniq-between-rest_21_38-backup.txt
+^ATCO-CIF(\d\d)(\d\d)(.{32})(.{16})(\d{8})(\d{4,6})$;./uniq/uniq-between-rest_23_5-backup.txt
+^Auction [a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12} timedOut$;./uniq/uniq-between-rest_6_28-backup.txt
+^BOR-STATUS\s{10}\s.{5}\sL\s(.{50})\s(.*)$;./uniq/uniq-between-rest_25_27-backup.txt
+^commits/[^/]+/\S{40}$;./uniq/uniq-between-rest_31_9-backup.txt
+^Content-Type:\s(.{0,100}charset=[^\n]+);./uniq/uniq-between1-rest_10_46-backup.txt
+^dejitter=(\d{1,10})(CDB=(\d{1,10})BTM=(0|1|2))?(TD=(\d{1,10}))?(BFR=(0|1))?$;./uniq/uniq-rest3_7_20-backup.txt
+^Digest realm=Administrators, nonce=\w{32}$;./uniq/uniq-rest3_3_14-backup.txt
+^Digest realm=Users, domain=\/admin \/private, nonce=\w{32}$;./uniq/uniq-rest3_10_26-backup.txt
+^Digest realm=Users, domain=\/admin, nonce=\w{32}$;./uniq/uniq-rest3_8_1-backup.txt
+^Digest realm=Users, nonce=\w{32}$;./uniq/uniq-rest3_8_14-backup.txt
+^Digest realm=Users, nonce=\w{32}, algorithm=MD5-sess$;./uniq/uniq-rest3_10_18-backup.txt
+^Digest realm=Users, nonce=\w{32}, opaque=abcdefg1234$;./uniq/uniq-rest3_1_27-backup.txt
+^Digest realm=Users, nonce=\w{32}, qop=auth$;./uniq/uniq-rest3_7_18-backup.txt
+^Digest realm=Users, nonce=\w{32}, qop=auth,auth-int$;./uniq/uniq-rest3_7_26-backup.txt
+^filesystem:chrome-extension:\/\/[a-p]{32}\/external\/;./uniq/uniq-between1-rest_17_22-backup.txt
+^from \S+ by \S+ \(.{0,100}\) with qmail-scanner;./uniq/uniq-between-rest_31_1-backup.txt
+^github\.com/[\w.-]{1,100}/[\w.-]{1,100}$;./uniq/uniq-between-rest_7_18-backup.txt
+^gpg:\s+using subkey ([a-f0-9]{16,40}) instead of primary key ([a-f0-9]{16,40})$;./uniq/uniq-between1-rest_20_26-merged.txt
+^hsl\(\s{0,31}[\-\.]?\d+\s{0,31},\s{0,31}\.?\d+%\s{0,31},\s{0,31}\.?\d+%\s{0,31}\)|hsla\(\s{0,31}[\-\.]?\d+\s{0,31},\s{0,31}\.?\d+%\s{0,31},\s{0,31}\.?\d+%\s{0,31},\s{0,31}\.?\d+\s{0,31}\)$;./uniq/uniq-between2-rest_11_17.txt
+^https://steamcommunity.com/openid/id/([0-9]{17,25});./uniq/uniq-between1-rest_15_67-backup.txt
+^https:\/\/example\.com\/authorize\?client_id=1234&nonce=[\w\d]{32}&response_type=code&scope=openid&state=[\w\d]{32}$;./uniq/uniq-between1-rest_17_28-backup.txt
+^https?:\/\/([A-Za-z0-9-]{1,63}\.)*(ba\.l\.google\.com|c\.googlesyndication\.com|corp\.google\.com|borg\.google\.com|docs\.google\.com|drive\.google\.com|googleplex\.com|googlevideo\.com|play\.google\.com|prod\.google\.com|sandbox\.google\.com|plus\.google\.com|ed\.video\.google\.com|vp\.video\.l\.google\.com|youtube\.com|youtubeeducation\.com)(:[0-9]+)?([\/\?\#]|$);./uniq/uniq-timeouted2_8_2-backup.txt
+^https?:\/\/([A-Za-z0-9-]{1,63}\.)*(ba\.l\.google\.com|c\.googlesyndication\.com|corp\.google\.com|docs\.google\.com|drive\.google\.com|googleplex\.com|googlevideo\.com|play\.google\.com|prod\.google\.com|sandbox\.google\.com|plus\.google\.com|ed\.video\.google\.com|vp\.video\.l\.google\.com|youtube\.com|youtubeeducation\.com)(:[0-9]+)?([\/\?\#]|$);./uniq/uniq-between1-rest_14_36-backup.txt
+^https?:\/\/([A-Za-z0-9-]{1,63}\.)*(corp\.google\.com|borg\.google\.com|googleapis\.com|prod\.google\.com|sandbox\.google\.com|staging\-www\.sandbox\.googleapis\.com)(:[0-9]+)?\/;./uniq/uniq-between-rest_34_22-backup.txt
+^https?:\/\/([A-Za-z0-9-]{1,63}\.)*(corp\.google\.com|borg\.google\.com|prod\.google\.com|video\.google\.com|youtube\.com|youtube\.googleapis\.com|youtube-nocookie\.com|youtubeeducation\.com)(:[0-9]+)?([\/\?\#]|$);./uniq/uniq-between1-rest_17_61-backup.txt
+^https?:\/\/([A-Za-z0-9-]{1,63}\.)*(corp\.google\.com|borg\.google\.com|prod\.google\.com|video\.google\.com|youtube\.com|youtube\.googleapis\.com|youtube-nocookie\.com|youtubeeducation\.com)(:[0-9]+)?\/+embed\/+;./uniq/uniq-between-rest_10_22-backup.txt
+^https?:\/\/([A-Za-z0-9-]{1,63}\.)*(corp\.google\.com|docs\.google\.com|drive\.google\.com|prod\.google\.com|sandbox\.google\.com|plus\.google\.com|mail\.google\.com|youtube\.com|youtubeeducation\.com)(:[0-9]+)?([\/\?\#]|$);./uniq/uniq-between1-rest_14_57-backup.txt
+^https?:\/\/([A-Za-z0-9-]{1,63}\.)*(corp\.google\.com|docs\.google\.com|drive\.google\.com|prod\.google\.com|sandbox\.google\.com|plus\.google\.com|mail\.google\.com|youtube\.com|youtubeeducation\.com)(:[0-9]+)?\/;./uniq/uniq-between1-rest_10_12-backup.txt
+^https?:\/\/([A-Za-z0-9-]{1,63}\.)*(corp\.google\.com|prod\.google\.com|video\.google\.com|youtube\.com|youtube\.googleapis\.com|youtube-nocookie\.com|youtubeeducation\.com)(:[0-9]+)?\/embed\/;./uniq/uniq-between1-rest_10_15-backup.txt
+^https?:\/\/(www\.gstatic\.com\/doubleclick\/studio\/innovation\/ytplayer|www\.gstatic\.com\/doubleclick\/studio\/innovation\/h5\/layouts\/tetris|tpc\.googlesyndication\.com\/safeframe\/|lightbox-(demos|builder)\.appspot\.com\/|([A-Za-z0-9-]{1,63}\.)*(imasdk\.googleapis\.com|2mdn\.net|googlesyndication\.com|corp\.google\.com|borg\.google\.com|googleads\.g\.doubleclick\.net|prod\.google\.com|static\.doubleclick\.net|static\.googleadsserving\.cn|studioapi\.doubleclick\.net|youtube\.com|youtube\.googleapis\.com|youtube-nocookie\.com|youtubeeducation\.com|ytimg\.com)(:[0-9]+)?([\/\?\#]|$));./uniq/uniq-timeouted2_8_3-backup.txt
+^https?:\/\/.*[0-9a-f]{40};./uniq/uniq-between1-rest_17_25-backup.txt
+^https?:\/\/gyazo.com\/[a-z\d]{32}$;./uniq/uniq-between1-rest_10_56-backup.txt
+^https?:\/\/sketchfab\.com\/models\/[a-z0-9]{32};./uniq/uniq-between-rest_14_41-backup.txt
+^chrome-extension[_|://]([a-z]{32});./uniq/uniq-between1-rest_19_42-backup.txt
+^I have entered my api key as ([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})$;./uniq/uniq-between-rest_26_6-backup.txt
+^I should get a course with id ([a-f0-9]{24})$;./uniq/uniq-between1-rest_17_60-merged.txt
+^I should get a school with id ([a-f0-9]{24})$;./uniq/uniq-between-rest_35_18-backup.txt
+^I should get a student with id ([a-f0-9]{24})$;./uniq/uniq-between-rest_34_7-backup.txt
+^I should get an organization with id ([a-f0-9]{24})$;./uniq/uniq-between1-rest_20_31-backup.txt
+^I should get the organization with id ([a-f0-9]{24})$;./uniq/uniq-between1-rest_18_14-backup.txt
+^id:([^ ]+) sub:(\d{1,3}) dlvrd:(\d{3}) submit date:(\d{10,12}) done date:(\d{10,12}) stat:([A-Z ]{7}) err:(\d{2,3}) text:(.*)$;./uniq/uniq-between-rest_19_14-backup.txt
+^ip-address\s*(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) *(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})*;./uniq/uniq-between1-rest_20_4-backup.txt
+^magnet:\?xt=urn:[a-z0-9]+:[a-z0-9]{32,40}&dn=.+&tr=.+$;./uniq/uniq-between1-rest_12_32-backup.txt
+^Merge\s\w{40}\sinto\s\w{40}$;./uniq/uniq-between-rest_4_3-backup.txt
+^mlid=(w\d{16})\r\npasswd=(.{16,32})$;./uniq/uniq-between-rest_22_34-backup.txt
+^multipart\/form-data boundary=--------------------------\d{24}$;./uniq/uniq-rest3_2_1-backup.txt
+^otpauth://hotp/\?secret=\w{32}&counter=0$;./uniq/uniq-between-rest_6_7-backup.txt
+^otpauth://totp/Example\:roberto@heapsource\.com\?secret=\w{32}&issuer=Example$;./uniq/uniq-between-rest_14_21-backup.txt
+^otpauth://totp/roberto@heapsource\.com\?secret=\w{32}$;./uniq/uniq-between1-rest_19_54-backup.txt
+^otpauth://totp/roberto\?secret=\w{32}$;./uniq/uniq-between1-rest_10_18-backup.txt
+^overwrite\.sig=.{27} path=\/ httponly$;./uniq/uniq-rest3_10_25-backup.txt
+^PGTIOU-[0-9]{10,}-[a-zA-Z0-9]{32}$;./uniq/uniq-rest3_10_11-backup.txt
+^please relay (\w{64}) for side (\w{16})\n;./uniq/uniq-between-rest_19_3-backup.txt
+^Q([012]{27})([012]{27})([012]{27})\z;./uniq/uniq-rest3_8_21-backup.txt
+^QB([NDR])(.{12})(.{8})(.{8})(.{24})(.{24})$;./uniq/uniq-between-rest_36_42-backup.txt
+^QL([NDR])(.{12})(.{48})(.)([BSPRID ])(.{8})$;./uniq/uniq-between-rest_3_26-backup.txt
+^QS([NDR])(.{4})(.{6})(\d{8})(\d{8}| {8})([01]{7})([ SH])([ ABXG])(.{4})(.{6})(.{8})(.{8})(.)$;./uniq/uniq-timeouted2_8_4-backup.txt
+^rake d *# x{65}\.\.\.$;./uniq/uniq-between1-rest_19_32-backup.txt
+^rake d\n *x{80};./uniq/uniq-between-rest_28_11-backup.txt
+^refs\/heads\/([^ ]+) ([0-9a-f]{40})$;./uniq/uniq-between1-rest_14_54-backup.txt
+^rename-command CONFIG [a-zA-Z0-9]{40}$;./uniq/uniq-between-rest_25_42-backup.txt
+^rename-command SHUTDOWN [a-zA-Z0-9]{40}$;./uniq/uniq-between-rest_20_34-backup.txt
+^RESULT PREPARED [0-9a-f]{32} \[\[ks, tbl, col, :varchar\]\]$;./uniq/uniq-rest3_7_22-backup.txt
+^rgb\(\s{0,31}[\d]{1,3}\s{0,31},\s{0,31}[\d]{1,3}\s{0,31},\s{0,31}[\d]{1,3}\s{0,31}\)|rgba\(\s{0,31}[\d]{1,3}\s{0,31},\s{0,31}[\d]{1,3}\s{0,31},\s{0,31}[\d]{1,3}\s{0,31},\s{0,31}[\.\d]+\s{0,31}\)$;./uniq/uniq-between-rest_30_16.txt
+^rgba\(\d{1,3}(\.\d{1,2})?%?, ?\d{1,3}(\.\d{1,2})?%?, ?\d{1,3}(\.\d{1,2})?%?, ?[01](\.\d{1,6})?\)$;./uniq/uniq-between-rest_29_11.txt
+^sample-file\.rb:13:   def inspection {100,} \| ;./uniq/uniq-between1-rest_17_53-backup.txt
+^sample-file\.rb:14:     x\.inspect {100,} \| ;./uniq/uniq-between1-rest_13_10-backup.txt
+^sample-file\.rb:20: s\.inspection {100,} \| ;./uniq/uniq-between-rest_4_43-backup.txt
+^sequenceflow-end-yellow-blue-[A-Za-z0-9]{25}$;./uniq/uniq-between-rest_35_4-backup.txt
+^sha256:[0-9a-f]{64}$;./uniq/uniq-between2-rest_11_41-backup.txt
+^sha256[:$][0-9]+[:$][a-z0-9\/+]+[:$][a-z0-9\/+]{32,128}$;./uniq/uniq-between-rest_31_30.txt
+^signed\.sig=.{27} path=\/ httponly$;./uniq/uniq-rest3_2_6-backup.txt
+^skit1 \([0-9a-f]{40}\) \[BRANCH=branch1\] \(Locally Modified\)$;./uniq/uniq-between1-rest_18_23-backup.txt
+^skit1 \([0-9a-f]{40}\) \[BRANCH=branch1\]$;./uniq/uniq-between-rest_34_6-backup.txt
+^skit1 \([0-9a-f]{40}\) \[BRANCH=master\] \(Locally Modified\)$;./uniq/uniq-between1-rest_15_65-backup.txt
+^skit1 \([0-9a-f]{40}\) \[BRANCH=master\] \(Remote Modified\)$;./uniq/uniq-between1-rest_14_73-backup.txt
+^skit1 \([0-9a-f]{40}\) \[BRANCH=master\]$;./uniq/uniq-between1-rest_17_59-backup.txt
+^skit1 \([0-9a-f]{40}\) \[TAG=v1\] \(Locally Modified\)$;./uniq/uniq-between-rest_33_39-backup.txt
+^skit1 \([0-9a-f]{40}\) \[TAG=v1\]$;./uniq/uniq-between1-rest_19_52-backup.txt
+^STM.{48,55}$;./uniq/uniq-between-rest_23_23-backup.txt
+^text/[a-zA-Z0-9.\-+]{1,100}\s?charset=([a-zA-Z0-9.\-+\s]{0,70}|[a-zA-Z0-9.\-+]{0,70})(\s?\([a-zA-Z0-9.\-+\s]{1,20}\))?$;./uniq/uniq-rest3_7_4.txt
+^text\/[a-zA-Z0-9\.\-\+]{1,100}\s?charset=([a-zA-Z0-9\.\-\+\s]{0,70}|[a-zA-Z0-9\.\-\+]{0,70})(\s?\([a-zA-Z0-9\.\-\+\s]{1,20}\))?$;./uniq/uniq-rest3_4_7-merged.txt
+^title *\= *[^\=]{2,60}$;./uniq/uniq-between-rest_34_10-backup.txt
+^tss~v1~*[a-zA-Z0-9\.\-\\_]{0,16}~[0-9]{1,3}~([a-zA-Z0-9\-\\_]+\={0,2})$;./uniq/uniq-between1-rest_13_29-backup.txt
+^UPDATEarm:0\d{13}10\nUPDATEarm:1\d{13}20\nUPDATEarm:2\d{13}30\nUPDATEarm:3\d{13}40\n$;./uniq/uniq-rest3_7_11-backup.txt
+^urn:btih:(.{40});./uniq/uniq-between-rest_19_36-backup.txt
+^VALIDSIG.+([0-9A-F]{40});./uniq/uniq-between-rest_24_8-backup.txt
+^Version: ([a-f0-9]{40})$;./uniq/uniq-between-rest_10_10-backup.txt
+^When I request sections for an organization with id ([a-f0-9]{24})$;./uniq/uniq-between-rest_30_5-backup.txt
+^When I request teachers for an organization with id ([a-f0-9]{24})$;./uniq/uniq-between1-rest_20_54-backup.txt
+^XE[0-9]{2}(ETH[0-9A-Z]{13}|[0-9A-Z]{30,31})$;./uniq/uniq-rest3_10_4-backup.txt
+_.{39};./uniq/uniq-best_37.txt
+__cfduid=([a-f0-9]{46});./uniq/uniq-between-rest_21_39-backup.txt
+_secure_my_unencrpyted_setting: [A-Za-z0-9\+\/]{342}==;./uniq/uniq-between1-rest_19_48-backup.txt
+`age` BETWEEN (:[0-9a-z]{32}) AND (:[0-9a-z]{32});./uniq/uniq-between-rest_28_12-backup.txt
+`name` IN \((:[0-9a-z]{32}),(:[0-9a-z]{32}),(:[0-9a-z]{32})\);./uniq/uniq-between-rest_17_29-backup.txt
+{/\*(mclAssignmentBeginI[a-z]{55}IEnd)\*/};./uniq/uniq-between-rest_3_29-backup.txt
+=.{32}$;./uniq/uniq-between1-rest_13_28.txt
+0\.\d{14}\.[a-fA-F0-9]{7};./uniq/uniq-between-rest_27_31-backup.txt
+0\.\d+\.\d{14}\.[a-fA-F0-9]{7};./uniq/uniq-best_66.txt
+0x(?:[0-9a-f]{40}|[0-9A-F]{40});./uniq/uniq-between1-rest_17_54-backup.txt
+0x(?i:[0-9a-f]{40});./uniq/uniq-between-rest_13_36-backup.txt
+0x([a-fA-F0-9]{40});./uniq/uniq-between-rest_28_14-backup.txt
+0x[0-9a-f]{32};./uniq/uniq-between1-rest_17_5-backup.txt
+0x[0-9a-f]{64};./uniq/uniq-rest3_9_3-backup.txt
+0x[0-9a-fA-F]{40};./uniq/uniq-between1-rest_12_37-backup.txt
+0x[0-9a-zA-Z]{40};./uniq/uniq-best_54.txt
+0x[a-zA-Z0-9]{40};./uniq/uniq-best_51.txt
+0x[a-zA-Z0-9]{64};./uniq/uniq-best_56.txt
+1-[0-9a-f]{8}-[0-9a-f]{16};./uniq/uniq-between-rest_20_19-backup.txt
+10\.1371/journal\.p[a-zA-Z]{3}\.[\d]{7}|10\.1371/annotation/[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12};./uniq/uniq-between-rest_3_18-backup.txt
+5[0-9a-zA-Z]{50};./uniq/uniq-between1-rest_10_6.txt
+7[0-9]{15,25};./uniq/uniq-best_45.txt
+97[89]{1}(?:-?\d){10,16}|97[89]{1}[- 0-9]{10,16};./uniq/uniq-between1-rest_11_49.txt
+a165627a7a72305820\w{64}0029(\w*);./uniq/uniq-best_64.txt
+addr=([13][123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{25,33});./uniq/uniq-between1-rest_17_52-backup.txt
+APA91([0-9a-zA-Z-_]){178};./uniq/uniq-best_60.txt
+api\/smrt\/reports\/(\d{13})\/(\d{13})\/statements;./uniq/uniq-between1-rest_10_32-backup.txt
+arn:aws:iam::((\d{12})|aws):policy/([a-zA-Z0-9-=,\.@_]{1,128});./uniq/uniq-between-rest_29_27-merged.txt
+arn:aws:iam::(\d{12}):instance-profile/([a-zA-Z0-9-=,\.@_]{1,128});./uniq/uniq-between1-rest_15_8-backup.txt
+avocado-vt-joblock-[0-9a-f]{40}-[0-9]+-[0-9a-z]{8}\.pid;./uniq/uniq-between-rest_4_28-backup.txt
+background: url\(\/\/cdn-[0|1].example.org\/images\/background.[a-f0-9]{32}.jpg\);./uniq/uniq-between-rest_5_17-backup.txt
+background-image: url\('..\/sprites.png\?[0-9a-f]{40}'\);./uniq/uniq-between-rest_30_4-backup.txt
+btih:([a-f0-9]{40});./uniq/uniq-between-rest_20_13-backup.txt
+cgisess_[0-9a-f]{32};./uniq/uniq-between-rest_31_44.txt
+commit\s+([a-f\d]{40});./uniq/uniq-between-rest_16_29-backup.txt
+compilation-.*\/[0-9a-f]{8}-[0-9a-f-]{27};./uniq/uniq-between1-rest_19_30-backup.txt
+compilation-[0-9a-f]{8}-[0-9a-f-]{27};./uniq/uniq-between-rest_20_32-backup.txt
+compilation-[0-9a-f]{8}-[0-9a-f-]{27}\/[0-9a-f]{8}-[0-9a-f-]{27};./uniq/uniq-between-rest_36_30-backup.txt
+Connected to node .{36} at example\.com:12321 in data center dc1;./uniq/uniq-between1-rest_15_6.txt
+connected to node .{36} at host0:9999 in data center dc;./uniq/uniq-between-rest_10_19-backup.txt
+Connection to node .{36} at .+:\d+ in data center .+ closed;./uniq/uniq-rest3_3_12-backup.txt
+Connection to node .{36} at .+:\d+ in data center .+ closed unexpectedly: bork;./uniq/uniq-timeouted2_5_2-backup.txt
+connection to node .{36} at host0:9999 in data center dc closed;./uniq/uniq-between1-rest_12_5-backup.txt
+connection to node .{36} at host0:9999 in data center dc closed unexpectedly: BORK;./uniq/uniq-timeouted2_8_7-backup.txt
+Corp: ([a-zA-Z0-9]{1}[a-zA-Z0-9'. -]{1,48}[a-zA-Z0-9.]{1});./uniq/uniq-between1-rest_11_43-merged.txt
+Creating missing vms: foobar2\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f-]{12} \(1\);./uniq/uniq-between-rest_34_32-backup.txt
+Current IPTC Digest: (0|#){32};./uniq/uniq-between1-rest_14_66.txt
+d_array_example\/[0-9a-f]{24}\/edit;./uniq/uniq-between-rest_15_34-backup.txt
+data:application/x-font-woff;charset=utf-8;base64,[A-Za-z0-9=/]{100,};./uniq/uniq-between-rest_10_34-backup.txt
+data:image/png;base64,[A-Za-z0-9=/]{100,};./uniq/uniq-between-rest_16_9-backup.txt
+data-src=(?:https?)?//player\.theplatform\.com/p/([^/]+)/.*/(media/guid/\d+/\d+);./uniq/uniq-rest3_2_9-backup.txt
+data-uix-load-more-href=(.{176});./uniq/uniq-rest3_7_16.txt
+digest:\s*(sha256:[a-f0-9]{64});./uniq/uniq-between1-rest_14_1-backup.txt
+discord(?:app\.com\/invite|\.gg(?:\/invite)?)\/([\w-]{2,255});./uniq/uniq-between1-rest_19_65-backup.txt
+DMM_TOKEN.*([a-z0-9]{32});./uniq/uniq-rest3_4_10-backup.txt
+document\.cookie=a=([a-f0-9]{32})path=/;./uniq/uniq-rest3_8_5-backup.txt
+dogrulama=[a-z0-9]{40};./uniq/uniq-between1-rest_14_10-backup.txt
+dummy-fastboot-\w{32};./uniq/uniq-between1-rest_13_40-backup.txt
+dwa_batch_[\d\w]{8}-[\d\w]{4}-[\d\w]{4}-[\d\w]{4}-[\d\w]{12};./uniq/uniq-timeouted2_5_3-backup.txt
+eiddcc[a-z]{38};./uniq/uniq-between-rest_1_5.txt
+ember-states-([0-9a-f]{40});./uniq/uniq-between-rest_15_38-backup.txt
+Faction: ([a-zA-Z0-9]{1}[a-zA-Z0-9'. -]{1,48}[a-zA-Z0-9.]{1});./uniq/uniq-between-rest_33_12-merged.txt
+fatal: (Path '([^']+)' does not exist in '([0-9a-f]{40})'|ambiguous argument '([^']+)': unknown revision or path not in the working tree.);./uniq/uniq-timeouted2_5_4.txt
+first-job\/[0-9a-f]{8}-[0-9a-f-]{27};./uniq/uniq-between-rest_27_37-backup.txt
+foo:.*(?:bar ){30,};./uniq/uniq-between1-rest_11_7-backup.txt
+foobar/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12};./uniq/uniq-between-rest_19_16-backup.txt
+foobar\/[0-9a-f-]{36} \(0\) \(canary\);./uniq/uniq-between1-rest_16_18-backup.txt
+guid: [a-zA-Z0-9]{8}-[a-zA-Z0-9]{8}-[a-zA-Z0-9]{8};./uniq/uniq-rest3_4_13-backup.txt
+href=(.*) title=.* alt= coords=(-?[0-9]{1,6}),(-?[0-9]{1,6}),(-?[0-9]{1,6}),(-?[0-9]{1,6});./uniq/uniq-rest3_2_4-backup.txt
+href=(.{1,125})>.{1,90}(Staffel|Season).*(\d{1,2}-?\d{1,2}|\d{1,2});./uniq/uniq-rest3_8_23.txt
+href=(/a/bar/app\.[a-f0-9]{64}\.css);./uniq/uniq-rest3_2_19-backup.txt
+href=(/assets/app\.assets\.css\.[a-f0-9]{64}\.css);./uniq/uniq-rest3_4_23-backup.txt
+href=.+/commit/([a-z0-9]{40})/>;./uniq/uniq-rest3_2_24-backup.txt
+href='//cdn-[0|1].example.org/assets/a.[a-f0-9]{32}.css';./uniq/uniq-between1-rest_17_74-backup.txt
+href=/foo(/assets/app\.[a-f0-9]{64}\.css);./uniq/uniq-rest3_10_15-backup.txt
+href=/foo(/assets/app\.assets\.css\.[a-f0-9]{64}\.css);./uniq/uniq-rest3_4_27-backup.txt
+href=https://cdn\.example\.com/assets/app\.[a-f0-9]{64}\.css;./uniq/uniq-rest3_4_15-backup.txt
+http://asa\.tv/movie/D5/gcuppapa/[a-z0-9A-Z]{32}\.flv;./uniq/uniq-between-rest_3_34-merged.txt
+http://cdn\w*\.yourfilehost\.com/thumbs/\d+/[a-z0-9A-Z]{32}\.jpg;./uniq/uniq-between-rest_36_44-backup.txt
+http://content\.veoh\.com/flash/p/\d/[a-z0-9A-Z]{16}/[a-z0-9A-Z]{40}\.fll\?ct=[a-z0-9A-Z]{48};./uniq/uniq-between-rest_24_26-backup.txt
+http://file\d+\.agesage\.jp/flv/\d{8}/\d{10}_\d{6}\.flv;./uniq/uniq-between-rest_19_25-backup.txt
+http://jp\.youtube\.com/get_video\?video_id=ATHC8qDkoO0&t=[-_a-z0-9A-Z]{32};./uniq/uniq-between-rest_11_13-backup.txt
+http://media\w+\.tube8\.com/flv/[a-z0-9A-Z]{32}/[a-z0-9A-Z]{8}/\d{4}/\d{2}/[a-z0-9A-Z]+/[a-z0-9A-Z]+\.flv;./uniq/uniq-rest3_10_14-backup.txt
+http://mobile\d+\.tube8\.com/flv/[a-z0-9A-Z]{32}/[a-z0-9A-Z]{8}/\d{4}/\d{2}/[a-z0-9A-Z]+/[a-z0-9A-Z]+\.3gp;./uniq/uniq-between-rest_5_33-backup.txt
+http://www\.asa\.tv/captured/gcuppapa/[a-z0-9A-Z]{32}_1\.jpg;./uniq/uniq-between-rest_30_34-merged.txt
+http://www\.example\.com/v1/recipes/[a-f0-9]{24};./uniq/uniq-between-rest_19_35-backup.txt
+http:\/\/api.tropo.com\/v1\/applications\/\d{1,7}\/addresses\/number\/\d{1,20};./uniq/uniq-between1-rest_19_14-backup.txt
+http[s]?://.+/(?:[V|v]\d+|[V|v]\d+\.\d+)/([a-z|A-Z|0-9]{32})(?:/|$);./uniq/uniq-between1-rest_10_10-backup.txt
+https://example.com/v1/AUTH_account/container/object\?temp_url_sig=[a-f0-9]{40}&temp_url_expires=1086400;./uniq/uniq-rest3_9_7-backup.txt
+https://mega.co.nz/#!.{52};./uniq/uniq-error_4-merged.txt
+https:\/\/accounts\.google\.com\/o\/oauth2\/v2\/auth\?client_id=cg-mock-id&redirect_uri=https:\/\/api-id\.execute-api\.eu-west-1\.amazonaws\.com\/dev\/authentication\/callback\/custom-google&response_type=code&scope=profile email&state=.{64};./uniq/uniq-between-rest_13_10-merged.txt
+https:\/\/accounts\.google\.com\/o\/oauth2\/v2\/auth\?client_id=g-mock-id&redirect_uri=https:\/\/api-id\.execute-api\.eu-west-1\.amazonaws\.com\/dev\/authentication\/callback\/google&response_type=code&scope=profile email&state=.{64};./uniq/uniq-between1-rest_19_44-merged.txt
+https:\/\/login\.live\.com\/oauth20_authorize\.srf\?client_id=ms-mock-id&redirect_uri=https:\/\/api-id\.execute-api\.eu-west-1\.amazonaws\.com\/dev\/authentication\/callback\/microsoft&response_type=code&scope=wl\.basic wl\.emails&state=.{64};./uniq/uniq-between-rest_25_30-merged.txt
+https?:\/\/(www\.)?[-a-zA-Z0-9@:%_\+.~#?&\/\/=]{2,256}\.[a-z]{2,4}[\s](\/[-a-zA-Z0-9@:%_\+.~#?&\/\/=]*)?;./uniq/merged-rest_3-backup.txt
+Chapter ?[sS]egment ?UID: length 16, data: 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2});./uniq/uniq-between-rest_35_2-backup.txt
+CHK\@[a-zA-Z0-9~\-]{31},([a-zA-Z0-9~\-]{22});./uniq/uniq-between1-rest_15_54-backup.txt
+identityId:.*[0-9a-z]{64};./uniq/uniq-between-rest_24_12-merged.txt
+index\.[a-z0-9]{32}\.html;./uniq/uniq-between1-rest_10_29-backup.txt
+INGRESSCOOKIE=[0-9a-f]{40};./uniq/uniq-between-rest_4_7-backup.txt
+job-[A-Za-z0-9]{24};./uniq/uniq-between-rest_13_12-backup.txt
+jsessionid=[0-9a-z]{32}$;./uniq/uniq-rest3_2_3-backup.txt
+kernel: (.{0,29}) ?IN;./uniq/uniq-between-rest_32_16-merged.txt
+key_(live|test)_[A-Za-z0-9]{32};./uniq/uniq-between1-rest_20_20-backup.txt
+link rel='stylesheet' href='/css/application.[a-f0-9]{32}.css' media='screen';./uniq/uniq-between-rest_26_2-backup.txt
+link rel='stylesheet' href='/css/screen.[a-f0-9]{32}.css' media='screen';./uniq/uniq-between1-rest_15_15-backup.txt
+link rel='stylesheet' href='/subpath/css/application.[a-f0-9]{32}.css' media='screen';./uniq/uniq-between-rest_32_34-backup.txt
+link rel='stylesheet' href='/subpath/css/screen.[a-f0-9]{32}.css' media='screen';./uniq/uniq-between1-rest_19_7-backup.txt
+M{5000};./uniq/unique-rest2_16-backup.txt
+Moon: ([a-zA-Z0-9]{1}[a-zA-Z0-9'. -]{1,48}[a-zA-Z0-9.]{1});./uniq/uniq-between1-rest_10_62-merged.txt
+multipart\/form-data boundary=--------------------------\d{24};./uniq/uniq-rest3_3_26-backup.txt
+Name: ([a-zA-Z0-9]{1}[a-zA-Z0-9'. -]{1,48}[a-zA-Z0-9.]{1});./uniq/uniq-between-rest_22_21-merged.txt
+Name\s+: (.+)\s+LastWriteTime\s+: ([0-9]{14}[0-9:\+-]{0,6})\s+LastAccessTime\s+: ([0-9]{14}[0-9:\+-]{0,6})\s+CreationTime\s+: ([0-9]{14}[0-9:\+-]{0,6})\s+Mode\s+: ([adhsr-]+)\s+Length\s+: {0,1}([0-9]{0,});./uniq/uniq-timeouted2_5_5-backup.txt
+NEED_PASSPHRASE (.{16}) (.{16}).*\n;./uniq/uniq-between-rest_13_16-backup.txt
+open\.spotify\.com\/(?:track|artist|user\/\w+\/playlist)\/[a-zA-Z-0-9]{22};./uniq/uniq-between-rest_21_4-backup.txt
+pack-([0-9a-f]{40}).idx;./uniq/uniq-between1-rest_16_15-backup.txt
+part\-[0-9a-f]{8}\-[0-9a-f]{4}\-[0-9a-f]{4}\-[0-9a-f]{4}\-[0-9a-f]{12}\@response\.info;./uniq/uniq-between-rest_13_18-backup.txt
+Playing from \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} \(\d+.\d+\) until \d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} \(\d+.\d+\)\.;./uniq/uniq-between-rest_16_1-backup.txt
+POSITION\s{0,5}\.{0,5}\s{0,5}(\d+\.\d+)\s{0,3}([NS])\s{0,5}\.{0,5}\s{0,5}(\d+\.\d+)\s{0,3}([WE])[\s\.];./uniq/uniq-between1-rest_14_53-merged.txt
+queryId:.{32};./uniq/uniq-rest3_5_1-merged.txt
+quiver-note-url/([0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12});./uniq/uniq-between-rest_16_24-backup.txt
+s\.setAttribute\('value', '(.{44})'\);./uniq/uniq-rest3_8_8-backup.txt
+s\.setAttribute\('value', '([a-f0-9]{40})'\);;./uniq/uniq-between-rest_30_21-backup.txt
+SECRET_KEY=[a-f0-9]{128};./uniq/uniq-between-rest_19_15-backup.txt
+Segment UID: 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2}) 0x([0-9a-f]{2});./uniq/uniq-between1-rest_10_13-backup.txt
+sha1: [a-z0-9]{40}\n;./uniq/uniq-between-rest_6_12-backup.txt
+SHA256 checksum: ([0-9a-f]{64});./uniq/uniq-between-rest_28_18-backup.txt
+sha256:[a-z0-9]{64};./uniq/uniq-between1-rest_20_27-backup.txt
+snapper\.ws=([0-9a-zA-Z.~_-]{24,});./uniq/uniq-between-rest_16_2-backup.txt
+src=(/a/foo/app\.head\.[a-f0-9]{64}\.js);./uniq/uniq-rest3_10_19-backup.txt
+src=(/assets/app\.assets\.js\.head\.[a-f0-9]{64}\.js);./uniq/uniq-rest3_7_24-backup.txt
+src='//cdn-[0|1].example.org/assets/b.[a-f0-9]{32}.js';./uniq/uniq-between-rest_31_33-backup.txt
+src=/foo(/assets/app\.assets\.js\.head\.[a-f0-9]{64}\.js);./uniq/uniq-rest3_7_13-backup.txt
+src=/foo(/assets/app\.head\.[a-f0-9]{64}\.js);./uniq/uniq-rest3_4_6-backup.txt
+src='/images/email.[a-f0-9]{32}.png';./uniq/uniq-between-rest_28_10-backup.txt
+src=\/foo(/assets/app\.assets\.js\.head\.[a-f0-9]{64}\.js);./uniq/uniq-between-rest_4_12-backup.txt
+src=\/foo(/assets/app\.head\.[a-f0-9]{64}\.js);./uniq/uniq-between-rest_30_10-merged.txt
+Statement [0-9a-f]{32} prepared on node a4a70900-24e1-11df-8924-001ff3591711 \(h3.example.com:1234\);./uniq/uniq-between-rest_31_36-backup.txt
+stdout:job=fake-errand-name index=0 id=.{36}\nnew-stdout\nadditional-stdout;./uniq/uniq-rest3_4_3-backup.txt
+style-src 'nonce-.{48}';./uniq/uniq-between-rest_26_16-merged.txt
+sweet_assets_([\w\d]{32}).css;./uniq/uniq-timeouted2_5_6-merged.txt
+sweet_assets_([\w\d]{32}).js;./uniq/uniq-timeouted2_5_7-backup.txt
+T([A-z0-9]){8}\/B([A-z0-9]){8}\/([A-z0-9]){24}\/?$;./uniq/uniq-between1-rest_13_15-merged.txt
+This reverts commit ([0-9a-f]{40});./uniq/uniq-rest3_9_5-backup.txt
+token.*([a-z0-9]{32});./uniq/uniq-rest3_1_19-backup.txt
+tree ([a-z0-9]{40});./uniq/uniq-between1-rest_18_11-backup.txt
+Update web-platform-tests to revision [0-9a-f]{40};./uniq/uniq-between1-rest_18_17-backup.txt
+Updating instance foobar1: foobar1\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f-]{12} \(0\);./uniq/uniq-between1-rest_16_11-backup.txt
+Updating instance foobar1: foobar1\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f-]{12} \(2\);./uniq/uniq-timeouted2_8_8-backup.txt
+Updating instance foobar1: foobar1\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f-]{12} \(3\);./uniq/uniq-between-rest_28_16-backup.txt
+Updating instance foobar2: foobar2\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f-]{12} \(1\);./uniq/uniq-between1-rest_17_20-backup.txt
+Updating instance foobar2: foobar2\/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f-]{12} \(2\);./uniq/uniq-between1-rest_10_52-backup.txt
+Updating instance our_instance_group: our_instance_group\/[0-9a-f]{8}-[0-9a-f-]{27} \(0\);./uniq/uniq-between-rest_18_2-backup.txt
+url\(fonts\/myfont\.woff\?([0-9a-f]{32})\);./uniq/uniq-rest3_5_12-backup.txt
+usage: pymentapp.py \[-h\] \[-i style\] \[-o style\] \[-q quotes\] \[-f status\] \[-t\].?.?\s{20}\[-c config\] \[-d\] \[-p status\] \[-v\] \[-w\].?.?\s{20}path.?.?pymentapp\.py: error: the following arguments are required: path;./uniq/uniq-timeouted2_5_8-backup.txt
+Using [0-9a-f]{40} as shared key;./uniq/uniq-between-rest_16_28-backup.txt
+uuid:(.{36});./uniq/uniq-between-rest_15_18-merged.txt
+var *_0x([a-f0-9]){4,6} *= *_0x([a-f0-9]){4,6}\['\w{5}'\]\(!_0x([a-f0-9]){4,6}, *!_0x([a-f0-9]){4,6}\);./uniq/uniq-rest3_5_7-backup.txt
+vendor-\w{32};./uniq/uniq-between-rest_31_10-backup.txt
+Victim: ([a-zA-Z0-9]{1}[a-zA-Z0-9'. -]{1,48}[a-zA-Z0-9.]{1});./uniq/uniq-between-rest_36_38-merged.txt
+WEB_SESSIONS_SECRET=[\w]{64};./uniq/uniq-rest3_4_21-backup.txt
+write-behind\.replica_mklhash [\d\w]{40}\r\n;./uniq/uniq-between-rest_29_16-backup.txt
+x-signature.*\n.*\w{32};./uniq/uniq-between-rest_11_20-backup.txt
+([0-9]{1,9999})\:([0-9]{1,9999});./uniq/above-all2_1-backup.txt
+M{5000};./uniq/above-all2_2-backup.txt
+([*]a[_] ){49999}[*]a_;./uniq/above-uniq_1-merged.txt
+(_a ){64999}_a;./uniq/above-uniq_2.txt
+\[(https?|news|ftp|mailto|gopher|irc):\/\/[^\]\| ]{4,1500}([\| ].*)?\];./uniq/above-uniq_5.txt
+\[{50000}a\]{50000};./uniq/above-uniq_6.txt
+^'((?:(?:''|[^']){0,32766}){0,32766})'\s*(.*)$;./uniq/above-uniq_7.txt
+^(?:([^\&'/:<>@]{1,1023})@)?([^/@]{1,1023})(?:/(.{1,1023}))?$;./uniq/above-uniq_8-merged.txt
+^([\w !\#$%&'()*+,-.\/:<>?@\[\]^`{|}~\\]{1,1024})=(.*)$;./uniq/above-uniq_9-merged.txt
+ {2,999};./uniq/uniq-between1-rest_10_70.txt
+&(#[0-9]+|#[xX][0-9a-fA-F]+|[^\t\n\f <&#]{1,32});./uniq/uniq-rest3_2_12.txt
+&[0-9a-z]{2,8}|&#[0-9]{1,7}|[0-9a-f]{1,6};./uniq/uniq-rest3_8_9.txt
+(&amp|\?)sid=[0-9a-f]{32}$;./uniq/uniq-rest3_10_24.txt
+(&amp|\?)sid=[0-9a-f]{32}&amp;./uniq/uniq-rest3_8_17.txt
+(([0-9a-f]{32}));./uniq/uniq-rest3_3_6.txt
+(?mi)^[a-z][a-z\-]{0,38}$;./uniq/uniq-between-rest_10_16.txt
+([^\s]*[\/][0-9a-f]{32})([^\s]*);./uniq/uniq-rest3_10_22.txt
+([0-9a-f]){40};./uniq/uniq-between1-rest_11_30.txt
+([0-9A-F]{4,6}) ([CFT]) ([0-9A-F]{4,6})(?: ([0-9A-F]{4,6}))?(?: ([0-9A-F]{4,6}))?;./uniq/uniq-rest3_7_9.txt
+([0-9a-f]{40})\s*(.*);./uniq/uniq-rest3_1_9.txt
+([0-9a-fA-F]{32})(?:\/(\d+))?(?:o=(\d+))?;./uniq/uniq-rest3_5_2.txt
+([a-f0-9A-F]{8}-[a-f0-9A-F]{4}-[a-f0-9A-F]{4}-[a-f0-9A-F]{4}-[a-f0-9A-F]{12});./uniq/uniq-between1-rest_10_22.txt
+([A-HJ-Z])(?:\s*((?:\d{1}\s*\d{1})|(?:\d{2}\s*\d{2})|(?:\d{3}\s*\d{3})|(?:\d{4}\s*\d{4})|(?:\d{5}\s*\d{5})))?;./uniq/uniq-between-rest_14_9.txt
+([a-z0-9]{40})(_\d+)?;./uniq/uniq-between1-rest_10_51.txt
+([a-zA-Z]{1,8})(-([a-zA-Z|-]{1,8}))?(\s*\s*q\s*=\s*(1\.0{0,3}|0\.\d{0,3}))?\s*(,|$);./uniq/uniq-rest3_4_24.txt
+([A-Za-z0-9_]{1,25})$;./uniq/uniq-between-rest_11_16.txt
+(\w{32});./uniq/uniq-rest3_4_8.txt
+(== ([a-f0-9]{40}));./uniq/uniq-rest3_3_9.txt
+(-32);./uniq/uniq-between-rest_10_1.txt
+/+organizations/+([a-z0-9][a-z0-9_-]{0,254});./uniq/uniq-between-rest_14_36.txt
+[^\s<>&]{32,};./uniq/uniq-rest3_10_28.txt
+[_a-zA-Z][_a-zA-Z0-9]{0,30};./uniq/uniq-between-rest_14_28.txt
+[0-9a-z-_/\.]{1,100};./uniq/uniq-rest3_10_8.txt
+[a-z_]{1}[a-z0-9_]{0,30};./uniq/uniq-rest3_9_26.txt
+[A-Za-z0-9-_]{30,};./uniq/uniq-rest3_2_17.txt
+\$([^?&$\']{1,40})\$;./uniq/uniq-rest3_5_27.txt
+\*\) (.{0,55});./uniq/uniq-rest3_6_10.txt
+\.(\d*)(?:9{5,20}|0{5,20})\d{0,2}(?:e(.+)|$);./uniq/uniq-rest3_6_13.txt
+\/([0-9a-f]{3})\/([0-9a-f]{3})\/([0-9a-f]{3})\/([0-9a-f]{23})\/;./uniq/uniq-between1-rest_10_41.txt
+\A((\d{1,2}[-\/]\d{1,2}[-\/]\d{4})|(\d{4}[-\/]\d{1,2}[-\/]\d{1,2})|(\d{1,2}-[A-Za-z]{3,4}-\d{4})|([A-Za-z]{3,4} +\d{1,2} \d{2,4}))\z;./uniq/uniq-between1-rest_10_7.txt
+\A(-?)(0|[1-9][0-9]{0,38})\z;./uniq/uniq-between-rest_14_16.txt
+\A[\w@\-_.=,]{1,164}\z;./uniq/uniq-rest3_6_22.txt
+\A[A-Za-z0-9()_$./+][A-Za-z0-9()_$./+-]{0,200}\z;./uniq/uniq-rest3_9_14.txt
+\A[A-Za-z0-9._][A-Za-z0-9._-]{0,31}\Z;./uniq/uniq-between-rest_13_38.txt
+\A\$1\$([!-#%-9-~]{0,8})\$([./0-9A-Za-z]{22})\z;./uniq/uniq-rest3_6_23.txt
+\A\$P\$([./0-9A-Za-z])([!-9-~]{8})\n\t\t\t\t([./0-9A-Za-z]{22})\z;./uniq/uniq-rest3_6_24.txt
+\AGB([0-9]{9}|[0-9]{12}|(HA|GD)[0-9]{3})\Z;./uniq/uniq-between1-rest_11_26.txt
+\s*(.{10,70})(?:\s+|$);./uniq/uniq-between1-rest_10_25.txt
+\s{1,100};./uniq/uniq-rest3_2_28.txt
+^ *[0-9]+\) ([A-Z0-9]{40}) (.+)$;./uniq/uniq-rest3_6_25.txt
+^&(?:#x[a-f0-9]{1,8}|#[0-9]{1,8}|[a-z][a-z0-9]{1,31});./uniq/uniq-rest3_8_7.txt
+^(&[a-z][a-z0-9]{1,31});./uniq/uniq-rest3_2_23.txt
+^(([^<>()[\]\.,:\s@]+(\.[^<>()[\]\.,:\s@]+)*)|(.+))@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$;./uniq/uniq-rest3_1_22.txt
+^(.*)\,(.*)\,(.*\,.*)\,.*\,(.*)\,\,{31};./uniq/uniq-rest3_10_23.txt
+^(?:[\}]|\s{1,256});./uniq/uniq-rest3_3_17.txt
+^(?i)[0-9a-z\\_\.\-\]{1,100}:[0-9]+$;./uniq/uniq-between-rest_10_20.txt
+^([0-9]{1,30})|([0-9]+\.[0-9]+[e]\+\[0-9]+)$;./uniq/uniq-between-rest_15_26.txt
+^([0-9a-f]{32})$;./uniq/uniq-rest3_4_26.txt
+^([0-9a-f]{8})-?([0-9a-f]{4})-?([0-9a-f]{4})-?([0-9a-f]{4})-?([0-9a-f]{12})$;./uniq/uniq-rest3_1_10.txt
+^([0-9a-fA-F]{8,16}) ([0-9a-fA-F]{8,16} )?[tTwW] (.*)$;./uniq/uniq-between-rest_10_6.txt
+^([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}|0)$;./uniq/uniq-between1-rest_11_14.txt
+^([a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12})$;./uniq/uniq-between-rest_11_17.txt
+^([a-zA-Z0-9\-]{38})$;./uniq/uniq-between-rest_12_7.txt
+^([a-zA-Z0-9][a-z0-9A-Z_-]{0,62})(.*)$;./uniq/uniq-rest3_8_25.txt
+^(\$md2\$)?[a-f0-9]{32}$;./uniq/uniq-between-rest_13_19.txt
+^(\$NT\$)?[a-f0-9]{32}$;./uniq/uniq-between1-rest_11_12.txt
+^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$;./uniq/uniq-between-rest_15_21.txt
+^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}).*(([0-9]{1,2})\/(.*)\/([0-9]{4})):(([0-9]{2}):[0-9]{2}:[0-9]{2})\s*(.*)\]\s*([\w]*)\s(.*)\sHTTP\/(.*)\s([0-9]{3})\s(.*)\s*(.*)\s*(.*);./uniq/uniq-rest3_7_17.txt
+^(\d{3}\.\d{3}\.\d{3}\.\d{3})$|^(\d{12})$|^(P-\d{8}\.\d{1}\/\d{3})$;./uniq/uniq-between-rest_13_30.txt
+^(0x)?[0-9A-F]{40}$;./uniq/uniq-between1-rest_10_16.txt
+^(0x|0X)?[A-F0-9]{40}$;./uniq/uniq-between1-rest_10_26.txt
+^(job|analysis)-[0-9A-Za-z]{24}:[a-zA-Z_][0-9a-zA-Z_]*$;./uniq/uniq-between-rest_15_25.txt
+^(org-[\-\.:_a-zA-Z0-9]{1,16}/)*org-[\-\.:_a-zA-Z0-9]{1,16}/ls-;./uniq/uniq-rest3_9_19.txt
+^/([^/]+/[^/]+)/([0-9a-fA-F]{40})(/.*)?$;./uniq/uniq-rest3_9_17.txt
+^/task/([a-zA-Z0-9_-]{22})/artifacts/(.*)$;./uniq/uniq-rest3_1_11.txt
+^/task/([a-zA-Z0-9_-]{22})/runs/([0-9]+)/exception$;./uniq/uniq-rest3_3_24.txt
+^[0-9a-f]{1,40}$;./uniq/uniq-rest3_9_6.txt
+^[0-9a-z]{3,24}$;./uniq/uniq-rest3_8_19.txt
+^[0-9a-zA-Z]([-0-9a-zA-Z]{0,48}[0-9a-zA-Z])?$;./uniq/uniq-between-rest_15_20.txt
+^[A-Z,0-9]{1,34}$;./uniq/uniq-between-rest_12_16.txt
+^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$;./uniq/uniq-between-rest_15_13.txt
+^[a-z0-9]{5,40}$;./uniq/uniq-between1-rest_10_74.txt
+^[A-Z0-9_]{1,30}$;./uniq/uniq-between-rest_14_23.txt
+^[a-zA-Z0-9,\-]{22,40}$;./uniq/uniq-between-rest_10_12.txt
+^[A-Za-z0-9](?:[A-Za-z0-9\-]{0,61}[A-Za-z0-9])?$;./uniq/uniq-between-rest_12_8.txt
+^[a-zA-Z0-9]([-._a-zA-Z0-9]{0,48}[a-zA-Z0-9])?$;./uniq/uniq-between-rest_11_2.txt
+^[A-Za-z0-9-_]{40}$;./uniq/uniq-between-rest_10_25.txt
+^\s*(\={3,50});./uniq/uniq-between-rest_14_15.txt
+^ACK ([0-9a-f]{40})$;./uniq/uniq-between-rest_10_38.txt
+^ETag: ([a-z0-9]{32});./uniq/uniq-rest3_2_14.txt
+^http.+([A-Z0-9]{13})_[0-9]{13}_([0-9]{13});./uniq/uniq-rest3_9_25.txt
+^UC([a-zA-Z0-9\-\\_]{22})$;./uniq/uniq-between1-rest_10_8.txt
+`name` = (:[0-9a-z]{32});./uniq/uniq-between1-rest_10_71.txt
+ember-([0-9a-f]{4,40});./uniq/uniq-between1-rest_10_1.txt
+IMPORTS\s+(.+[A-Z][\w\-?]{0,63})\s*;./uniq/uniq-rest3_7_6.txt
+ns=(\d*)g=([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12});./uniq/uniq-rest3_8_16.txt
+ObjectID\(([0-9a-f]{24})\);./uniq/uniq-rest3_8_15.txt
+resourceID:([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12});./uniq/uniq-rest3_10_21.txt
