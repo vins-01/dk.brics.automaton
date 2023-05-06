@@ -527,10 +527,10 @@ final public class BasicOperations {
 									conditionalStates = new ArrayList<>();
 								}
 								conditionalStates.add(t.conditionalState);
-								final ArrayList<AbstractState> newStates =
-										new ArrayList<>(1);
-								newStates.add(toAdd);
-								toAdd = new State(mergeInternalStates(newStates));
+//								final ArrayList<AbstractState> newStates =
+//										new ArrayList<>(1);
+//								newStates.add(toAdd);
+//								toAdd = new State(mergeInternalStates(newStates));
 								transitionState.put(
 									t.to,
 									conditionalStates
