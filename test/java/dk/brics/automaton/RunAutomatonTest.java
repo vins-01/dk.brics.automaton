@@ -3,6 +3,16 @@ package dk.brics.automaton;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class RunAutomatonTest {
 
     @Test
@@ -236,5 +246,154 @@ public class RunAutomatonTest {
         Assert.assertTrue("Match (abbcabbcabbcabbc): ", a.run("abbcabbcabbcabbc"));
         Assert.assertTrue("Match (abbcabbcabbcabbc): ", a.run("abbcabbcabbcabbc"));
         Assert.assertFalse("Match (abbcabbcabbcabbcabbc): ", a.run("abbcabbcabbcabbcabbc"));
+    }
+
+    @Test
+    public void testComplex() throws IOException {
+        File file = new File("./test/resources/complex/regex-valid.txt");
+        FileReader fileReader = new FileReader(file);
+        BufferedReader reader = new BufferedReader(fileReader);
+        String line = null;
+        String regex = reader.readLine();
+        RegExp r = new RegExp(regex);
+        Automaton a = r.toAutomaton();
+        System.out.println(a.toDot());
+        StringBuilder valid = new StringBuilder(reader.readLine());
+        while ((line = reader.readLine()) != null) {
+            valid.append("\n");
+            valid.append(line);
+        }
+        System.out.println("Match " + valid.toString() + " Result: " + a.run(valid.toString()));
+    }
+
+    @Test
+    public void testCount() throws IOException {
+        Files.list(Paths.get("./test/resources/bench"))
+                .filter(file ->  !Files.isDirectory(file))
+                .map(Path::toFile)
+                .map(file -> {
+                    try {
+                        return new BufferedReader(new FileReader(file));
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+                })
+                .forEach(reader -> {
+                    String line = null;
+                    RegExp r = null;
+                    Automaton a = null;
+                    try {
+                        while ((line = reader.readLine()) != null) {
+                            String regex =
+                                line.substring(0, line.lastIndexOf(';'));
+                            System.out.println(regex);
+                            r = new RegExp(regex);
+                            a = r.toAutomaton();
+                        }
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+    }
+
+    @Test
+    public void testComplex20() throws IOException {
+        testComplex("./test/resources/complex/random_20_100.txt");
+    }
+
+    @Test
+    public void testComplex15() throws IOException {
+        testComplex("./test/resources/complex/random_15_100.txt");
+    }
+    @Test
+    public void testComplex10() throws IOException {
+        testComplex("./test/resources/complex/random_10_100.txt");
+    }
+
+    @Test
+    public void testFailure() throws IOException {
+        testComplex("./test/resources/complex/failing-regex.txt");
+    }
+
+    private static void testComplex(String pathname) throws IOException {
+        final Map<RegExp.Operators, String> operatorsMap = Stream.of(
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.CHAR_CLASS_START, "//"),
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.CHAR_CLASS_SEPARATOR, "//"),
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.CHAR_CLASS_END, "//"),
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.CHAR_CLASS_NEGATION, "//"),
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.REPEAT_MIN, "//"),
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.REPEAT_RANGE_START, "["),
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.REPEAT_RANGE_SEPARATOR, ".."),
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.REPEAT_RANGE_END, "]"),
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.REPEAT_RANGE_UNBOUND, "*"),
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.CONCATENATION, "."),
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.UNION, "+"),
+                new AbstractMap.SimpleEntry<>(RegExp.Operators.EMPTY_STRING, "$")
+        ).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        File file = new File(pathname);
+        final int extensionIdx = pathname.lastIndexOf('.');
+        String pathStrings = pathname.substring(0, extensionIdx) + "-strings" + pathname.substring(extensionIdx);
+        File fileStrings = new File(pathStrings);
+        if (fileStrings.exists()) {
+            fileStrings.delete();
+        }
+        if (!fileStrings.createNewFile()) {
+            throw new RuntimeException("Cannot create accepting strings file: " + pathStrings);
+        }
+        String regex;
+        Map<Integer, String> regexSizes = new HashMap<>();
+        try (
+                FileReader fileReader = new FileReader(file);
+                FileWriter fileStringsWriter = new FileWriter(fileStrings);
+            ) {
+            try (
+                    BufferedReader reader = new BufferedReader(fileReader);
+                    BufferedWriter writer = new BufferedWriter(fileStringsWriter);
+                ) {
+                while ((regex = reader.readLine()) != null) {
+                    System.out.println(regex);
+                    RegExp r = new RegExp(regex, operatorsMap);
+                    //final String example = r.getString();
+                    Automaton a = r.toAutomaton(false);
+                    regexSizes.put(a.getStates().size(), regex);
+                    //generateAcceptingString(writer, a);
+//                    System.out.println(a.toDot());
+                }
+            }
+        }
+        regexSizes
+            .entrySet()
+            .stream()
+            .sorted(Comparator.comparing(Map.Entry::getKey))
+            .forEachOrdered(entry -> System.out.println("Regex: " + entry.getValue() + " #States: " + entry.getKey()));
+    }
+
+    private static void generateAcceptingString(BufferedWriter writer, Automaton a) {
+        int size = 10;
+        int retried = 0;
+        Set<String> strings = null;
+        while (retried <= 3) {
+            strings = SpecialOperations.getStrings(a, size);
+            retried++;
+            if (strings.isEmpty()) {
+                size *= 2;
+            }
+         }
+        if (strings.isEmpty()) {
+            writeStringTo(writer).accept("\000");
+        } else {
+            strings.forEach(writeStringTo(writer));
+        }
+    }
+
+    private static Consumer<String> writeStringTo(BufferedWriter writer) {
+        return s -> {
+            try {
+                writer.write(s);
+                writer.newLine();
+            } catch (IOException e) {
+                System.out.println("Cannot write " + s + ": " + e.getMessage());
+            }
+        };
     }
 }
