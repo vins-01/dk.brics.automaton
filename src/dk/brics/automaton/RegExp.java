@@ -481,11 +481,33 @@ public class RegExp {
 				sb.append(exp2.getString());
 				break;
 			case REGEXP_INTERSECTION:
-				sb.append("(");
-				exp1.toStringBuilder(sb);
-				sb.append("&");
-				exp2.toStringBuilder(sb);
-				sb.append(")");
+				String r1 = exp1.getString();
+				String r2 = exp2.getString();
+				StringBuilder intersection = new StringBuilder();
+				final int min = Integer.min(r1.length(), r2.length());
+				for (int i = 0; i < min; i++) {
+					Character choosen = null;
+					if (new Random().nextBoolean()) {
+						choosen = r1.charAt(i);
+					} else {
+						choosen = r2.charAt(i);
+					}
+					intersection.append(choosen);
+				}
+				if (r1.length() == r2.length()) {
+					String suffix = null;
+					if (new Random().nextBoolean()) {
+						suffix = r2.substring(min);
+					} else {
+						suffix = r1.substring(min);
+					}
+					intersection.append(suffix);
+				} else if (r1.length() > min) {
+					intersection.append(r1.substring(min));
+				} else {
+					intersection.append(r2.substring(min));
+				}
+				sb.append(intersection);
 				break;
 			case REGEXP_OPTIONAL:
 				if (new Random().nextBoolean()) {
@@ -496,10 +518,10 @@ public class RegExp {
 				repeat(new Random().nextInt(5), sb);
 				break;
 			case REGEXP_REPEAT_MIN:
-				repeat(min, sb);
+				repeat(this.min, sb);
 				break;
 			case REGEXP_REPEAT_MINMAX:
-				repeat(new Random().nextInt(max - min + 1) + min, sb);
+				repeat(new Random().nextInt(max - this.min + 1) + this.min, sb);
 				break;
 			case REGEXP_COMPLEMENT:
 				sb.append("~(");
@@ -528,7 +550,7 @@ public class RegExp {
 				sb.append("<").append(s).append(">");
 				break;
 			case REGEXP_INTERVAL:
-				String s1 = Integer.toString(min);
+				String s1 = Integer.toString(this.min);
 				String s2 = Integer.toString(max);
 				sb.append("<");
 				if (digits > 0)
@@ -935,9 +957,9 @@ public class RegExp {
 		RegExp e = parseRepeatExp();
 		if (
 				more() && !peek(convert(Operators.GROUP_END) + convert(Operators.UNION)) &&
-				(!check(INTERSECTION) || !peek(convert(Operators.INTERSECTION))) &&
-				match(convert(Operators.CONCATENATION))
-			)
+						(!check(INTERSECTION) || !peek(convert(Operators.INTERSECTION))) &&
+						match(convert(Operators.CONCATENATION))
+		)
 			e = makeConcatenation(e, parseConcatExp());
 		return e;
 	}
@@ -946,10 +968,10 @@ public class RegExp {
 		RegExp e = parseComplExp();
 		while (
 				peek(
-					convert(Operators.OPTIONAL) +
-					convert(Operators.REPEAT) +
-					convert(Operators.REPEAT_MIN) +
-					convert(Operators.REPEAT_RANGE_START)
+						convert(Operators.OPTIONAL) +
+								convert(Operators.REPEAT) +
+								convert(Operators.REPEAT_MIN) +
+								convert(Operators.REPEAT_RANGE_START)
 				)
 		) {
 			if (match(convert(Operators.OPTIONAL)))

@@ -40,7 +40,7 @@ import java.util.TreeSet;
  * Special automata operations.
  */
 final public class SpecialOperations {
-	
+
 	private SpecialOperations() {}
 
 	/**
@@ -87,7 +87,7 @@ final public class SpecialOperations {
 		b2.determinize();
 		return b1.intersection(b2).minus(BasicAutomata.makeEmptyString());
 	}
-	
+
 	private static void acceptToAccept(Automaton a) {
 		AbstractState s = new State();
 		for (AbstractState r : a.getAcceptStates())
@@ -95,10 +95,10 @@ final public class SpecialOperations {
 		a.initial = s;
 		a.deterministic = false;
 	}
-	
-	/** 
-	 * Returns an automaton that accepts the single chars that occur 
-	 * in strings that are accepted by the given automaton. 
+
+	/**
+	 * Returns an automaton that accepts the single chars that occur
+	 * in strings that are accepted by the given automaton.
 	 * Never modifies the input automaton.
 	 */
 	public static Automaton singleChars(Automaton a) {
@@ -107,7 +107,7 @@ final public class SpecialOperations {
 		b.initial = s;
 		State q = new State();
 		q.accept = true;
-		if (a.isSingleton()) 
+		if (a.isSingleton())
 			for (int i = 0; i < a.singleton.length(); i++)
 				s.transitions.add(new Transition(a.singleton.charAt(i), q));
 		else
@@ -118,7 +118,7 @@ final public class SpecialOperations {
 		b.removeDeadTransitions();
 		return b;
 	}
-	
+
 	/**
 	 * Returns an automaton that accepts the trimmed language of the given
 	 * automaton. The resulting automaton is constructed as follows: 1) Whenever
@@ -157,12 +157,12 @@ final public class SpecialOperations {
 		a.checkMinimizeAlways();
 		return a;
 	}
-	
+
 	private static void addSetTransitions(AbstractState s, String set, AbstractState p) {
 		for (int n = 0; n < set.length(); n++)
 			s.transitions.add(new Transition(set.charAt(n), p));
 	}
-	
+
 	/**
 	 * Returns an automaton that accepts the compressed language of the given
 	 * automaton. Whenever a <code>c</code> character is allowed in the
@@ -189,14 +189,14 @@ final public class SpecialOperations {
 		a.checkMinimizeAlways();
 		return a;
 	}
-	
+
 	/**
 	 * Returns an automaton where all transition labels have been substituted.
 	 * <p>
 	 * Each transition labeled <code>c</code> is changed to a set of
 	 * transitions, one for each character in <code>map(c)</code>. If
 	 * <code>map(c)</code> is null, then the transition is unchanged.
-	 * @param map map from characters to sets of characters (where characters 
+	 * @param map map from characters to sets of characters (where characters
 	 *            are <code>Character</code> objects)
 	 */
 	public static Automaton subst(Automaton a, Map<Character, Set<Character>> map) {
@@ -252,9 +252,9 @@ final public class SpecialOperations {
 		return a;
 	}
 
-	/** 
-	 * Finds the largest entry whose value is less than or equal to c, 
-	 * or 0 if there is no such entry. 
+	/**
+	 * Finds the largest entry whose value is less than or equal to c,
+	 * or 0 if there is no such entry.
 	 */
 	static int findIndex(char c, char[] points) {
 		int a = 0;
@@ -270,7 +270,7 @@ final public class SpecialOperations {
 		}
 		return a;
 	}
-	
+
 	/**
 	 * Returns an automaton where all transitions of the given char are replaced by a string.
 	 * @param c char
@@ -313,7 +313,7 @@ final public class SpecialOperations {
 		a.checkMinimizeAlways();
 		return a;
 	}
-	
+
 	/**
 	 * Returns an automaton accepting the homomorphic image of the given automaton
 	 * using the given function.
@@ -352,7 +352,7 @@ final public class SpecialOperations {
 		a.checkMinimizeAlways();
 		return a;
 	}
-	
+
 	/**
 	 * Returns an automaton with projected alphabet. The new automaton accepts
 	 * all strings that are projections of strings accepted by the given automaton
@@ -422,7 +422,7 @@ final public class SpecialOperations {
 			return a;
 		}
 	}
-	
+
 	/**
 	 * Returns true if the language of this automaton is finite.
 	 */
@@ -431,10 +431,10 @@ final public class SpecialOperations {
 			return true;
 		return isFinite(a.initial, new HashSet<>(), new HashSet<>());
 	}
-	
-	/** 
-	 * Checks whether there is a loop containing s. (This is sufficient since 
-	 * there are never transitions to dead states.) 
+
+	/**
+	 * Checks whether there is a loop containing s. (This is sufficient since
+	 * there are never transitions to dead states.)
 	 */
 	private static boolean isFinite(AbstractState s, HashSet<AbstractState> path, HashSet<AbstractState> visited) {
 		path.add(s);
@@ -445,7 +445,7 @@ final public class SpecialOperations {
 		visited.add(s);
 		return true;
 	}
-	
+
 	/**
 	 * Returns the set of accepted strings of the given length.
 	 */
@@ -457,20 +457,20 @@ final public class SpecialOperations {
 			getStrings(a.initial, strings, new StringBuilder(), length);
 		return strings;
 	}
-	
+
 	private static void getStrings(AbstractState s, Set<String> strings, StringBuilder path, int length) {
 		if (length == 0) {
 			if (s.accept)
 				strings.add(path.toString());
-		} else 
+		} else
 			for (AbstractTransition t : s.transitions)
-				for (int n = t.min; n <= t.max; n++) {
+				for (int n = t.min; n <= t.max && strings.isEmpty(); n++) {
 					path.append((char)n);
 					getStrings(t.to, strings, path, length - 1);
 					path.deleteCharAt(path.length() - 1);
 				}
 	}
-	
+
 	/**
 	 * Returns the set of accepted strings, assuming this automaton has a finite
 	 * language. If the language is not finite, null is returned.
@@ -483,7 +483,7 @@ final public class SpecialOperations {
 			return null;
 		return strings;
 	}
-	
+
 	/**
 	 * Returns the set of accepted strings, assuming that at most <code>limit</code>
 	 * strings are accepted. If more than <code>limit</code> strings are
@@ -502,9 +502,9 @@ final public class SpecialOperations {
 		return strings;
 	}
 
-	/** 
-	 * Returns the strings that can be produced from the given state, or false if more than 
-	 * <code>limit</code> strings are found. <code>limit</code>&lt;0 means "infinite". 
+	/**
+	 * Returns the strings that can be produced from the given state, or false if more than
+	 * <code>limit</code> strings are found. <code>limit</code>&lt;0 means "infinite".
 	 * */
 	private static boolean getFiniteStrings(AbstractState s, HashSet<AbstractState> pathstates, HashSet<String> strings, StringBuilder path, int limit) {
 		pathstates.add(s);
@@ -526,7 +526,7 @@ final public class SpecialOperations {
 		pathstates.remove(s);
 		return true;
 	}
-	
+
 	/**
 	 * Returns the longest string that is a prefix of all accepted strings and
 	 * visits each state at most once.
@@ -553,7 +553,7 @@ final public class SpecialOperations {
 		} while (!done);
 		return b.toString();
 	}
-	
+
 	/**
 	 * Prefix closes the given automaton.
 	 */
@@ -563,7 +563,7 @@ final public class SpecialOperations {
 		a.clearHashCode();
 		a.checkMinimizeAlways();
 	}
-	
+
 	/**
 	 * Constructs automaton that accepts the same strings as the given automaton
 	 * but ignores upper/lower case of A-F.
@@ -580,9 +580,9 @@ final public class SpecialOperations {
 			map.put(c2, ws);
 		}
 		Automaton ws = Datatypes.getWhitespaceAutomaton();
-		return ws.concatenate(a.subst(map)).concatenate(ws);		
+		return ws.concatenate(a.subst(map)).concatenate(ws);
 	}
-	
+
 	/**
 	 * Constructs automaton that accepts 0x20, 0x9, 0xa, and 0xd in place of each 0x20 transition
 	 * in the given automaton.
