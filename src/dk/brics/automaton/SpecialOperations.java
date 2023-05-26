@@ -464,7 +464,7 @@ final public class SpecialOperations {
 				strings.add(path.toString());
 		} else 
 			for (Transition t : s.transitions)
-				for (int n = t.min; n <= t.max; n++) {
+				for (int n = t.min; n <= t.max && strings.isEmpty(); n++) {
 					path.append((char)n);
 					getStrings(t.to, strings, path, length - 1);
 					path.deleteCharAt(path.length() - 1);
