@@ -22,13 +22,15 @@ public class RunAutomatonTest {
             new SimpleEntry<>(RegExp.Operators.CHAR_CLASS_END, "//"),
             new SimpleEntry<>(RegExp.Operators.CHAR_CLASS_NEGATION, "//"),
             new SimpleEntry<>(RegExp.Operators.REPEAT_MIN, "//"),
+            new SimpleEntry<>(RegExp.Operators.INTERSECTION, "//"),
             new SimpleEntry<>(RegExp.Operators.REPEAT_RANGE_START, "["),
             new SimpleEntry<>(RegExp.Operators.REPEAT_RANGE_SEPARATOR, ".."),
             new SimpleEntry<>(RegExp.Operators.REPEAT_RANGE_END, "]"),
             new SimpleEntry<>(RegExp.Operators.REPEAT_RANGE_UNBOUND, "*"),
             new SimpleEntry<>(RegExp.Operators.CONCATENATION, "."),
             new SimpleEntry<>(RegExp.Operators.UNION, "+"),
-            new SimpleEntry<>(RegExp.Operators.EMPTY_STRING, "$")
+            new SimpleEntry<>(RegExp.Operators.EMPTY_STRING, "$"),
+            new SimpleEntry<>(RegExp.Operators.INTERLEAVING, "&")
     ).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
     @Test
@@ -323,6 +325,11 @@ public class RunAutomatonTest {
     }
 
     @Test
+    public void testComplex20EvaluateStrings() throws IOException {
+        testAcceptStrings("./test/resources/complex/random_20_100.txt");
+    }
+
+    @Test
     public void testComplex15() throws IOException {
         testComplex("./test/resources/complex/random_15_100.txt");
     }
@@ -334,6 +341,59 @@ public class RunAutomatonTest {
     @Test
     public void testFailure() throws IOException {
         testComplex("./test/resources/complex/failing-regex.txt");
+    }
+
+    @Test
+    public void testEmptyStrings() throws IOException {
+        testComplex("./test/resources/complex/empty-generated.txt");
+    }
+
+    @Test
+    public void testAcceptingEmptyStrings() throws IOException {
+        testComplexStrings("./test/resources/complex/empty-generated.txt");
+    }
+
+    @Test
+    public void testInterleaving() {
+        RegExp r = new RegExp(
+                "a{1,2}&b{2,3}",
+                Stream.of(
+                        new SimpleEntry<>(RegExp.Operators.INTERSECTION, "//"),
+                        new SimpleEntry<>(RegExp.Operators.INTERLEAVING, "&")
+                ).collect(Collectors.toMap(SimpleEntry::getKey, SimpleEntry::getValue))
+        );
+        Automaton a = r.toAutomaton();
+        System.out.println(a.run("ababb"));
+    }
+
+    public void fixEmptyStrings(String pathname) throws IOException {
+        File file = new File(pathname);
+        final int extensionIdx = pathname.lastIndexOf('.');
+        String fixedStringsFile = pathname.substring(0, extensionIdx) + "-fixed" + pathname.substring(extensionIdx);
+        File fileStrings = new File(fixedStringsFile);
+        if (fileStrings.exists()) {
+            fileStrings.delete();
+        }
+        if (!fileStrings.createNewFile()) {
+            throw new RuntimeException("Cannot create fixed strings file: " + fixedStringsFile);
+        }
+        String regex;
+        try (
+                FileReader fileReader = new FileReader(file);
+                FileWriter fileStringsWriter = new FileWriter(fileStrings);
+        ) {
+            try (
+                    BufferedReader reader = new BufferedReader(fileReader);
+                    BufferedWriter writer = new BufferedWriter(fileStringsWriter);
+            ) {
+                while ((regex = reader.readLine()) != null) {
+                    System.out.println(regex);
+                    RegExp r = new RegExp(regex, operatorsMap);
+                    writeStringTo(writer).accept(r.getString());
+                    Automaton a = r.toAutomaton(false);
+                }
+            }
+        }
     }
 
     private static void testComplex(String pathname) throws IOException {
@@ -388,8 +448,6 @@ public class RunAutomatonTest {
             fileResults.delete();
         }
         fileResults.createNewFile();
-        String regex;
-        String s;
         try (
                 FileReader fileReader = new FileReader(file);
                 FileReader fileStringsReader = new FileReader(fileStrings);
@@ -400,19 +458,45 @@ public class RunAutomatonTest {
                     BufferedReader stringsReader = new BufferedReader(fileStringsReader);
                     BufferedWriter resultsWriter = new BufferedWriter(fileResultsWriter);
             ) {
-                writeStringTo(resultsWriter).accept("Regex,String,Result");
-                while ((regex = reader.readLine()) != null && (s = stringsReader.readLine()) != null) {
-                    System.out.println(regex);
-                    RegExp r = new RegExp(regex, operatorsMap);
-                    Automaton a = r.toAutomaton(false);
-                    boolean result = a.run(s);
-                    writeStringTo(resultsWriter)
-                            .accept(
-                                    String.join(",", regex, s, String.valueOf(result))
-                            );
-                }
+                evaluateAcceptingStrings(reader, stringsReader, resultsWriter);
             }
         }
+    }
+
+    private static void testAcceptStrings(String pathname) throws IOException {
+        File file = new File(pathname);
+        final int extensionIdx = pathname.lastIndexOf('.');
+        final String fileName = pathname.substring(0, extensionIdx);
+        final String fileExtension = pathname.substring(extensionIdx);
+        String pathStrings = fileName + "-strings" + fileExtension;
+        File fileStrings = new File(pathStrings);
+        try (
+                FileReader fileReader = new FileReader(file);
+                FileReader fileStringsReader = new FileReader(fileStrings);
+        ) {
+            try (
+                    BufferedReader reader = new BufferedReader(fileReader);
+                    BufferedReader stringsReader = new BufferedReader(fileStringsReader);
+            ) {
+                evaluateAcceptingStrings(reader, stringsReader, null);
+            }
+        }
+    }
+
+    private static void evaluateAcceptingStrings(BufferedReader reader, BufferedReader stringsReader, BufferedWriter resultsWriter) throws IOException {
+            writeStringTo(resultsWriter).accept("Regex,String,Result");
+            String regex = null;
+            String s = null;
+            while ((regex = reader.readLine()) != null && (s = stringsReader.readLine()) != null) {
+                System.out.println(regex);
+                RegExp r = new RegExp(regex, operatorsMap);
+                Automaton a = r.toAutomaton(false);
+                boolean result = a.run(s);
+                writeStringTo(resultsWriter)
+                        .accept(
+                                String.join(",", regex, s, String.valueOf(result))
+                        );
+            }
     }
 
     private static void generateAcceptingString(BufferedWriter writer, Automaton a) {
@@ -435,6 +519,9 @@ public class RunAutomatonTest {
 
     private static Consumer<String> writeStringTo(BufferedWriter writer) {
         return s -> {
+            if (writer == null) {
+                return;
+            }
             try {
                 writer.write(s);
                 writer.newLine();
