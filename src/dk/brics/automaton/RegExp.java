@@ -117,7 +117,8 @@ public class RegExp {
 		REGEXP_STRING,
 		REGEXP_ANYSTRING,
 		REGEXP_AUTOMATON,
-		REGEXP_INTERVAL
+		REGEXP_INTERVAL,
+		REGEXP_INTERLEAVING
 	}
 
 	enum ComplexOperators {
@@ -156,7 +157,8 @@ public class RegExp {
 		INTERVAL,
 		INTERVAL_START, // '<'
 		INTERVAL_SEPARATOR, // '-'
-		INTERVAL_END // '>'
+		INTERVAL_END, // '>'
+		INTERLEAVING // '%'
 	}
 
 	/**
@@ -384,6 +386,11 @@ public class RegExp {
 				if (minimize)
 					a.minimize();
 				break;
+			case REGEXP_INTERLEAVING:
+				a = exp1.toAutomaton(automata, automaton_provider, minimize).shuffle(exp2.toAutomaton(automata, automaton_provider, minimize));
+				if (minimize)
+					a.minimize();
+				break;
 			case REGEXP_OPTIONAL:
 				a = exp1.toAutomaton(automata, automaton_provider, minimize).optional();
 				if (minimize)
@@ -481,9 +488,18 @@ public class RegExp {
 				sb.append(exp2.getString());
 				break;
 			case REGEXP_INTERSECTION:
+				String i1 = exp1.getString();
+				String i2 = exp2.getString();
+				StringBuilder intersection = new StringBuilder();
+				for (int i = 0; i < Math.min(i1.length(), i2.length()) && i1.charAt(i) == i2.charAt(i); i++) {
+					intersection.append(i1.charAt(i));
+				}
+				sb.append(intersection);
+				break;
+			case REGEXP_INTERLEAVING:
 				String r1 = exp1.getString();
 				String r2 = exp2.getString();
-				StringBuilder intersection = new StringBuilder();
+				StringBuilder interleaving = new StringBuilder();
 				final int min = Integer.min(r1.length(), r2.length());
 				for (int i = 0; i < min; i++) {
 					Character choosen = null;
@@ -492,7 +508,7 @@ public class RegExp {
 					} else {
 						choosen = r2.charAt(i);
 					}
-					intersection.append(choosen);
+					interleaving.append(choosen);
 				}
 				if (r1.length() == r2.length()) {
 					String suffix = null;
@@ -501,13 +517,13 @@ public class RegExp {
 					} else {
 						suffix = r1.substring(min);
 					}
-					intersection.append(suffix);
+					interleaving.append(suffix);
 				} else if (r1.length() > min) {
-					intersection.append(r1.substring(min));
+					interleaving.append(r1.substring(min));
 				} else {
-					intersection.append(r2.substring(min));
+					interleaving.append(r2.substring(min));
 				}
-				sb.append(intersection);
+				sb.append(interleaving);
 				break;
 			case REGEXP_OPTIONAL:
 				if (new Random().nextBoolean()) {
@@ -538,7 +554,9 @@ public class RegExp {
 				appendChar(((char)(new Random().nextInt(Character.MAX_VALUE - Character.MIN_VALUE + 1) + Character.MIN_VALUE)), sb);
 				break;
 			case REGEXP_EMPTY:
+				break;
 			case REGEXP_STRING:
+				sb.append(this.s);
 				break;
 			case REGEXP_ANYSTRING:
 				int maxChars = new Random().nextInt(5);
@@ -591,6 +609,13 @@ public class RegExp {
 				b.append("(");
 				exp1.toStringBuilder(b);
 				b.append("&");
+				exp2.toStringBuilder(b);
+				b.append(")");
+				break;
+			case REGEXP_INTERLEAVING:
+				b.append("(");
+				exp1.toStringBuilder(b);
+				b.append("%");
 				exp2.toStringBuilder(b);
 				b.append(")");
 				break;
@@ -664,7 +689,7 @@ public class RegExp {
 	}
 
 	private void appendChar(char c, StringBuilder b) {
-		if ("|&?*+{},![]^-.#@\"()<>\\".indexOf(c) != -1) {
+		if ("|&%?*+{},![]^-.#@\"()<>\\".indexOf(c) != -1) {
 			b.append("\\");
 		}
 		b.append(c);
@@ -748,6 +773,14 @@ public class RegExp {
 	static RegExp makeIntersection(RegExp exp1, RegExp exp2) {
 		RegExp r = new RegExp();
 		r.kind = Kind.REGEXP_INTERSECTION;
+		r.exp1 = exp1;
+		r.exp2 = exp2;
+		return r;
+	}
+
+	static RegExp makeInterleaving(RegExp exp1, RegExp exp2) {
+		RegExp r = new RegExp();
+		r.kind = Kind.REGEXP_INTERLEAVING;
 		r.exp1 = exp1;
 		r.exp2 = exp2;
 		return r;
@@ -862,9 +895,12 @@ public class RegExp {
 	}
 
 	private boolean match(String s) {
-		if (pos >= b.length())
+		if (s == null || !more())
 			return false;
-		if (s != null && s.equals(b.substring(pos, pos + s.length()))) {
+		final int upperBound = pos + s.length();
+		if (upperBound > b.length())
+			return false;
+		if (s.equals(b.substring(pos, upperBound))) {
 			pos += s.length();
 			return true;
 		}
@@ -894,6 +930,8 @@ public class RegExp {
 				return converted.orElse("|");
 			case INTERSECTION:
 				return converted.orElse("&");
+			case INTERLEAVING:
+				return converted.orElse("%");
 			case REPEAT:
 				return converted.orElse("*");
 			case CONCATENATION:
@@ -940,9 +978,16 @@ public class RegExp {
 	}
 
 	final RegExp parseUnionExp() throws IllegalArgumentException {
-		RegExp e = parseInterExp();
+		RegExp e = parseInterleavingExp();
 		if (match(convert(Operators.UNION)))
 			e = makeUnion(e, parseUnionExp());
+		return e;
+	}
+
+	final RegExp parseInterleavingExp() throws IllegalArgumentException {
+		RegExp e = parseInterExp();
+		if (match(convert(Operators.INTERLEAVING)))
+			e = makeInterleaving(e, parseInterleavingExp());
 		return e;
 	}
 
@@ -958,6 +1003,7 @@ public class RegExp {
 		if (
 				more() && !peek(convert(Operators.GROUP_END) + convert(Operators.UNION)) &&
 						(!check(INTERSECTION) || !peek(convert(Operators.INTERSECTION))) &&
+						!peek(convert(Operators.INTERLEAVING)) &&
 						match(convert(Operators.CONCATENATION))
 		)
 			e = makeConcatenation(e, parseConcatExp());
