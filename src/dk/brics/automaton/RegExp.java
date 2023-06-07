@@ -147,7 +147,8 @@ public class RegExp {
 		CHAR_CLASS_END, // ']'
 		CHAR_CLASS_NEGATION, // '^'
 		ANY_CHAR, // '.'
-		EMPTY_STRING, // '#'
+		EMPTY_LANGUAGE, // '#'
+		EMPTY_STRING, // '()'
 		ANY_STRING, // '@'
 		STRING_START, // '"'
 		STRING_END, // '"'
@@ -964,6 +965,8 @@ public class RegExp {
 				return converted.orElse("-");
 			case CHAR_CLASS_NEGATION:
 				return converted.orElse("^");
+			case EMPTY_STRING:
+				return converted.orElse("()");
 			case ANY_STRING:
 				return converted.orElse("@");
 			case INTERVAL_START:
@@ -1106,7 +1109,7 @@ public class RegExp {
 	final RegExp parseSimpleExp() throws IllegalArgumentException {
 		if (match(convert(Operators.ANY_CHAR)))
 			return makeAnyChar();
-		else if (check(EMPTY) && match(convert(Operators.EMPTY_STRING)))
+		else if (check(EMPTY) && match(convert(Operators.EMPTY_LANGUAGE)))
 			return makeEmpty();
 		else if (check(ANYSTRING) && match(convert(Operators.ANY_STRING)))
 			return makeAnyString();
@@ -1117,9 +1120,9 @@ public class RegExp {
 			if (!match(convert(Operators.STRING_END)))
 				throw new IllegalArgumentException("expected '\"' at position " + pos);
 			return makeString(b.substring(start, pos - 1));
+		} else if (match(convert(Operators.EMPTY_STRING))) {
+			return makeString("");
 		} else if (match(convert(Operators.GROUP_START))) {
-			if (match(convert(Operators.GROUP_END)))
-				return makeString("");
 			RegExp e = parseUnionExp();
 			if (!match(convert(Operators.GROUP_END)))
 				throw new IllegalArgumentException("expected ')' at position " + pos);
