@@ -8,6 +8,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.function.Consumer;
@@ -484,17 +486,23 @@ public class RunAutomatonTest {
     }
 
     private static void evaluateAcceptingStrings(BufferedReader reader, BufferedReader stringsReader, BufferedWriter resultsWriter) throws IOException {
-            writeStringTo(resultsWriter).accept("Regex,String,Result");
+            writeStringTo(resultsWriter).accept("Regex,String,Creation,Execution,Result");
             String regex = null;
             String s = null;
+            Instant startTime = null;
+            Instant midTime = null;
+            Instant endTime = null;
             while ((regex = reader.readLine()) != null && (s = stringsReader.readLine()) != null) {
                 System.out.println(regex);
+                startTime = Instant.now();
                 RegExp r = new RegExp(regex, operatorsMap);
                 Automaton a = r.toAutomaton(false);
+                midTime = Instant.now();
                 boolean result = a.run(s);
+                endTime = Instant.now();
                 writeStringTo(resultsWriter)
                         .accept(
-                                String.join(",", regex, s, String.valueOf(result))
+                                String.join(",", regex, s, String.valueOf(Duration.between(startTime, midTime).toMillis()), String.valueOf(Duration.between(midTime, endTime).toMillis()), String.valueOf(result))
                         );
             }
     }
