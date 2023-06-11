@@ -322,6 +322,11 @@ public class RunAutomatonTest {
     }
 
     @Test
+    /**
+     * Failing regexes: ^\(*\d+\+\$\)*(\[((\d+\.\.(\d+|\*))|\*)\]\)*)+$
+     * Example: (((5+$))[53..56])[20..*]
+     *
+     */
     public void testComplexAccepting20() throws IOException {
         testComplexStrings("./test/resources/complex/random_20_100.txt");
     }
